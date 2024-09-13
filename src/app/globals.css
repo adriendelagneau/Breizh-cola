@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: 'creamCake';
-  src: url('/font/Cream\ Cake.otf') format('opentype');
+  src: url('/public/font/Cream\ Cake.otf') format('opentype');
 }
 @font-face {
   font-family: 'poppins';
-  src: url('/font/poppins-extrabold.ttf') format('truetype');
+  src: url('/public/font/poppins-extrabold.ttf') format('truetype');
 }
 
 
