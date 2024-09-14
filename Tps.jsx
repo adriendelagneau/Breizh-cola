@@ -36,10 +36,8 @@ const Navbar = () => {
   useEffect(() => {
     // Set initial state
     updateMedia();
-
     // Add resize event listener
     window.addEventListener('resize', updateMedia);
-
     // Clean up event listener on component unmount
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
@@ -49,21 +47,37 @@ const Navbar = () => {
     if (timeline) {
       timeline.to(
         navbarRef.current,
-        { top: "0%", duration: 0.6, ease: "power4.out", delay: 1.5 },
+        { top: "0%", duration: 0.6, ease: "power4.out", delay: 2.1 },
         "one"
       );
     }
   }, [timeline]);
 
+  // Scroll animation only for desktop-sized screens, keeping timeline animation on mobile
   useGSAP(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
-      if (currentScrollTop > lastScrollTop.current && currentScrollTop > 200) {
-        gsap.to(navbarRef.current, { translateY: "-100%", duration: 0.3 });
-      } else if (currentScrollTop < lastScrollTop.current) {
-        gsap.to(navbarRef.current, { translateY: "0%", duration: 0.3 });
+      const windowWidth = window.innerWidth;
+
+      // Only apply scroll animation if window width is 1280px or greater
+      if (windowWidth >= 1280) {
+        if (currentScrollTop > lastScrollTop.current && currentScrollTop > 200) {
+          // Hides the navbar with smooth animation
+          gsap.to(navbarRef.current, { 
+            y: "-100%", 
+            duration: 0.3, 
+            ease: "power4.out" 
+          });
+        } else if (currentScrollTop < lastScrollTop.current) {
+          // Shows the navbar with smooth animation
+          gsap.to(navbarRef.current, { 
+            y: "0%", 
+            duration: 0.3, 
+            ease: "power4.out" 
+          });
+        }
+        lastScrollTop.current = currentScrollTop;
       }
-      lastScrollTop.current = currentScrollTop;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -71,6 +85,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div
       ref={navbarRef}
