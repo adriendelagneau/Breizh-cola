@@ -29,7 +29,7 @@ const Navbar = () => {
 
     // If screen width is less than 1280px, reset the navbar to be visible
     if (windowWidth < 1280) {
-      gsap.to(navbarRef.current, { translateY: "0%", duration: 0 });
+      gsap.to(navbarRef.current, { y: "0%", duration: 0 });
     }
   };
 
@@ -44,16 +44,18 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
 
+  // Timeline animation applies to all screen sizes, bringing the navbar into view from -top-full to top-0
   useGSAP(() => {
     if (timeline) {
       timeline.to(
         navbarRef.current,
-        { y: "0%", duration: 0.6, ease: "power4.out", delay: 2.1 },
+        { top: "0%", duration: 0.6, ease: "power4.out", delay: 2.1 },
         "one"
       );
     }
   }, [timeline]);
 
+  // Scroll animation only for desktop-sized screens, keeping timeline animation on mobile
   useGSAP(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
@@ -62,9 +64,9 @@ const Navbar = () => {
       // Only apply scroll animation if window width is 1280px or greater
       if (windowWidth >= 1280) {
         if (currentScrollTop > lastScrollTop.current && currentScrollTop > 200) {
-          gsap.to(navbarRef.current, { translateY: "-100%", duration: 0.3 });
+          gsap.to(navbarRef.current, { top: "-100%", duration: 0.3 });
         } else if (currentScrollTop < lastScrollTop.current) {
-          gsap.to(navbarRef.current, { translateY: "0%", duration: 0.3 });
+          gsap.to(navbarRef.current, { top: "0%", duration: 0.3 });
         }
         lastScrollTop.current = currentScrollTop;
       }
@@ -79,7 +81,7 @@ const Navbar = () => {
   return (
     <div
       ref={navbarRef}
-      className='fixed top-0 left-0 z-30 flex justify-center w-full h-20 p-1 -translate-y-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
+      className='fixed left-0 z-30 flex justify-center w-full h-20 p-1 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
     >
       <div className='flex items-center w-1/4 font-bold uppercase sm:w-1/3 sm:text-xl'>
         {isDesktop ? (

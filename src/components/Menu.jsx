@@ -4,7 +4,7 @@ import { useMenu, useSmoothScroll } from "@/store/zuStore";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
-import BurgerIcon2 from "./BurgerIcon2";
+import BurgerIconMenu from "./BurgerIconMenu";
 
 
 const Menu = () => {
@@ -58,9 +58,9 @@ const Menu = () => {
   return (
     <div
       ref={menu1Ref}
-      className="fixed left-0 z-30 w-full h-screen bg-mainDarkColor dark:bg-secondDarkColor  top-full"
+      className="fixed left-0 z-30 w-full h-screen bg-mainDarkColor dark:bg-secondDarkColor top-full"
     >
-      <BurgerIcon2 />
+      <BurgerIconMenu />
     </div>
   );
 };
