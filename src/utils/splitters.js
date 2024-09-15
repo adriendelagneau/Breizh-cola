@@ -2,6 +2,18 @@
 
 import React from 'react';
 
+const splitLetters = (word, refs) => {
+ return word.split('').map((letter, i) => (
+   <span
+     key={letter + "_" + i}
+     ref={(el) => refs.current.push(el)}
+     className="opacity-0"
+   >
+     {letter}
+   </span>
+ ));
+};
+
 export const splitWords = (phrase, refs) => {
   return phrase.split(' ').map((word, i) => {
     const letters = splitLetters(word, refs);
@@ -13,14 +25,3 @@ export const splitWords = (phrase, refs) => {
   });
 };
 
-export const splitLetters = (word, refs) => {
-  return word.split('').map((letter, i) => (
-    <span
-      key={letter + "_" + i}
-      ref={(el) => refs.current.push(el)}
-      className="opacity-0"
-    >
-      {letter}
-    </span>
-  ));
-};
