@@ -15,6 +15,7 @@ const splitLetters = (word, refs) => {
 };
 
 export const splitWords = (phrase, refs) => {
+  console.log(refs)
   return phrase.split(' ').map((word, i) => {
     const letters = splitLetters(word, refs);
     return (

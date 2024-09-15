@@ -14,8 +14,8 @@ export default function Home() {
       <Landing />
       <Infos />
       <Marquee />
-      <SponsortsMusic />
-      <SponsortsSport />
+      {/* <SponsortsMusic /> */}
+      {/* <SponsortsSport /> */}
       <Screen />
     </div>
 
