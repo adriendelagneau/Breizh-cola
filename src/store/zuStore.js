@@ -23,6 +23,21 @@ const useGSAPTimeline1 = create((set) => ({
   setTimeline: (timeline) => set({ timeline }), 
 }));
 
+const useGSAPTimeline2 = create((set) => ({
+  timeline: gsap.timeline(), 
+  setTimeline: (timeline) => set({ timeline }), 
+}));
 
-export { useSmoothScroll, useSmallMenu, useMenu, useGSAPTimeline1 };
+const useGSAPTimeline3 = create((set) => ({
+  timeline: gsap.timeline(), 
+  setTimeline: (timeline) => set({ timeline }), 
+}));
+
+const useGSAPTimeline4 = create((set) => ({
+  timeline: gsap.timeline(), 
+  setTimeline: (timeline) => set({ timeline }), 
+}));
+
+
+export { useSmoothScroll, useSmallMenu, useMenu, useGSAPTimeline1, useGSAPTimeline2, useGSAPTimeline3, useGSAPTimeline4 };
 

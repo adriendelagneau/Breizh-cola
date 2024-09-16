@@ -6,15 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useGSAP } from '@gsap/react';
 import { splitWords } from '@/utils/splitters';
+import { infosText } from '@/utils/data';
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 
-const phrases = [
-  "Créé en 2002, Breizh Cola est le premier cola régional à proposer aux consommateurs une vraie alternative française à cette boisson mythique. Des années plus tard, le cola breton est un véritable succès.",
-  "C’est grâce à sa recette unique, son identité authentiquement bretonne et son ton décalé que Breizh Cola a su se hisser dans le peloton de tête des marques de cola en France."
-];
 
 const Infos = () => {
   const refs = useRef([]);
@@ -92,8 +89,8 @@ const Infos = () => {
   // };
 
   return (
-    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 text-3xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-4xl lg:text-5xl">
-      {phrases.map((phrase, index) => (
+    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl">
+      {infosText.map((phrase, index) => (
         <div key={index} className="mb-6 paragraph">
           {splitWords(phrase, refs)}
         </div>

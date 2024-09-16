@@ -70,7 +70,7 @@ const Music = () => {
   return (
     <div
       ref={container}
-      className="flex flex-col items-center justify-center w-full gap-12 p-10 text-2xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-4xl lg:text-5xl font-poppins"
+      className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold max-w-screen-2xl dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins"
     >
       {sponsortsMusicText.map((phrase, index) => (
         <div key={index} className="mb-6 paragraph">

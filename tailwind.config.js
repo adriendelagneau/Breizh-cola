@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-pink-gradient': 'linear-gradient(to right, #831843, #581C87)', // from-pink-900 to-pink-950
+      },
       fontFamily: {
         creamCake: ["CreamCake", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],

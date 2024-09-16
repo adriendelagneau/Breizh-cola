@@ -148,7 +148,7 @@ export const infosText = [
 
 export const sponsortsMusicText = [
   "Breizh Cola est un partenaire de choix pour les festivals bretons, mettant en avant la scène musicale locale.",
-  "Grâce à son soutien, la marque contribue à la promotion de la culture musicale bretonne tout en renforçant ses liens avec le public régional."
+ 
 ];
 
 export const sponsortsSportText = [
