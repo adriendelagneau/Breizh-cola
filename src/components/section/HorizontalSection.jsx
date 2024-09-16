@@ -15,7 +15,7 @@ const HorizontalScrollSection = () => {
   const sectionRef = useRef(null);
   const scrollContainerRef = useRef(null);
 
-  const updateScrollTrigger = () => {
+  useGSAP(() => {
     const scrollWidth = scrollContainerRef.current.scrollWidth;
     const viewportWidth = window.innerWidth;
 
@@ -31,17 +31,9 @@ const HorizontalScrollSection = () => {
         invalidateOnRefresh: true,
       },
     });
-  };
-
-  useEffect(() => {
-    updateScrollTrigger();
-    
-    // Add event listener for window resize
-    window.addEventListener('resize', updateScrollTrigger);
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      window.removeEventListener('resize', updateScrollTrigger);
     };
   }, []);
 
@@ -54,7 +46,7 @@ const HorizontalScrollSection = () => {
           <ProductOriginal />
         </div>
         <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
-          <ProductZero containerRef={scrollContainerRef} />
+        <ProductZero containerRef={scrollContainerRef} />
         </div>
         <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
           <ProductCherry containerRef={scrollContainerRef} />
@@ -65,3 +57,4 @@ const HorizontalScrollSection = () => {
 };
 
 export default HorizontalScrollSection;
+
