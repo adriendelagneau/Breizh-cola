@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import 'tailwindcss/tailwind.css';
 import { useGSAP } from "@gsap/react";
-import ProductOriginal from "./ProductOriginal";
-import ProductZero from "./ProductZero";
-import ProductCherry from "./ProductCherry";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,13 +41,13 @@ const HorizontalScrollSection = () => {
       <div ref={scrollContainerRef} className="flex w-[300vw] h-full">
         {/* Sections */}
         <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
-          <ProductOriginal />
+   one
         </div>
         <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
-        <ProductZero containerRef={scrollContainerRef} />
+     two
         </div>
         <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
-          <ProductCherry containerRef={scrollContainerRef} />
+     three
         </div>
       </div>
     </div>
