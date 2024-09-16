@@ -39,13 +39,13 @@ const HorizontalScrollSection = () => {
       {/* Horizontally scrollable container */}
       <div ref={scrollContainerRef} className="flex w-[300vw] h-full">
         {/* Sections */}
-        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
+        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor text-blue-700">
    one
         </div>
-        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
+        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor text-blue-700">
      two
         </div>
-        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor">
+        <div className="flex items-center justify-center w-[100vw] h-full bg-secondColor dark:bg-secondDarkColor text-blue-700">
      three
         </div>
       </div>
