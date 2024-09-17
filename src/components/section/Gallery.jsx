@@ -44,10 +44,10 @@ const Gallery = () => {
     <ProductOriginal containerRef={containerRef}/>
     </section>
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-    <ProductCherry containerRef={containerRef}/>
+    <ProductCherry />
     </section>
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-    <ProductZero containerRef={containerRef}/>
+    <ProductZero/>
     </section>
   </div>
   );
