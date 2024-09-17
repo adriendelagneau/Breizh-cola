@@ -1,108 +1,104 @@
-'use client';
+import React, { useRef, useEffect } from 'react';
+import { useGLTF } from '@react-three/drei';
+import { gsap } from 'gsap';
+import { useGSAPTimeline2 } from "@/store/zuStore";
+import { useGSAP } from '@gsap/react';
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MagneticButtons from '../MagneticButtons';
-import { useGSAPTimeline3 } from "@/store/zuStore";
-import TransitionLink from '../TransitionLink';
+export function SodaOrange() {
+  const { nodes, materials } = useGLTF('/model/soda-orange.glb');
+  const meshRef = useRef();
 
-gsap.registerPlugin(ScrollTrigger);
+  const timeline = useGSAPTimeline2((state) => state.timeline);
 
-const ProductCherry = () => {
-  const section2Ref = useRef(null);  // Reference to the entire section
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const ref5 = useRef(null);
-  const ref6 = useRef(null);
-  const ref7 = useRef(null);
+  useGSAP(() => {
+    if (timeline && meshRef.current) {
+      // Define GSAP matchMedia for responsive animations
+      let mm = gsap.matchMedia();
 
+      mm.add(
+        {
+          // Breakpoints based on your custom screen sizes
+          '2xl': '(min-width: 1536px)',
+          'xl': '(min-width: 1280px) and (max-width: 1535px)',
+          'lg': '(min-width: 1024px) and (max-width: 1279px)',
+          'md': '(min-width: 768px) and (max-width: 1023px)',
+          'sm': '(min-width: 640px) and (max-width: 767px)',
+          'xs': '(max-width: 639px)',
+        },
+        (context) => {
+          const { conditions } = context;
+          let scale, positionX, positionY;
 
-  const buttonRef = useRef(null);
+          // Handle size and position based on each breakpoint
+          if (conditions['2xl']) {
+            scale = 11;
+            positionX = 65;
+            positionY = -37;
+          } else if (conditions['xl']) {
+            scale = 9.5;
+            positionX = 54;
+            positionY = -14;
+          } else if (conditions['lg']) {
+            scale = 9;
+            positionX = 0;
+            positionY = -45;
+          } else if (conditions['md']) {
+            scale = 7.6;
+            positionX = 0;
+            positionY = -45;
+          } else if (conditions['sm']) {
+            scale = 7.2;
+            positionX = 0;
+            positionY = -42;
+          } else if (conditions['xs']) {
+            scale = 6.5;
+            positionX = 0;
+            positionY = -30;
+          }
 
-  const timeline = useGSAPTimeline3((state) => state.timeline);
+          // Set initial position and scale
+          gsap.set(meshRef.current.scale, { x: scale, y: scale, z: scale });
+          gsap.set(meshRef.current.position, { x: positionX, y: positionY });
 
-  useEffect(() => {
-    if (timeline && section2Ref.current) {
-      // Calculate the start position based on the container's width
-      const section2Width = section2Ref.current.offsetWidth; // Get the width of the section
-
-
-      ScrollTrigger.create({
-        trigger: section2Ref.current,  // Trigger based on the ProductZero section itself
-        start: `left+=${section2Width * 1.5}`,  // Start the animation after scrolling 1.5x the section width
-        end: `+=${section2Width}`,  // End the animation after scrolling through the entire width of the section
-        scrub: 1,  // Synchronize animation with scroll position
-        markers: false,  // Set to true to see markers for debugging
-        onEnter: () => {
+          // Add animations to the timeline
           timeline
             .to(
-              [ref1.current, ref2.current, ref3.current, ref4.current, ref5.current, ref6.current, ref7.current],
+              meshRef.current.rotation,
               {
-                y: 0,
-                opacity: 1,
-                duration: 0.6,
-                ease: 'power4.out',
-                stagger: 0.05,
+                y: Math.PI * 2,
+                duration: 0.9,
+                ease: 'power2.inOut',
               }
             )
-            .to(buttonRef.current, { scale: 1, ease: 'back.out' });
-        },
-      });
+            .to(
+              meshRef.current.position,
+              {
+                x: positionX + 7,  // Moves the object based on screen size
+                duration: 0.9,
+                ease: 'power2.inOut',
+              }
+            );
+        }
+      );
+
+      return () => {
+        // Clean up matchMedia listener when component unmounts
+        mm.revert();
+      };
     }
   }, [timeline]);
 
   return (
-    <div  ref={section2Ref}  className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
-      <div
-        className="relative scale-0 w-[150px] h-[75px] top-[50vh] sm:top-[57vh] left-20 sm:left-32 md:top-[64vh] md:left-44 sm:w-[200px] sm:h-[100px] 2xl:w-[360px] xl:w-[300px] xl:h-[200px] 2xl:h-[180px] md:w-[250px] md:h-[125px] xl:top-[50vh] xl:left-[56vw]"
-        ref={buttonRef}
-      >
-        <MagneticButtons>
-          <button className="text-mainColor dark:text-mainDarkColor rotate-12 border-mainColor h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px] border-2 font-bold hover:text-secondColor md:w-[250px] md:h-[125px] hover:bg-mainColor dark:hover:text-secondDarkColor dark:hover:bg-mainDarkColor dark:border-mainDarkColor 2xl:-rotate-6">
-            <TransitionLink href={"/products/cherry"}>
-              decouvrez le
-            </TransitionLink>
-          </button>
-        </MagneticButtons>
-      </div>
-
-      <div className="flex flex-col gap-1 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
-        <p className="flex gap-4 overflow-hidden">
-          <span ref={ref1} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            notes
-          </span>
-          <span ref={ref2} className="overflow-hidden translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-secondDarkColor dark:text-stroke-mainDarkColor">
-            gourmande
-          </span>
-        </p>
-        <p className="flex gap-1 overflow-hidden">
-          <span ref={ref3} className="translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-stroke-secondColor dark:text-secondDarkColor">
-            de cerises
-          </span>
-          <span ref={ref4} className="overflow-hidden translate-y-full text-mainColor dark:text-mainDarkColor">
-            griottes
-          </span>
-        </p>
-        <p className="flex gap-4 mt-12 overflow-hidden text-3xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-          <span ref={ref5} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            et toujours
-          </span>
-          <span ref={ref6} className="translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-stroke-mainDarkColor dark:text-secondDarkColor">
-            aussi
-          </span>
-        </p>
-
-        <p className="flex gap-8 mt-2 overflow-hidden text-3xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-          <span ref={ref7} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            rafraichissant
-          </span>
-        </p>
-      </div>
-    </div>
+    <group ref={meshRef} dispose={null} rotation={[0,0,Math.PI * 0.04]}>
+      <group rotation={[-Math.PI / 2, 0, Math.PI * 0.8]}>
+        <mesh geometry={nodes.Object_2.geometry} material={materials['Material.006']} />
+        <mesh geometry={nodes.Object_3.geometry} material={materials.aiStandardSurface4SG} />
+        <mesh geometry={nodes.Object_4.geometry} material={materials.aiStandardSurface2SG} />
+        <mesh geometry={nodes.Object_4001.geometry} material={materials['Material.005']} />
+      </group>
+    </group>
   );
-};
+}
 
-export default ProductCherry;
+// Preload the GLTF model
+useGLTF.preload('/model/soda-orange.glb');

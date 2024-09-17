@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { SponsortMusic } from "@/utils/data";
-import Music from "../Music";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +40,7 @@ const SponsortsMusic = () => {
 
   return (
     <div className="py-12">
-      <Music />
+   
       {/* Grid container */}
       <div ref={containerRef}>
         <div className="grid grid-cols-3 gap-2 w-[340px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[600px] xl:w-[700px] xl:gap-6">

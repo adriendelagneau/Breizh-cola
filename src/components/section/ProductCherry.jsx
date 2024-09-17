@@ -32,8 +32,8 @@ const ProductCherry = () => {
 
       ScrollTrigger.create({
         trigger: section3Ref.current,  // Trigger based on the ProductZero section itself
-        start: `left+=${section3Width*0.8}`,  // Start the animation after scrolling 1.5x the section width
-        end: `+=${section3Width*0.8}`,  // End the animation after scrolling through the entire width of the section
+        start: `left+=${section3Width*0.75}`,  // Start the animation after scrolling 1.5x the section width
+        end: `+=${section3Width*0.75}`,  // End the animation after scrolling through the entire width of the section
         scrub: 1,  // Synchronize animation with scroll position
         markers: false,  // Set to true to see markers for debugging
         onEnter: () => {
@@ -70,7 +70,7 @@ const ProductCherry = () => {
         </MagneticButtons>
       </div>
 
-      <div className="flex flex-col gap-1 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
+      <div className="flex flex-col gap-12 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
         <p className="flex gap-4 overflow-hidden">
           <span ref={ref1} className="translate-y-full text-mainColor dark:text-mainDarkColor">
             notes

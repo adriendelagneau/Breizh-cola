@@ -66,7 +66,7 @@ const ProductZero = () => {
         </MagneticButtons>
       </div>
 
-      <div className="flex flex-col gap-1 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
+      <div className="flex flex-col gap-12 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
         <p className="flex gap-4 overflow-hidden">
           <span ref={refZero1} className="translate-y-full opacity-0 text-mainColor dark:text-mainDarkColor">
             0%

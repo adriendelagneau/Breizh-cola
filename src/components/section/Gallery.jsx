@@ -41,7 +41,7 @@ const Gallery = () => {
     ref={containerRef}
   >
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-    <ProductOriginal containerRef={containerRef}/>
+    <ProductOriginal/>
     </section>
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
     <ProductCherry />
