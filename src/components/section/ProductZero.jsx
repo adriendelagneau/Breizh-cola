@@ -11,7 +11,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductZero = () => {
-  const sectionRef = useRef(null);
+  const sectionZeroRef = useRef(null);
   const refZero1 = useRef(null);
   const refZero2 = useRef(null);
   const refZero3 = useRef(null);
@@ -24,13 +24,13 @@ const ProductZero = () => {
   const timeline = useGSAPTimeline4((state) => state.timeline);  // Retrieve timeline from Zustand store
 
   useGSAP(() => {
-    if (timeline && sectionRef.current) {
-      const sectionWidth = sectionRef.current.offsetWidth;
+    if (timeline && sectionZeroRef.current) {
+      const sectionWidth = sectionZeroRef.current.offsetWidth;
 
       ScrollTrigger.create({
-        trigger: sectionRef.current,
+        trigger: sectionZeroRef.current,
         start: `left+=${sectionWidth * 1.5}`,
-        end: `+=${sectionWidth} *1.5`,
+        end: `+=${sectionWidth *1.5}`,
         scrub: 1,
         markers: false,
         onEnter: () => {
@@ -49,10 +49,10 @@ const ProductZero = () => {
         },
       });
     }
-  }, [timeline]);
+  }, {scope: sectionZeroRef});
 
   return (
-    <div ref={sectionRef} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
+    <div ref={sectionZeroRef} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
       <div
         className="relative scale-0 w-[150px] h-[75px] top-[50vh] sm:top-[57vh] left-20 sm:left-32 md:top-[64vh] md:left-44 sm:w-[200px] sm:h-[100px] 2xl:w-[360px] xl:w-[300px] xl:h-[200px] 2xl:h-[180px] md:w-[250px] md:h-[125px] xl:top-[50vh] xl:left-[56vw]"
         ref={buttonRefZero}
