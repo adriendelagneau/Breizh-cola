@@ -28,8 +28,8 @@ const ProductZero = ({ containerRef }) => {
 
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: () => `+=${sectionWidth}`,  // Adjust based on section's position in container
-        end: () => `+=${sectionWidth}`,
+        start: () => `+=${sectionWidth *2}`,  // Adjust based on section's position in container
+        end: () => `+=${sectionWidth *2}`,
         once: true,  // Animation will only play once
         onEnter: () => {
           timeline

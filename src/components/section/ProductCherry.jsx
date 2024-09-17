@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
-import { useGSAPTimeline2 } from "@/store/zuStore";  
+import { useGSAPTimeline2 } from "@/store/zuStore";
 import TransitionLink from '../TransitionLink';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,6 +17,8 @@ const ProductCherry = ({ containerRef }) => {
   const ref5 = useRef(null);
   const ref6 = useRef(null);
   const ref7 = useRef(null);
+  const ref8 = useRef(null);
+
   const buttonRef = useRef(null);
 
   const timeline = useGSAPTimeline2((state) => state.timeline);
@@ -28,7 +30,7 @@ const ProductCherry = ({ containerRef }) => {
 
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: () => `+=${sectionWidth * 2}`,  // Adjust based on the Cherry section's position
+        start: () => `+=${sectionWidth }`,  // Adjust based on the Cherry section's position
         end: () => `+=${sectionWidth}`,
         once: true,  // Animation will only play once
         onEnter: () => {
@@ -63,32 +65,32 @@ const ProductCherry = ({ containerRef }) => {
       <div className="flex flex-col gap-1 ml-3 text-3xl uppercase sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-poppins">
         <p className="flex gap-4 overflow-hidden">
           <span ref={ref1} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            Le gout
+            notes
           </span>
           <span ref={ref2} className="overflow-hidden translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-secondDarkColor dark:text-stroke-mainDarkColor">
-            cerise
+            gourmande
           </span>
         </p>
         <p className="flex gap-1 overflow-hidden">
           <span ref={ref3} className="translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-stroke-secondColor dark:text-secondDarkColor">
-           Une saveur
+            de cerises
           </span>
           <span ref={ref4} className="overflow-hidden translate-y-full text-mainColor dark:text-mainDarkColor">
-            unique
+            griottes
           </span>
         </p>
         <p className="flex gap-4 mt-12 overflow-hidden text-3xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           <span ref={ref5} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            Fruite
+            et toujours
           </span>
           <span ref={ref6} className="translate-y-full text-stroke-1 text-stroke-mainColor text-secondColor dark:text-stroke-mainDarkColor dark:text-secondDarkColor">
-            et doux
+            aussi
           </span>
         </p>
 
         <p className="flex gap-8 mt-2 overflow-hidden text-3xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           <span ref={ref7} className="translate-y-full text-mainColor dark:text-mainDarkColor">
-            Un vrai delice
+            rafraichissant
           </span>
         </p>
       </div>
