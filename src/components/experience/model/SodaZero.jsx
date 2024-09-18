@@ -3,13 +3,13 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { gsap } from 'gsap'
-import { useGSAPTimeline1 } from '@/store/zuStore' 
+import { useTimelineStore } from '@/store/zuStore' 
 import { useGSAP } from '@gsap/react'
 
 export function SodaZero(props) {
   const groupRef = useRef();
   const { nodes, materials } = useGLTF('/model/soda-zero.glb');
-  const { timeline } = useGSAPTimeline1();
+  const { timeline } = useTimelineStore();
   const [screenSize, setScreenSize] = useState('sm'); // State to track screen size
 
   // Function to handle resizing and updating the screen size state

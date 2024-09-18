@@ -4,10 +4,10 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Fun from "./Fun";
 import ProductOriginal from "./ProductOriginal";
 import ProductZero from "./ProductZero";
 import ProductCherry from "./ProductCherry";
+
 
 
 const Gallery = () => {
@@ -44,7 +44,7 @@ const Gallery = () => {
     <ProductOriginal/>
     </section>
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
-    <ProductCherry />
+    <ProductCherry/>
     </section>
     <section className="flex items-center justify-center h-screen text-8xl min-w-[100vw] panel">
     <ProductZero/>

@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
-import { useGSAPTimeline4 } from "@/store/zuStore";  
+import { useTimelineStore3 } from "@/store/zuStore";
 import TransitionLink from '../TransitionLink';
 import { useGSAP } from '@gsap/react';
 
@@ -21,35 +21,47 @@ const ProductZero = () => {
   const refZero7 = useRef(null);
   const buttonRefZero = useRef(null);
 
-  const timeline = useGSAPTimeline4((state) => state.timeline);  // Retrieve timeline from Zustand store
+  // Get the timeline and playTimeline3 from the store
+  const { timeline3, playTimeline3 } = useTimelineStore3((state) => ({
+    timeline3: state.timeline3,
+    playTimeline3: state.playTimeline3,
+  }));
 
+  // Effect to add tweens to the timeline
+  useEffect(() => {
+    if (timeline3) {
+      timeline3
+        .to(
+          [refZero1.current, refZero2.current, refZero3.current, refZero4.current, refZero5.current, refZero6.current, refZero7.current],
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: 'power4.out',
+            stagger: 0.05,
+          }
+        )
+        .to(buttonRefZero.current, { scale: 1, ease: 'back.out' });
+    }
+  }, [timeline3]);
+
+  // Effect to setup ScrollTrigger and play the timeline
   useGSAP(() => {
-    if (timeline && sectionZeroRef.current) {
+    if (timeline3 && sectionZeroRef.current) {
       const sectionWidth = sectionZeroRef.current.offsetWidth;
 
       ScrollTrigger.create({
         trigger: sectionZeroRef.current,
         start: `left+=${sectionWidth * 1.5}`,
-        end: `+=${sectionWidth *1.5}`,
+        end: `+=${sectionWidth * 1.5}`,
         scrub: 1,
         markers: false,
         onEnter: () => {
-          timeline
-            .to(
-              [refZero1.current, refZero2.current, refZero3.current, refZero4.current, refZero5.current, refZero6.current, refZero7.current],
-              {
-                y: 0,
-                opacity: 1,
-                duration: 0.6,
-                ease: 'power4.out',
-                stagger: 0.05,
-              }
-            )
-            .to(buttonRefZero.current, { scale: 1, ease: 'back.out' });
+          playTimeline3(); // Play the timeline when the trigger is reached
         },
       });
     }
-  }, {scope: sectionZeroRef});
+  }, [timeline3, playTimeline3, sectionZeroRef]);
 
   return (
     <div ref={sectionZeroRef} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
@@ -87,7 +99,7 @@ const ProductZero = () => {
           <span ref={refZero5} className="translate-y-full opacity-0 text-mainColor dark:text-mainDarkColor">
             Zero 
           </span>
-          <span ref={refZero6} className="translate-y-full opacity-0 text-stroke-1 text-stroke-mainColor text-secondColor dark:text-stroke-mainDarkColor dark:text-secondDarkColor">
+          <span ref={refZero6} className="translate-y-full opacity-0 text-stroke-1 text-stroke-mainColor text-secondColor dark:text-mainDarkColor dark:text-stroke-mainDarkColor">
             Calories
           </span>
         </p>

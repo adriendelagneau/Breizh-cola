@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import BurgerIcon from './BurgerIcon';
 import { useMenu, useSmallMenu } from '@/store/zuStore';
-import { useGSAPTimeline1 } from '@/store/zuStore';
+import { useTimelineStore } from '@/store/zuStore';
 import TransitionLink from './TransitionLink';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useGSAP } from '@gsap/react';
@@ -15,7 +15,7 @@ const Navbar = () => {
   const lastScrollTop = useRef(0);
   const { setSmallMenu } = useSmallMenu();
   const { setMenu } = useMenu();
-  const { timeline } = useGSAPTimeline1();
+  const { timeline } = useTimelineStore();
 
   // Update the state based on window width and ensure the navbar is shown on mobile
   const updateMedia = () => {

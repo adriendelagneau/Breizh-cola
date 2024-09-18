@@ -1,17 +1,33 @@
 import { create } from 'zustand';
 import gsap from 'gsap';
 
-// Generalized GSAP Timeline Store
-const createGSAPTimelineStore = () => create((set) => ({
-  timeline: gsap.timeline(),
-  setTimeline: (timeline) => set({ timeline }),
+const useTimelineStore = create(() => ({
+  timeline: gsap.timeline(), // Paused timeline
 }));
 
-// Create different instances for each timeline
-const useGSAPTimeline1 = createGSAPTimelineStore();
-const useGSAPTimeline2 = createGSAPTimelineStore();
-const useGSAPTimeline3 = createGSAPTimelineStore();
-const useGSAPTimeline4 = createGSAPTimelineStore();
+const useTimelineStore2 = create((set, get) => ({
+  timeline2: gsap.timeline({ paused: true }), 
+  playTimeline2: () => {
+    const { timeline2 } = get();
+    timeline2.play(); // Play the timeline
+  },
+}));
+
+const useTimelineStore3 = create((set, get) => ({
+  timeline3: gsap.timeline({ paused: true }), 
+  playTimeline3: () => {
+    const { timeline3 } = get();
+    timeline3.play(); // Play the timeline
+  },
+}));
+
+const useTimelineStore4 = create((set, get) => ({
+  timeline4: gsap.timeline({ paused: true }), 
+  playTimeline4: () => {
+    const { timeline4 } = get();
+    timeline4.play(); // Play the timeline
+  },
+}));
 
 const useSmoothScroll = create((set) => ({
   isActive: true,
@@ -34,8 +50,8 @@ export {
   useSmoothScroll,
   useSmallMenu,
   useMenu,
-  useGSAPTimeline1,
-  useGSAPTimeline2,
-  useGSAPTimeline3,
-  useGSAPTimeline4,
+  useTimelineStore,
+  useTimelineStore2,
+  useTimelineStore3,
+  useTimelineStore4
 };

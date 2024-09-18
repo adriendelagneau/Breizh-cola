@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAPTimeline1 } from "@/store/zuStore";
+import { useTimelineStore } from "@/store/zuStore"; 
 import { useGSAP } from "@gsap/react";
 import BreizhHome from "../experience/view/BreizhHome";
 
@@ -20,7 +20,7 @@ const Landing = () => {
   const landingRef = useRef(null);
 
   // Access the timeline from Zustand store
-  const { timeline } = useGSAPTimeline1();
+  const { timeline } = useTimelineStore((state) => state); // Access the timeline from the store
 
   useGSAP(() => {
     if (timeline) {
