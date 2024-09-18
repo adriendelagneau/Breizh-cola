@@ -6,7 +6,6 @@ import Link from "next/link"; // Import Next.js Link
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sponsortsSport } from "@/utils/data";
-import Sport from "../Sport";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +45,6 @@ const SponsortsSport = () => {
       <h2 className="mb-6 text-6xl font-bold text-center capitalize font-poppins text-mainColor dark:text-secondColor">
         sport
       </h2>
-    <Sport />
       {/* Grid container */}
       <div ref={container2Ref}>
         <div className="grid grid-cols-3 gap-2 w-[340px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[600px] xl:w-[700px] xl:gap-6">

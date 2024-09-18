@@ -146,12 +146,17 @@ export const infosText = [
   "C’est grâce à sa recette unique, son identité authentiquement bretonne et son ton décalé que Breizh Cola a su se hisser dans le peloton de tête des marques de cola en France."
 ];
 
-export const sponsortsMusicText = [
-  "Breizh Cola est un partenaire de choix pour les festivals bretons, mettant en avant la scène musicale locale.",
- 
-];
-
 export const sponsortsSportText = [
   "Breizh Cola s’investit dans le sport breton en soutenant des compétitions régionales.",
   "Cette implication dans le sport permet à la marque de promouvoir un mode de vie actif et de renforcer la notoriété des événements sportifs à travers toute la région."
+];
+
+export const sponsortMusicText = [
+  "Breizh Cola soutient la scène musicale bretonne en parrainant des festivals et concerts locaux.",
+  "La marque s’associe à des événements musicaux majeurs pour célébrer la culture régionale à travers des partenariats authentiques."
+];
+
+export const sponsortText = [
+  "En soutenant divers événements culturels et sportifs, Breizh Cola s’engage à promouvoir les talents et les traditions de la région bretonne.",
+  "La marque bretonne renforce sa présence en investissant dans des initiatives qui favorisent le développement régional, tant au niveau sportif que culturel."
 ];

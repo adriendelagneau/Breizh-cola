@@ -1,15 +1,15 @@
-'use client';
+"use client"
 
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { splitWords } from '@/utils/splitters';
-import { sponsortsMusicText } from '@/utils/data'; 
 import { useGSAP } from '@gsap/react';
+import { sponsortMusicText } from '@/utils/data'; // Import the music text
+import { splitWords } from '@/utils/splitters';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Music = () => {
+const MusicSponsorship = () => {
   const refs = useRef([]);
   const container = useRef(null);
 
@@ -63,17 +63,12 @@ const Music = () => {
         stagger: 0.1,
       });
     });
-
-    return () => mm.revert();
   }, []);
 
   return (
-    <div
-      ref={container}
-      className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold max-w-screen-2xl dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins"
-    >
-      {sponsortsMusicText.map((phrase, index) => (
-        <div key={index} className="mb-6 paragraph">
+    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto my-12 text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl">
+      {sponsortMusicText.map((phrase, index) => (
+        <div key={index} className="flex flex-wrap gap-2 my-6 leading-[3.25rem]">
           {splitWords(phrase, refs)}
         </div>
       ))}
@@ -81,4 +76,4 @@ const Music = () => {
   );
 };
 
-export default Music;
+export default MusicSponsorship;
