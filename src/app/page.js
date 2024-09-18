@@ -8,6 +8,7 @@ import SportsSponsorship from "@/components/SportsSponsortship";
 import MusicSponsorship from "@/components/MusicSponsortship";
 import Sponsorship from "@/components/Sponsortship";
 import SponsortsSport from "@/components/section/SponsortsSport";
+import Footer from "@/components/section/Footer";
 
 
 
@@ -24,10 +25,11 @@ export default function Home() {
       <Sponsorship />
       <MusicSponsorship />
       <SponsortsMusic />
-      <SportsSponsorship />
-<SponsortsSport />
       <Marquee />
+      <SportsSponsorship />
+      <SponsortsSport />
       <Screen />
+      <Footer />
     </div>
 
   );
