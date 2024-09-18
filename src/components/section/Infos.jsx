@@ -3,10 +3,9 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import { useGSAP } from '@gsap/react';
-
 import { infosText } from '@/utils/data';
+import { splitWords } from '@/utils/splitters';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,27 +72,13 @@ const Infos = () => {
 
   }, []);
 
-  const splitWords = (phrase) => {
-    return phrase.split(" ").map((word, i) => {
-      const letters = splitLetters(word);
-      return <p key={word + "_" + i} className="inline-block mr-2">{letters}</p>;
-    });
-  };
-
-  const splitLetters = (word) => {
-    return word.split("").map((letter, i) => (
-      <span key={letter + "_" + i} ref={el => refs.current.push(el)} className="opacity-0">
-        {letter}
-      </span>
-    ));
-  };
 
   return (
     
       
-    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl">
+    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl ">
       {infosText.map((phrase, index) => (
-        <div key={index} className="mb-6 paragraph">
+        <div key={index} className="flex flex-wrap gap-2 mb-6">
           {splitWords(phrase, refs)}
         </div>
       ))}

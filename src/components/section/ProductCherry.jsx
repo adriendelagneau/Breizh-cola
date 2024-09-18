@@ -7,6 +7,7 @@ import MagneticButtons from '../MagneticButtons';
 import { useTimelineStore4 } from "@/store/zuStore";
 import TransitionLink from '../TransitionLink';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductCherry = () => {
@@ -65,6 +66,7 @@ const ProductCherry = () => {
 
   return (
     <div ref={section3Ref} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
+
       <div
         className="relative scale-0 w-[150px] h-[75px] top-[50vh] sm:top-[57vh] left-20 sm:left-32 md:top-[64vh] md:left-44 sm:w-[200px] sm:h-[100px] 2xl:w-[360px] xl:w-[300px] xl:h-[200px] 2xl:h-[180px] md:w-[250px] md:h-[125px] xl:top-[50vh] xl:left-[56vw]"
         ref={buttonRef}
