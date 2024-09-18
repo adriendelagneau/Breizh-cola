@@ -76,9 +76,9 @@ const Infos = () => {
   return (
     
       
-    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl ">
+    <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto my-12 text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl">
       {infosText.map((phrase, index) => (
-        <div key={index} className="flex flex-wrap gap-2 mb-6">
+        <div key={index} className="flex flex-wrap gap-2 my-6 leading-[3.25rem]">
           {splitWords(phrase, refs)}
         </div>
       ))}

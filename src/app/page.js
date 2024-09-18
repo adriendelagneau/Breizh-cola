@@ -15,6 +15,7 @@ export default function Home() {
       <Landing />
       <Infos />
       <Gallery />
+   
       <SponsortsMusic />
       <Marquee />
       <Screen /> 
