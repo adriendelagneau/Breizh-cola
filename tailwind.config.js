@@ -23,6 +23,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@designbycode/tailwindcss-text-stroke")],
+  plugins: [
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
   darkMode: ['selector'],
 };

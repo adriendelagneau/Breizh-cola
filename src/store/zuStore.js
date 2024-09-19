@@ -3,6 +3,7 @@ import gsap from 'gsap';
 
 const useTimelineStore = create(() => ({
   timeline: gsap.timeline(), // Paused timeline
+  
 }));
 
 const useTimelineStore2 = create((set, get) => ({
@@ -27,6 +28,7 @@ const useTimelineStore4 = create((set, get) => ({
     const { timeline4 } = get();
     timeline4.play(); // Play the timeline
   },
+  
 }));
 
 const useSmoothScroll = create((set) => ({

@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
 import { useTimelineStore4 } from "@/store/zuStore";
 import TransitionLink from '../TransitionLink';
+import { useGSAP } from '@gsap/react';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -29,7 +30,7 @@ const ProductCherry = () => {
   }));
 
   // Effect to create and add tweens to the timeline
-  useEffect(() => {
+  useGSAP(() => {
     if (timeline4) {
       timeline4
         .to(
@@ -47,7 +48,7 @@ const ProductCherry = () => {
   }, [timeline4]);
 
   // Effect to setup ScrollTrigger
-  useEffect(() => {
+  useGSAP(() => {
     if (timeline4 && section3Ref.current) {
       const section3Width = section3Ref.current.offsetWidth; // Get the width of the section
 

@@ -10,6 +10,8 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
   const router = useRouter();
   const pathname = usePathname(); // Get the current path
 
+ 
+
 
   const animate = () => {
     if (href === pathname) {
@@ -17,6 +19,8 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
     }
 
     let TL = gsap.timeline();
+
+
 
     TL.to(["#transition0", "#transition1", "#transition2", "#transition3"], {
       top: "0",

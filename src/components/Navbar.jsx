@@ -8,6 +8,7 @@ import TransitionLink from './TransitionLink';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -86,13 +87,14 @@ const Navbar = () => {
               produits
             </li>
             <TransitionLink
-              href={"/historique"}
+              href={"/chronology"}
               myClass={
                 "relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-secondDarkColor"
               }
             >
               historique
             </TransitionLink>
+
           </ul>
         ) : (
           <div className='flex items-center text-xl font-bold uppercase'>

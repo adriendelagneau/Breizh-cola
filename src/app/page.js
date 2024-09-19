@@ -20,14 +20,15 @@ export default function Home() {
     <div className="w-full bg-mainColor text-secondColor dark:bg-mainDarkColor dark:text-secondDarkColor ">
       <Landing />
       <Infos />
+      <Marquee />
       <Screen />
       <Gallery />
       <Sponsorship />
       <MusicSponsorship />
       <SponsortsMusic />
-      <Marquee />
       <SportsSponsorship />
       <SponsortsSport />
+      <Marquee />
       <Screen />
       <Footer />
     </div>
