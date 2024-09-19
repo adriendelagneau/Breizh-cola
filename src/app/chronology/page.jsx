@@ -9,7 +9,6 @@ const page = () => {
 
   return (
     <div className={`min-h-[150vh] dark:bg-mainDarkColor  bg-mainColor text-mainColor`}>
-      <Screen />
       <Chronos />
       <CFooter />
     </div>
