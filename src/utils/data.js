@@ -160,3 +160,15 @@ export const sponsortText = [
   "En soutenant divers événements culturels et sportifs, Breizh Cola s’engage à promouvoir les talents et les traditions de la région bretonne.",
   "La marque bretonne renforce sa présence en investissant dans des initiatives qui favorisent le développement régional, tant au niveau sportif que culturel."
 ];
+
+export const sections = [
+  { id: 'year-2003', year: 2003 },
+  { id: 'year-2007', year: 2007 },
+  { id: 'year-2011', year: 2011 },
+  { id: 'year-2018', year: 2018 },
+  { id: 'year-2022', year: 2022 },
+  { id: 'year-2025', year: 2025 },
+  { id: 'year-2028', year: 2028 },
+  { id: 'year-2031', year: 2031 },
+  { id: 'year-2035', year: 2035 },
+];

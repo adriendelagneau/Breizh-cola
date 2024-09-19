@@ -3,11 +3,18 @@ import Years from './Years';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { sections } from '@/utils/data';
+import { useCurrentIndexStore } from '@/store/zuStore';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Chronos = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  const { currentIndex, setCurrentIndex } = useCurrentIndexStore(state => ({
+    currentIndex: state.currentIndex,
+    setCurrentIndex: state.setCurrentIndex,
+  }));
+  
   const sectionsRef = useRef([]);
 
   useEffect(() => {
@@ -29,24 +36,12 @@ const Chronos = () => {
     };
   }, []);
 
-  const sections = [
-    { id: 'year-2003', year: 2003 },
-    { id: 'year-2007', year: 2007 },
-    { id: 'year-2011', year: 2011 },
-    { id: 'year-2018', year: 2018 },
-    { id: 'year-2022', year: 2022 },
-    { id: 'year-2025', year: 2025 },  // New Section
-    { id: 'year-2028', year: 2028 },  // New Section
-    { id: 'year-2031', year: 2031 },  // New Section
-    { id: 'year-2035', year: 2035 },  // New Section
-  ];
-
   return (
     <div className='relative w-full h-auto'>
       {/* Container for the fixed Years */}
       <div className="relative">
         {/* Ensure Years is fixed within the Chronos component */}
-        <Years currentIndex={currentIndex} sections={sections} />
+        <Years currentIndex={currentIndex} />
       </div>
 
       {/* Sections for each year */}

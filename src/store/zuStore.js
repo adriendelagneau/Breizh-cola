@@ -48,6 +48,11 @@ const useMenu = create((set) => ({
   toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
 }));
 
+const useCurrentIndexStore = create((set) => ({
+  currentIndex: 0,
+  setCurrentIndex: (index) => set({ currentIndex: index }),
+}));
+
 export {
   useSmoothScroll,
   useSmallMenu,
@@ -55,5 +60,6 @@ export {
   useTimelineStore,
   useTimelineStore2,
   useTimelineStore3,
-  useTimelineStore4
+  useTimelineStore4,
+  useCurrentIndexStore
 };

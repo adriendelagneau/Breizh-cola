@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { sections } from '@/utils/data';
+import { useCurrentIndexStore } from '@/store/zuStore';
 
-const Years = ({ currentIndex, sections }) => {
+const Years = () => {
   const listRef = useRef(null);
   const liRefs = useRef([]);
+
+  const { currentIndex } = useCurrentIndexStore(state => state);
 
   useEffect(() => {
     if (listRef.current) {
