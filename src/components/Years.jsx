@@ -1,7 +1,5 @@
-"use client"
-
-import React, { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const Years = ({ currentIndex, sections }) => {
   const listRef = useRef(null);
@@ -15,13 +13,13 @@ const Years = ({ currentIndex, sections }) => {
           gsap.to(li, {
             scale: 1,
             duration: 0.5,
-            ease: 'power2.out', // Add easing to make the transition smoother
+            ease: 'power2.out',
           });
         } else {
           gsap.to(li, {
             scale: 0.4,
             duration: 0.5,
-            ease: 'power2.out', // Same easing for non-active elements
+            ease: 'power2.out',
           });
         }
       });
@@ -30,17 +28,17 @@ const Years = ({ currentIndex, sections }) => {
     // Optional cleanup if needed
     return () => {
       liRefs.current.forEach((li) => {
-        gsap.killTweensOf(li); // Clear any ongoing animations
+        gsap.killTweensOf(li);
       });
     };
   }, [currentIndex]);
 
   return (
-    <div className='fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-mainColor'>
+    <div className='fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-secondColor dark:text-secondDarkColor'>
       <div className='overflow-y-hidden h-[105px]'>
         <ul 
           ref={listRef} 
-          className='relative transform'
+          className='relative transition transform'
           style={{ transform: `translateY(${-(currentIndex * 100) / sections.length}%)` }}
         >
           {sections.map((s, i) => (
