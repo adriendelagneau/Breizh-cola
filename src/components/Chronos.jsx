@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+"use client"
+
+import React, { useEffect, useRef } from 'react';
 import Years from './Years';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sections } from '@/utils/data';
 import { useCurrentIndexStore } from '@/store/zuStore';
+import CFooter from './CFooter';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Chronos = () => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
   const { currentIndex, setCurrentIndex } = useCurrentIndexStore(state => ({
     currentIndex: state.currentIndex,
     setCurrentIndex: state.setCurrentIndex,
@@ -18,8 +20,7 @@ const Chronos = () => {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
-    // Create scroll triggers for each section
-    sectionsRef.current.forEach((section, index) => {
+    const triggers = sectionsRef.current.map((section, index) =>
       ScrollTrigger.create({
         trigger: section,
         start: 'top center',
@@ -27,24 +28,21 @@ const Chronos = () => {
         onEnter: () => setCurrentIndex(index),
         onEnterBack: () => setCurrentIndex(index),
         markers: false // Disable markers
-      });
-    });
+      })
+    );
 
     return () => {
-      // Clean up scroll triggers
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      triggers.forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [setCurrentIndex]);
 
   return (
-    <div className='relative w-full h-auto'>
-      {/* Container for the fixed Years */}
-      <div className="relative">
-        {/* Ensure Years is fixed within the Chronos component */}
-        <Years currentIndex={currentIndex} />
-      </div>
+    <div className='relative top-0 left-0 w-full'>
+    
 
-      {/* Sections for each year */}
+        <Years currentIndex={currentIndex} />
+
+      {/* Custom rendering of sections */}
       {sections.map((section, index) => (
         <div 
           key={section.id} 
@@ -52,18 +50,39 @@ const Chronos = () => {
           id={section.id}
           ref={el => sectionsRef.current[index] = el}
         >
-          <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4 dark:text-secondDarkColor text-secondColor'>
-            Text for Year {section.year}
-          </div>
-          <Image 
-            src={"/image/BC-2015.jpg"} 
-            alt={`Historical image from the year ${section.year}`} 
-            width={300} 
-            height={413} 
-            className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-3/4'
-          />
+          {/* Alternate text and image position */}
+          {index % 2 === 0 ? (
+            <>
+              <div className='absolute transform -translate-x-1/2 left-1/4 dark:text-secondDarkColor text-secondColor'>
+                {section.text}
+              </div>
+              <Image 
+                src={section.image} 
+                alt={`Historical image from the year ${section.year}`} 
+                width={300} 
+                height={413} 
+                className='absolute transform -translate-x-1/2 left-3/4'
+                layout="intrinsic"
+              />
+            </>
+          ) : (
+            <>
+              <Image 
+                src={section.image} 
+                alt={`Historical image from the year ${section.year}`} 
+                width={300} 
+                height={413} 
+                className='absolute transform -translate-x-1/2 left-1/4'
+                layout="intrinsic"
+              />
+              <div className='absolute transform -translate-x-1/2 left-3/4 dark:text-secondDarkColor text-secondColor'>
+                {section.text}
+              </div>
+            </>
+          )}
         </div>
       ))}
+            <CFooter />
     </div>
   );
 };

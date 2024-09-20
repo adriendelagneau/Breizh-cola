@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useEffect, useRef } from 'react';
 import { useCurrentIndexStore } from '@/store/zuStore'; 
 import AnchorLink from './AnchorLinks';
@@ -23,20 +21,34 @@ const CFooter = () => {
     const activeNav = activeNavRef.current;
 
     if (links.length > 0 && activeNav) {
-      // Ensure activeNav is already appended to the right element
+      // Move the activeNav to the correct li without animation on first render
       const currentLink = links[currentIndex];
 
-      // Only move activeNav if it's not already inside the current link
       if (currentLink && !currentLink.contains(activeNav)) {
-        const state = Flip.getState(activeNav); // Capture the initial state of the underline
-        currentLink.appendChild(activeNav); // Append the underline to the active link
+        // Place the activeNav directly without animation for the initial render
+        currentLink.appendChild(activeNav);
+      }
+    }
+  }, []);  // Empty dependency array to run only once on mount
+
+  useEffect(() => {
+    const links = linksRef.current;
+    const activeNav = activeNavRef.current;
+
+    if (links.length > 0 && activeNav) {
+      const currentLink = links[currentIndex];
+
+      if (currentLink && !currentLink.contains(activeNav)) {
+        // Animate the activeNav to the new position on click
+        const state = Flip.getState(activeNav);
+        currentLink.appendChild(activeNav);
         Flip.from(state, {
           duration: 0.5,
           absolute: true,
         });
       }
     }
-  }, [currentIndex]);  // Re-run when currentIndex changes
+  }, [currentIndex]);  // Re-run only when currentIndex changes
 
   const handleClick = (i) => {
     setCurrentIndex(i);  // Update Zustand store with the current index
@@ -49,15 +61,13 @@ const CFooter = () => {
   };
 
   return (
-    <div className='fixed bottom-0 left-0 z-20 w-full p-6 bg-mainColor dark:bg-mainDarkColor dark:text-secondDarkColor text-secondColor'>
+    <div className='sticky bottom-0 left-0 z-0 flex flex-col justify-end w-full h-screen p-6 bg-mainColor dark:bg-mainDarkColor dark:text-secondDarkColor text-secondColor'>
       <ul className='flex gap-10 text-xl'>
         {sections.map((y, i) => (
           <div key={i} className="relative nav-item">
             <li
               ref={addToRefs}
-              className={`text-4xl transition cursor-pointer font-poppins hover:scale-110 nav-link ${
-                currentIndex === i ? 'text-activeColor' : ''
-              }`}
+              className={`text-4xl transition cursor-pointer font-poppins hover:scale-110 nav-link`}
               onClick={() => handleClick(i)}
             >
               <AnchorLink destination={y.id} name={y.year} />
@@ -67,7 +77,7 @@ const CFooter = () => {
         {/* Active underline (rendered only once, outside the loop) */}
         <div 
           ref={activeNavRef} 
-          className="active-nav h-1 bg-secondColor dark:bg-secondDarkColor rounded-lg absolute left-0 bottom-[-10px] w-full"
+          className="active-nav h-[2px] bg-secondColor dark:bg-secondDarkColor rounded-lg absolute left-0 bottom-[-10px] w-full"
         ></div>
       </ul>
     </div>

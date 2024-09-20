@@ -38,7 +38,7 @@ const Years = () => {
   }, [currentIndex]);
 
   return (
-    <div className='fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-secondColor dark:text-secondDarkColor'>
+    <div className='sticky top-0 left-0 z-10 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-secondColor dark:text-secondDarkColor'>
       <div className='overflow-y-hidden h-[105px]'>
         <ul 
           ref={listRef} 
