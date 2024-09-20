@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { useCurrentIndexStore, useTimelineStore2, useTimelineStore3, useTimelineStore4 } from "./store/zuStore";
 
 export const animatePageIn = () => {
   const transitionElement = document.getElementById("transition-element");
@@ -26,11 +27,18 @@ export const animatePageIn = () => {
   }
 };
 
-export const animatePageOut = (href, router) => {
+export const animatePageOut = (href, router, onCompleteCallback) => {
   const animationWrapper = document.getElementById("transition-element");
 
   if (animationWrapper) {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: () => {
+        router.push(href); // Navigate to the new page
+        if (onCompleteCallback) {
+          onCompleteCallback(); // Call the callback to reverse timelines and reset index
+        }
+      }
+    });
 
     tl.set(animationWrapper, {
       xPercent: -100,
@@ -39,21 +47,15 @@ export const animatePageOut = (href, router) => {
       borderTopLeftRadius: "0",
       borderBottomLeftRadius: "0",
     })
-      .to(animationWrapper, {
-        xPercent: 0,
-        duration: 1,
-        onComplete: () => {
-          router.push(href);
-        },
-      })
-      .to(
-        animationWrapper,
-        {
-          borderTopRightRadius: "0",
-          borderBottomRightRadius: "0",
-          duration: 0.4,
-        },
-        "<"
-      );
+    .to(animationWrapper, {
+      xPercent: 0,
+      duration: 1,
+    })
+    .to(animationWrapper, {
+      borderTopRightRadius: "0",
+      borderBottomRightRadius: "0",
+      duration: 0.4,
+    });
   }
 };
+

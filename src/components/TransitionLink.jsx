@@ -32,7 +32,7 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
       reverseTimeline2();
       reverseTimeline3();
       reverseTimeline4();
-
+      
       // Step 3: Navigate to the new route
       router.push(href);
       setMenuOpen && setMenuOpen(false);

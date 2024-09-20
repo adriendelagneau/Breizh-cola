@@ -3,8 +3,12 @@
 import { useEffect } from "react";
 import { animatePageIn } from "@/animations";
 
+
 export default function Template({ children }) {
+
+  
   useEffect(() => {
+    
     animatePageIn();
   }, []);
 
