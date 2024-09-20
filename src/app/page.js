@@ -9,9 +9,6 @@ import MusicSponsorship from "@/components/MusicSponsortship";
 import Sponsorship from "@/components/Sponsortship";
 import SponsortsSport from "@/components/section/SponsortsSport";
 import Footer from "@/components/section/Footer";
-import Test from "@/components/Test";
-
-
 
 
 export default function Home() {
@@ -31,7 +28,6 @@ export default function Home() {
       <SponsortsSport />
       <Marquee />
       <Screen />
-      <Test />
       <Footer />
     </div>
 
