@@ -10,25 +10,23 @@ export default function TransitionLink({
   myClass
 }) {
   const router = useRouter();
-  const pathname = usePathname(); // Get the current path
+  const pathname = usePathname(); 
 
-  const { reverseTimeline2 } = useTimelineStore2(); // Access reverse method from Zustand store
-  const { reverseTimeline3 } = useTimelineStore3(); // Access reverse method from Zustand store
-  const { reverseTimeline4 } = useTimelineStore4(); // Access reverse method from Zustand store
-  const { resetCurrentIndex } = useCurrentIndexStore(); // Access reset method for current index
+  const { reverseTimeline2 } = useTimelineStore2(); 
+  const { reverseTimeline3 } = useTimelineStore3(); 
+  const { reverseTimeline4 } = useTimelineStore4(); 
+  const { resetCurrentIndex } = useCurrentIndexStore();
 
 
   const handleClick = () => {
     if (href !== pathname) {
       // Add the onComplete callback to the animation
       animatePageOut(href, router, () => {
-        // This will execute once the animation completes
+    
         reverseTimeline2();
         reverseTimeline3();
         reverseTimeline4();
-
-        // Step 4: Reset current index
-        resetCurrentIndex(); // Reset the index to 0
+        resetCurrentIndex(); 
       });
     }
   };

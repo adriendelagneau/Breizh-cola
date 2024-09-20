@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useCurrentIndexStore, useTimelineStore2, useTimelineStore3, useTimelineStore4 } from "./store/zuStore";
+
 
 export const animatePageIn = () => {
   const transitionElement = document.getElementById("transition-element");
