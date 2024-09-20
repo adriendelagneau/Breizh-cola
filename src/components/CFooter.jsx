@@ -4,6 +4,7 @@ import AnchorLink from './AnchorLinks';
 import { sections } from '@/utils/data';
 import { gsap } from 'gsap';
 import Flip from 'gsap/Flip';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(Flip);
 
@@ -31,7 +32,7 @@ const CFooter = () => {
     }
   }, []);  // Empty dependency array to run only once on mount
 
-  useEffect(() => {
+  useGSAP(() => {
     const links = linksRef.current;
     const activeNav = activeNavRef.current;
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { sections } from '@/utils/data';
 import { useCurrentIndexStore } from '@/store/zuStore';
+import { useGSAP } from '@gsap/react';
 
 const Years = () => {
   const listRef = useRef(null);
@@ -9,7 +10,7 @@ const Years = () => {
 
   const { currentIndex } = useCurrentIndexStore(state => state);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (listRef.current) {
       // Animate the current li differently
       liRefs.current.forEach((li, i) => {

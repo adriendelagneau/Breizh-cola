@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sections } from '@/utils/data';
 import { useCurrentIndexStore } from '@/store/zuStore';
 import CFooter from './CFooter';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +20,7 @@ const Chronos = () => {
   
   const sectionsRef = useRef([]);
 
-  useEffect(() => {
+  useGSAP(() => {
     const triggers = sectionsRef.current.map((section, index) =>
       ScrollTrigger.create({
         trigger: section,
