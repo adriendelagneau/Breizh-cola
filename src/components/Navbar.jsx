@@ -4,11 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import BurgerIcon from './BurgerIcon';
 import { useMenu, useSmallMenu } from '@/store/zuStore';
 import { useTimelineStore } from '@/store/zuStore';
-import TransitionLink from './TransitionLink';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import Link from 'next/link';
+
+import TransitionLink from './TransitionL';
 
 const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -88,6 +88,7 @@ const Navbar = () => {
             </li>
             <TransitionLink
               href={"/chronology"}
+              label={"historique"}
               myClass={
                 "relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-secondDarkColor"
               }
@@ -102,8 +103,8 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className='flex items-center justify-center w-1/2 text-5xl capitalize sm:w-1/3 font-creamCake md:text-6xl'>
-        <TransitionLink href={"/"}>breiz cola</TransitionLink>
+      <div className=''>
+        <TransitionLink href={"/"} label={"breizh cola"} myClass={"flex items-center justify-center w-1/2 text-5xl capitalize sm:w-1/3 font-creamCake md:text-6xl"}>breiz cola</TransitionLink>
       </div>
       <div className='flex items-center justify-end w-1/4 pr-3 sm:w-1/3'>
         <div className='flex items-center text-xl font-bold uppercase cursor-pointer'>

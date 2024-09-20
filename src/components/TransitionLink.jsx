@@ -46,7 +46,7 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
         stagger: 0.24,
         delay: 0.6,
       });
-    });
+    })
   };
 
   return (
