@@ -4,7 +4,7 @@ import gsap from "gsap";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { useTimelineStore2, useTimelineStore3, useTimelineStore4 } from "@/store/zuStore";
+import { useTimelineStore2, useTimelineStore3, useTimelineStore4, useCurrentIndexStore } from "@/store/zuStore";
 
 const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
   const router = useRouter();
@@ -12,6 +12,7 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
   const { reverseTimeline2 } = useTimelineStore2(); // Access the reverse method from the Zustand store
   const { reverseTimeline3 } = useTimelineStore3(); // Access the reverse method from the Zustand store
   const { reverseTimeline4 } = useTimelineStore4(); // Access the reverse method from the Zustand store
+  const {resetCurrentIndex} = resetCurrentIndex();
 
 
   const animate = () => {
@@ -31,6 +32,7 @@ const TransitionLink = ({ href, children, setMenuOpen, myClass }) => {
       reverseTimeline2();
       reverseTimeline3();
       reverseTimeline4();
+      resetCurrentIndex();
 
       // Step 3: Navigate to the new route
       router.push(href);
