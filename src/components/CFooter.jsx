@@ -62,7 +62,7 @@ const CFooter = () => {
   };
 
   return (
-    <div className='sticky bottom-0 left-0 z-0 flex flex-col justify-end w-full h-screen p-6 bg-mainColor dark:bg-mainDarkColor dark:text-secondDarkColor text-secondColor'>
+    <div className='sticky bottom-0 left-0 z-10 flex flex-col justify-end w-full h-screen p-6 dark:text-secondDarkColor text-secondColor'>
       <ul className='flex gap-10 text-xl'>
         {sections.map((y, i) => (
           <div key={i} className="relative nav-item">
@@ -78,7 +78,7 @@ const CFooter = () => {
         {/* Active underline (rendered only once, outside the loop) */}
         <div 
           ref={activeNavRef} 
-          className="active-nav h-[2px] bg-secondColor dark:bg-secondDarkColor rounded-lg absolute left-0 bottom-[-10px] w-full"
+          className="active-nav h-[2px] bg-secondColor dark:bg-secondDarkColor rounded-lg absolute left-0 bottom-[-5px] w-full"
         ></div>
       </ul>
     </div>
