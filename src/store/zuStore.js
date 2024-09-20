@@ -3,32 +3,42 @@ import gsap from 'gsap';
 
 const useTimelineStore = create(() => ({
   timeline: gsap.timeline(), // Paused timeline
-  
 }));
 
 const useTimelineStore2 = create((set, get) => ({
-  timeline2: gsap.timeline({ paused: true }), 
+  timeline2: gsap.timeline({ paused: true }),
   playTimeline2: () => {
     const { timeline2 } = get();
     timeline2.play(); // Play the timeline
   },
+  reverseTimeline2: () => {
+    const { timeline2 } = get();
+    timeline2.reverse(); // Reverse the timeline
+  },
 }));
 
 const useTimelineStore3 = create((set, get) => ({
-  timeline3: gsap.timeline({ paused: true }), 
+  timeline3: gsap.timeline({ paused: true }),
   playTimeline3: () => {
     const { timeline3 } = get();
     timeline3.play(); // Play the timeline
   },
+  reverseTimeline3: () => {
+    const { timeline3 } = get();
+    timeline3.reverse(); // Reverse the timeline
+  },
 }));
 
 const useTimelineStore4 = create((set, get) => ({
-  timeline4: gsap.timeline({ paused: true }), 
+  timeline4: gsap.timeline({ paused: true }),
   playTimeline4: () => {
     const { timeline4 } = get();
     timeline4.play(); // Play the timeline
   },
-  
+  reverseTimeline4: () => {
+    const { timeline4 } = get();
+    timeline4.reverse(); // Reverse the timeline
+  },
 }));
 
 const useSmoothScroll = create((set) => ({
@@ -51,6 +61,7 @@ const useMenu = create((set) => ({
 const useCurrentIndexStore = create((set) => ({
   currentIndex: 0,
   setCurrentIndex: (index) => set({ currentIndex: index }),
+  resetCurrentIndex: () => set({ currentIndex: 0 }), // Method to reset index to 0
 }));
 
 export {
@@ -61,5 +72,5 @@ export {
   useTimelineStore2,
   useTimelineStore3,
   useTimelineStore4,
-  useCurrentIndexStore
+  useCurrentIndexStore,
 };
