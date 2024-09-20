@@ -75,9 +75,9 @@ const Navbar = () => {
   return (
     <div
       ref={navbarRef}
-      className='fixed left-0 z-40 flex justify-center w-full h-20 p-1 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
+      className='fixed left-0 z-40 flex justify-between w-full h-20 p-1 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
     >
-      <div className='flex items-center w-1/4 font-bold uppercase sm:w-1/3 sm:text-xl'>
+      <div className='flex items-center font-bold uppercase sm:text-xl'>
         {isDesktop ? (
           <ul className='flex gap-3 text-xl font-bold uppercase'>
             <li
@@ -103,10 +103,10 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className=''>
-        <TransitionLink href={"/"} label={"breizh cola"} myClass={"flex items-center justify-center w-1/2 text-5xl capitalize sm:w-1/3 font-creamCake md:text-6xl"}>breiz cola</TransitionLink>
+      <div className='absolute text-5xl capitalize -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 font-creamCake md:text-6x'>
+        <TransitionLink href={"/"} label={"breizh cola"} myClass={" "}>breiz cola</TransitionLink>
       </div>
-      <div className='flex items-center justify-end w-1/4 pr-3 sm:w-1/3'>
+      <div className='flex items-center justify-end '>
         <div className='flex items-center text-xl font-bold uppercase cursor-pointer'>
           <ThemeSwitcher />
         </div>
