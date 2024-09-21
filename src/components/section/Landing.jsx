@@ -38,7 +38,7 @@ const Landing = () => {
           {
             y: 0,
             ease: "power4.out",
-            delay: 0.5,
+            delay: 1.8,
             stagger: {
               amount: 0.3,
             },

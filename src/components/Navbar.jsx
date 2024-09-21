@@ -50,7 +50,7 @@ const Navbar = () => {
     if (timeline) {
       timeline.to(
         navbarRef.current,
-        { top: "0%", duration: 0.6, ease: "power4.out", delay: 1.5 },
+        { top: "0%", duration: 0.6, ease: "power4.out", delay: 2.8 },
         "one"
       );
     }

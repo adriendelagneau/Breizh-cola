@@ -6,12 +6,12 @@ const Footer = () => {
 
   return (
     <div
-      className={` flex flex-col items-center justify-center h-[40vh] bg-mainColor`}
+      className={` flex flex-col items-center justify-center h-[40vh] bg-mainColor dark:bg-mainDarkColor`}
     >
       <div className="flex justify-center gap-10 sm:gap-16 lg:gap-0">
         <MagneticButtons>
           <svg
-            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor h-[50px] "
+            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor dark:fill-secondDarkColor h-[50px] "
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor h-[50px] "
+            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor dark:fill-secondDarkColor h-[50px] "
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor h-[50px] "
+            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor dark:fill-secondDarkColor h-[50px] "
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor h-[50px] "
+            className="lg:h-[150px] lg:p-[50px] cursor-pointer fill-secondColor dark:fill-secondDarkColor h-[50px] "
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"

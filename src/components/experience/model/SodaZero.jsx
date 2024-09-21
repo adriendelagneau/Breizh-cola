@@ -84,7 +84,7 @@ export function SodaZero(props) {
           y: scale.y,
           z: scale.z,
           duration: 0.6,
-          delay: 1.2,
+          delay: 2.5,
           ease: 'power3.out',
         },
         'one' // GSAP label for syncing animations
