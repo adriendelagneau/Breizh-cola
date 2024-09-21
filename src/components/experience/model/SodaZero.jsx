@@ -37,7 +37,7 @@ export function SodaZero(props) {
   }, []);
 
   // Apply animations and settings based on screen size
-  useEffect(() => {
+  useGSAP(() => {
     if (timeline) {
       let scale, position;
 
