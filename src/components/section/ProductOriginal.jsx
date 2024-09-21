@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
 import { useTimelineStore2 } from "@/store/zuStore";  // Import the timeline hook from your store
-import TransitionLink from '../TransitionL';
+import TransitionLink from '../TransitionLink';
 import BreizhOrange from '../experience/view/BreizhOrange';
 
 gsap.registerPlugin(ScrollTrigger);

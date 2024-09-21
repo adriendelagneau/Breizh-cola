@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
 import { useTimelineStore4 } from "@/store/zuStore";
-import TransitionLink from '../TransitionL';
+import TransitionLink from '../TransitionLink';
 import { useGSAP } from '@gsap/react';
 
 

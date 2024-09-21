@@ -8,7 +8,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-import TransitionLink from './TransitionL';
+import TransitionLink from './TransitionLink';
 
 const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(true);

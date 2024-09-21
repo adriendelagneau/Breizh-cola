@@ -1,7 +1,6 @@
 // utils/splitters.js
 import React from 'react';
 
-
 const splitLetters = (word, refs) => {
   return word.split("").map((letter, i) => (
     <span
@@ -13,7 +12,6 @@ const splitLetters = (word, refs) => {
     </span>
   ));
 };
-
 
 export const splitWords = (phrase, refs) => {
   return phrase.split(" ").map((word, i) => (
