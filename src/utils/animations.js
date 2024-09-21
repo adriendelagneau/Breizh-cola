@@ -15,15 +15,15 @@ export const animatePageIn = () => {
         duration: 1,
         delay: 1,  // Add delay here for page in
       })
-      .to(
-        transitionElement,
-        {
-          borderTopLeftRadius: "50vh",
-          borderBottomLeftRadius: "50vh",
-          duration: 0.4,
-        },
-        "<"
-      );
+      // .to(
+      //   transitionElement,
+      //   {
+      //     borderTopLeftRadius: "50vh",
+      //     borderBottomLeftRadius: "50vh",
+      //     duration: 0.4,
+      //   },
+      //   "<"
+      // );
   }
 };
 
@@ -42,20 +42,20 @@ export const animatePageOut = (href, router, onCompleteCallback) => {
 
     tl.set(animationWrapper, {
       xPercent: -100,
-      borderTopRightRadius: "50vh",
-      borderBottomRightRadius: "50vh",
-      borderTopLeftRadius: "0",
-      borderBottomLeftRadius: "0",
+      // borderTopRightRadius: "50vh",
+      // borderBottomRightRadius: "50vh",
+      // borderTopLeftRadius: "0",
+      // borderBottomLeftRadius: "0",
     })
     .to(animationWrapper, {
       xPercent: 0,
       duration: 1,
     })
-    .to(animationWrapper, {
-      borderTopRightRadius: "0",
-      borderBottomRightRadius: "0",
-      duration: 0.4,
-    });
+    // .to(animationWrapper, {
+    //   borderTopRightRadius: "0",
+    //   borderBottomRightRadius: "0",
+    //   duration: 0.4,
+    // });
   }
 };
 
