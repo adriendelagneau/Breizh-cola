@@ -103,7 +103,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className='absolute text-5xl capitalize -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 font-creamCake md:text-6x'>
+      <div className='absolute text-5xl capitalize -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 font-creamCake md:text-6xl'>
         <TransitionLink href={"/"} label={"breizh cola"} myClass={" "}>breiz cola</TransitionLink>
       </div>
       <div className='flex items-center justify-end '>

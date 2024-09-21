@@ -58,7 +58,7 @@ const Menu = () => {
   return (
     <div
       ref={menu1Ref}
-      className="fixed left-0 z-30 w-full h-screen bg-mainDarkColor dark:bg-secondDarkColor top-full"
+      className="fixed left-0 z-40 w-full h-screen bg-mainDarkColor dark:bg-secondDarkColor top-full"
     >
       <BurgerIconMenu />
     </div>

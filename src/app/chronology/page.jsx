@@ -11,7 +11,6 @@ const page = () => {
     <div className={`min-h-[150vh] dark:bg-mainDarkColor  bg-mainColor text-mainColor`}>
       <Screen />
       <Chronos />
-<Screen />
     </div>
   )
 }

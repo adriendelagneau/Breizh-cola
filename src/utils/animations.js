@@ -13,17 +13,8 @@ export const animatePageIn = () => {
       .to(transitionElement, {
         xPercent: 100,
         duration: 1,
-        delay: 1,  // Add delay here for page in
+        delay: 0.6,  
       })
-      // .to(
-      //   transitionElement,
-      //   {
-      //     borderTopLeftRadius: "50vh",
-      //     borderBottomLeftRadius: "50vh",
-      //     duration: 0.4,
-      //   },
-      //   "<"
-      // );
   }
 };
 
@@ -33,29 +24,20 @@ export const animatePageOut = (href, router, onCompleteCallback) => {
   if (animationWrapper) {
     const tl = gsap.timeline({
       onComplete: () => {
-        router.push(href); // Navigate to the new page
+        router.push(href);
         if (onCompleteCallback) {
-          onCompleteCallback(); // Call the callback to reverse timelines and reset index
+          onCompleteCallback();
         }
       }
     });
 
     tl.set(animationWrapper, {
       xPercent: -100,
-      // borderTopRightRadius: "50vh",
-      // borderBottomRightRadius: "50vh",
-      // borderTopLeftRadius: "0",
-      // borderBottomLeftRadius: "0",
     })
     .to(animationWrapper, {
       xPercent: 0,
       duration: 1,
     })
-    // .to(animationWrapper, {
-    //   borderTopRightRadius: "0",
-    //   borderBottomRightRadius: "0",
-    //   duration: 0.4,
-    // });
   }
 };
 
