@@ -118,27 +118,27 @@ export const sponsortsSport = [
       src: "/image/sponsorts/sport/rugby-vannes-150x150.jpg",
       linkUrl: "https://tombeesdelanuit.com",
     },
-    {
-      src: "/image/sponsorts/sport/Side-car-cross.png",
-      linkUrl: "https://vieillescharrues.com",
-    },
+    // {
+    //   src: "/image/sponsorts/sport/Side-car-cross.png",
+    //   linkUrl: "https://vieillescharrues.com",
+    // },
 
-    {
-      src: "/image/sponsorts/sport/stade-brestois-150x150.jpg",
-      linkUrl: "https://roiarthur.com",
-    },
-    {
-      src: "/image/sponsorts/sport/stade-rennais-150x150.jpg",
-      linkUrl: "https://roue-waroch.com",
-    },
-    {
-      src: "/image/sponsorts/sport/tour-de-bretagne-150x150.jpg",
-      linkUrl: "https://tombeesdelanuit.com",
-    },
-    {
-      src: "/image/sponsorts/sport/ujap-quimper-150x150.jpg",
-      linkUrl: "https://vieillescharrues.com",
-    },
+    // {
+    //   src: "/image/sponsorts/sport/stade-brestois-150x150.jpg",
+    //   linkUrl: "https://roiarthur.com",
+    // },
+    // {
+    //   src: "/image/sponsorts/sport/stade-rennais-150x150.jpg",
+    //   linkUrl: "https://roue-waroch.com",
+    // },
+    // {
+    //   src: "/image/sponsorts/sport/tour-de-bretagne-150x150.jpg",
+    //   linkUrl: "https://tombeesdelanuit.com",
+    // },
+    // {
+    //   src: "/image/sponsorts/sport/ujap-quimper-150x150.jpg",
+    //   linkUrl: "https://vieillescharrues.com",
+    // },
 ];
 
 export const infosText = [

@@ -13,7 +13,7 @@ export const animatePageIn = () => {
       .to(transitionElement, {
         xPercent: 100,
         duration: 1,
-        delay: 0.6,  
+        delay: 0.8,  
       })
   }
 };
