@@ -9,7 +9,7 @@ import MusicSponsorship from "@/components/MusicSponsortship";
 import Sponsorship from "@/components/Sponsortship";
 import SponsortsSport from "@/components/section/SponsortsSport";
 import Footer from "@/components/section/Footer";
-import MyGrid from "@/components/MyGrid";
+
 
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
       <SportsSponsorship />
       <SponsortsSport />
       <Marquee />
-      <MyGrid />
+
       <Screen />
       <Footer />
     </div>

@@ -4,26 +4,21 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(Flip);
 
 const MyGrid = () => {
-  const containerRef = useRef(null);
+  // Array of refs for each figure
+  const figuresRef = useRef([]);
+  
+  // Refs need to be initialized to an array of objects
+  figuresRef.current = [];
 
-  useGSAP(() => {
-    const container = containerRef.current;
-    const images = gsap.utils.toArray(container.querySelectorAll("figure"));
+  useEffect(() => {
+    const images = figuresRef.current;
 
-    if (!images.length) {
-      console.error("No figure elements found!");
-      return;
-    }
-
-    // Initial big image is the first figure
+    // Set the initial bigImage as the first figure element
     let bigImage = images[0];
-
-    console.log("Initial bigImage:", bigImage);
 
     // Add click event listeners to each figure element
     images.forEach((image) => {
@@ -38,48 +33,41 @@ const MyGrid = () => {
     };
 
     function changeGrid(image) {
-      // Preventing the change if clicked on the current big image
       if (image === bigImage) return;
-
-      // Logging state before change
-      console.log("Before Flip:", {
-        bigImage: bigImage.dataset.grid,
-        clickedImage: image.dataset.grid,
-      });
 
       // Get the current state of the grid
       let state = Flip.getState(images);
 
       // Swap the dataset attributes between the clicked image and the current big image
-      const currentBigGrid = bigImage.dataset.grid;
       bigImage.dataset.grid = image.dataset.grid;
-      image.dataset.grid = currentBigGrid;
+      image.dataset.grid = "img-6";
       bigImage = image;
-
-      console.log("After Swap:", {
-        bigImage: bigImage.dataset.grid,
-        clickedImage: image.dataset.grid,
-      });
 
       // Animate the layout change using GSAP Flip
       Flip.from(state, {
         absolute: true,
         ease: "Power1.inOut",
-        duration: 0.6, // Adding duration for clearer visibility
-        onComplete: () => {
-          console.log("Animation completed!");
-        },
       });
     }
   }, []);
 
+  // Function to push refs dynamically
+  const addToRefs = (el) => {
+    if (el && !figuresRef.current.includes(el)) {
+      figuresRef.current.push(el);
+    }
+  };
+
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="flex items-center justify-center w-full h-screen">
       <div
         className="grid grid-cols-3 grid-rows-3 gap-4 aspect-square w-[660px] mx-auto my-auto justify-center items-center"
-        ref={containerRef}
       >
-        <figure data-grid="img-1" className="col-span-2 row-span-2 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-6"
+          className="relative col-span-2 row-span-2 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
@@ -89,7 +77,11 @@ const MyGrid = () => {
             className="object-cover rounded-lg"
           />
         </figure>
-        <figure data-grid="img-2" className="col-start-3 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-5"
+          className="relative col-start-3 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
@@ -99,7 +91,11 @@ const MyGrid = () => {
             className="object-cover rounded-lg"
           />
         </figure>
-        <figure data-grid="img-3" className="col-start-3 row-start-2 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-4"
+          className="relative col-start-3 row-start-2 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
@@ -109,7 +105,11 @@ const MyGrid = () => {
             className="object-cover rounded-lg"
           />
         </figure>
-        <figure data-grid="img-4" className="col-start-3 row-start-3 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-3"
+          className="relative col-start-3 row-start-3 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
@@ -119,7 +119,11 @@ const MyGrid = () => {
             className="object-cover rounded-lg"
           />
         </figure>
-        <figure data-grid="img-5" className="col-start-2 row-start-3 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-2"
+          className="relative col-start-2 row-start-3 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
@@ -129,7 +133,11 @@ const MyGrid = () => {
             className="object-cover rounded-lg"
           />
         </figure>
-        <figure data-grid="img-6" className="col-start-1 row-start-3 aspect-square bg-blue-500 relative">
+        <figure
+          data-grid="img-1"
+          className="relative col-start-1 row-start-3 bg-blue-500 aspect-square"
+          ref={addToRefs} // Assign ref
+        >
           <Image
             src={
               "https://res.cloudinary.com/dos8mey8r/image/upload/v1727247803/breizhCola/Bobital_jy5oyk.png"
