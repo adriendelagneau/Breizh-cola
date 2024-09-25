@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react'
-import { productsDetails } from '@/utils/detailData';
+import { productsDetails } from '@/utils/data'; 
 import ProductTitle from '@/components/ProductTittle';
 
 

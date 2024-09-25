@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { sections } from '@/utils/data';
 import { useCurrentIndexStore } from '@/store/zuStore';
 import { useGSAP } from '@gsap/react';
+import CFooter from './CFooter';
 
 const Years = () => {
   const listRef = useRef(null);
@@ -57,6 +58,7 @@ const Years = () => {
           ))}
         </ul>
       </div>
+
     </div>
   );
 }

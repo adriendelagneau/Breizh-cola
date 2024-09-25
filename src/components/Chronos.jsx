@@ -24,11 +24,11 @@ const Chronos = () => {
     const triggers = sectionsRef.current.map((section, index) =>
       ScrollTrigger.create({
         trigger: section,
-        start: 'top center',
-        end: 'bottom center',
+        start: 'center center',
+
         onEnter: () => setCurrentIndex(index),
         onEnterBack: () => setCurrentIndex(index),
-        markers: false // Disable markers
+        markers: true // Disable markers
       })
     );
 
@@ -47,14 +47,14 @@ const Chronos = () => {
       {sections.map((section, index) => (
         <div 
           key={section.id} 
-          className={`w-full h-[150vh] relative`} 
+          className={`w-full h-[200vh] relative text-3xl font-poppins`} 
           id={section.id}
           ref={el => sectionsRef.current[index] = el}
         >
           {/* Alternate text and image position */}
           {index % 2 === 0 ? (
             <>
-              <div className='absolute transform -translate-x-1/2 left-1/4 dark:text-secondDarkColor text-secondColor'>
+              <div className='absolute w-64 transform -translate-x-1/2 left-1/4 dark:text-secondDarkColor text-secondColor top-72'>
                 {section.text}
               </div>
               <Image 
@@ -73,10 +73,10 @@ const Chronos = () => {
                 alt={`Historical image from the year ${section.year}`} 
                 width={300} 
                 height={413} 
-                className='absolute transform -translate-x-1/2 left-1/4'
+                className='absolute transform -translate-x-1/2 left-1/4 '
                 layout="intrinsic"
               />
-              <div className='absolute transform -translate-x-1/2 left-3/4 dark:text-secondDarkColor text-secondColor'>
+              <div className='absolute transform -translate-x-1/2 left-3/4 dark:text-secondDarkColor text-secondColor top-72'>
                 {section.text}
               </div>
             </>
