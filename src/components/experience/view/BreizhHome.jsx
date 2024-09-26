@@ -7,8 +7,7 @@ import { SodaZero } from "../model/SodaZero";
 
 
 const BreizhHome = () => {
-  const cameraRef = useRef(null);
-
+  const sodaRef = useRef(); // Reference to the SodaZeroMain object
 
   return (
     <div
@@ -20,7 +19,6 @@ const BreizhHome = () => {
         <Suspense>
           <Environment preset="city" />
           <OrthographicCamera
-            ref={cameraRef}
             makeDefault
             zoom={15}
             position={[0, 0, 50]}

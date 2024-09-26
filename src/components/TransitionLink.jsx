@@ -19,6 +19,7 @@ export default function TransitionLink({
 
 
   const handleClick = () => {
+    console.log(href, pathname)
     if (href !== pathname) {
       // Add the onComplete callback to the animation
       animatePageOut(href, router, () => {

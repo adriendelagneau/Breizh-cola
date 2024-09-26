@@ -21,6 +21,7 @@ export const animatePageIn = () => {
 export const animatePageOut = (href, router, onCompleteCallback) => {
   const animationWrapper = document.getElementById("transition-element");
 
+  
   if (animationWrapper) {
     const tl = gsap.timeline({
       onComplete: () => {

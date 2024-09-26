@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from 'react'
 import { productsDetails } from '@/utils/data'; 
 import ProductTitle from '@/components/ProductTittle';
+import ProductDescription from '@/components/ProductDescription';
+import Ingredients from '@/components/Ingredients';
+import Zero from '@/components/experience/view/Zero';
+import Marquee from '@/components/Marquee';
 
 
 
@@ -25,10 +29,21 @@ const page = ({params}) => {
       }
 
     return (
-        <div className={`min-h-[150vh]  bg-mainColor text-secondColor dark:bg-mainDarkColor dark:text-secondDarkColor`}>
-            <ProductTitle name={selectedProduct.name} />
-      
-        </div>
+      <div
+      className="bg-secondColor transition-colors duration-500 min-h-[200vh] w-full"
+    >
+      <div id="single" className="w-full min-h-[200vh] relative">
+        <Zero />
+        <ProductTitle name={selectedProduct.name} />
+        <ProductDescription description={selectedProduct.description} />
+        <Marquee />
+        <Ingredients
+            ingredients={selectedProduct.ingredients}
+            nutritionel={selectedProduct.nutritionel}
+            formats={selectedProduct.format}
+          />
+      </div>
+    </div>
   )
 }
 

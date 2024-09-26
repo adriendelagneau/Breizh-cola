@@ -78,17 +78,17 @@ const Menu = () => {
       <ul className="flex flex-col items-center justify-center w-full h-full gap-4 uppercase text-8xl text-mainColor font-poppins dark:text-mainDarkColor">
         <li className="relative overflow-hidden">
           <div ref={(el) => liRefs.current[0] = el} className="translate-y-full">
-            <TransitionLink href="/products/original" label="original" myClass="transition-link" /> {/* Using TransitionLink */}
+            <TransitionLink href={"/products/original"} label={"original"} myClass="transition-link" /> {/* Using TransitionLink */}
           </div>
         </li>
         <li className="relative overflow-hidden">
           <div ref={(el) => liRefs.current[1] = el} className="translate-y-full">
-            <TransitionLink href="/products/zero" label="zero" myClass="transition-link" /> {/* Using TransitionLink */}
+            <TransitionLink href={"/products/zero"} label={"zero"} myClass="transition-link" /> {/* Using TransitionLink */}
           </div>
         </li>
         <li className="relative overflow-hidden">
           <div ref={(el) => liRefs.current[2] = el} className="translate-y-full">
-            <TransitionLink href="/products/cherry" label="cherry" myClass="transition-link" /> {/* Using TransitionLink */}
+            <TransitionLink href={"/products/cherry"} label={"cherry"} myClass="transition-link" /> {/* Using TransitionLink */}
           </div>
         </li>
       </ul>

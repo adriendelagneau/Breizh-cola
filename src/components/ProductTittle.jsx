@@ -53,7 +53,7 @@ const ProductTitle = ({ name, color }) => {
   }, []);
 
   return (
-    <div className="w-full pt-56">
+    <div className="w-full h-screen pt-32">
     
       <div ref={subRef} className="relative mt-6 ">
         <div

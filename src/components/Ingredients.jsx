@@ -14,7 +14,6 @@ const Ingredients = ({ ingredients, nutritionel, formats }) => {
           <p className="text-2xl">{ingredients}</p>
         </div>
         <Nutritionel nutritionel={nutritionel} />
-        <ProductFormats formats={formats} />
       </div>
       <div className="w-1/2"></div>
     </div>

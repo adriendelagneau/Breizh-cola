@@ -210,7 +210,9 @@ export const productsDetails = [
     name: "zero",
     color: "#000000",
     description:
-      "La version sans sucres de notre célèbre cola. Tout le goût, sans les calories ! Parfait pour ceux qui souhaitent se faire plaisir sans compromis.",
+    [
+      "Avec Breizh Cola Zéro, savourez toute la tradition et l'authenticité d’un cola breton sans l'ombre d'une calorie ! Nous avons élaboré cette version sans sucres pour ceux qui aiment se faire plaisir tout en prenant soin de leur bien-être. Vous retrouverez la même effervescence, le même goût unique, mais sans compromis."," Que vous soyez en quête d’une boisson rafraîchissante après une journée bien remplie, ou que vous souhaitiez simplement un moment de détente, Breizh Cola Zéro est là pour vous. Toujours aussi pétillant, toujours aussi bon, sans les calories, c’est une nouvelle façon de vivre l’expérience Breizh Cola !"
+    ],
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame, acésulfame K et sucralose.",
     nutritionel: {
