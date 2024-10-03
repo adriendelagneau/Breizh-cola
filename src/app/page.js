@@ -1,14 +1,13 @@
-import FlipLayout from "@/components/FlipLayout";
-import Marquee from "@/components/Marquee";
-import Footer from "@/components/section/Footer";
-
-import Gallery from "@/components/section/Gallery";
-import Infos from "@/components/section/Infos";
-import Journee from "@/components/section/Journee";
 import Landing from "@/components/section/Landing";
-import Screen from "@/components/section/Screen";
+import Infos from "@/components/section/Infos";
 import VideoStory from "@/components/section/VideoStory";
+import Marquee from "@/components/Marquee";
+import Gallery from "@/components/section/Gallery";
 import Sponsorship from "@/components/Sponsortship";
+import FlipLayout from "@/components/FlipLayout";
+import Fun from "@/components/section/Fun";
+import Footer from "@/components/section/Footer";
+import Screen from "@/components/section/Screen";
 
 
 export default function Home() {
@@ -24,7 +23,7 @@ export default function Home() {
       <Sponsorship />
       <FlipLayout />
       <Marquee />
-      <Journee />
+      <Fun />
       <Screen />
       <Footer />
     </div>
