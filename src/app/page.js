@@ -1,9 +1,10 @@
 import FlipLayout from "@/components/FlipLayout";
 import Marquee from "@/components/Marquee";
 import Footer from "@/components/section/Footer";
-import Fun from "@/components/section/Fun";
+
 import Gallery from "@/components/section/Gallery";
 import Infos from "@/components/section/Infos";
+import Journee from "@/components/section/Journee";
 import Landing from "@/components/section/Landing";
 import Screen from "@/components/section/Screen";
 import VideoStory from "@/components/section/VideoStory";
@@ -23,6 +24,7 @@ export default function Home() {
       <Sponsorship />
       <FlipLayout />
       <Marquee />
+      <Journee />
       <Screen />
       <Footer />
     </div>
