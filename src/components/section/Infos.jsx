@@ -25,7 +25,7 @@ const Infos = () => {
         scrollTrigger: {
           trigger: container.current,
           scrub: true,
-          start: 'top 70%',
+          start: 'top 85%',
           end: `+=${window.innerHeight * 1.1}`, // Custom end for mobile
           once: true,
           toggleActions: 'play none none none',
@@ -42,7 +42,7 @@ const Infos = () => {
         scrollTrigger: {
           trigger: container.current,
           scrub: true,
-          start: 'top 80%',
+          start: 'top 85%',
           end: `+=${window.innerHeight * 0.8}`, // Custom end for tablets
           once: true,
           toggleActions: 'play none none none',
@@ -78,7 +78,7 @@ const Infos = () => {
       
     <div ref={container} className="flex flex-col items-center justify-center w-full gap-12 p-10 mx-auto my-12 text-xl font-extrabold dark:text-secondDarkColor text-secondColor sm:text-2xl lg:text-5xl font-poppins max-w-screen-2xl">
       {infosText.map((phrase, index) => (
-        <div key={index} className="flex flex-wrap gap-2 my-6 leading-[3.25rem]">
+        <div key={index} className="flex flex-wrap gap-2 my-6 lg:leading-[3.25rem]">
           {splitWords(phrase, refs)}
         </div>
       ))}

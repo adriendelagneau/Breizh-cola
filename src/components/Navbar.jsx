@@ -7,8 +7,9 @@ import { useTimelineStore } from '@/store/zuStore';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Link from 'next/link';
 
-import TransitionLink from './TransitionLink';
+
 
 const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -86,15 +87,15 @@ const Navbar = () => {
             >
               produits
             </li>
-            <TransitionLink
+            <Link
               href={"/chronology"}
               label={"historique"}
-              myClass={
+              className={
                 "relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-secondDarkColor"
               }
             >
               historique
-            </TransitionLink>
+            </Link>
 
           </ul>
         ) : (
@@ -104,7 +105,7 @@ const Navbar = () => {
         )}
       </div>
       <div className='absolute text-5xl capitalize -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 font-creamCake md:text-6xl'>
-        <TransitionLink href={"/"} label={"breizh cola"} myClass={" "}>breiz cola</TransitionLink>
+        <Link href={"/"} label={"breizh cola"} myClass={" "}>breiz cola</Link>
       </div>
       <div className='flex items-center justify-end '>
         <div className='flex items-center text-xl font-bold uppercase cursor-pointer'>

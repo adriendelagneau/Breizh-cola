@@ -39,19 +39,19 @@ const SponsortsMusic = () => {
   }, []);
 
   return (
-    <div className="py-12">
-   
+    <div className="py-2">
+   <h3 className="text-5xl uppercase font-poppins">music</h3>
       {/* Grid container */}
       <div ref={containerRef}>
-        <div className="grid grid-cols-3 gap-2 w-[340px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[600px] xl:w-[700px] xl:gap-6">
+        <div className="grid grid-cols-3 gap-1 w-[250px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[540px] ">
           {SponsortMusic.map((image, index) => (
             <Link key={index} href={image.linkUrl} passHref>
-              <div className="relative w-24 h-24 rounded-lg sm:w-28 sm:h-28 grid-item aspect-square md:w-32 md:h-32 xl:w-36 xl:h-36">
+              <div className="relative w-20 h-20 rounded-lg sm:w-28 sm:h-28 grid-item aspect-square md:w-32 md:h-32 ">
                 <Image
                   src={image.src}
                   alt={`Sponsor Image ${index + 1}`}
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover border-2 rounded-lg border-secondColor dark:border-secondDarkColor"
                 />
               </div>
             </Link>

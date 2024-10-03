@@ -1,39 +1,37 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Import Next.js Link
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { sponsortsSport } from "@/utils/data";
 
-// Register ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 const SponsortsSport = () => {
-  // Updated image array with link URLs
 
+  const containerRef2 = useRef(null);
 
-  const container2Ref = useRef(null);
+  useGSAP(() => {
+    const items = gsap.utils.toArray(".grid-item");
 
-  useEffect(() => {
-    const items = gsap.utils.toArray(".grid-item2");
-
-    // GSAP Animation with ScrollTrigger and random stagger
     gsap.fromTo(
       items,
-      { scale: 0 }, // Start state: hidden
+      { scale: 0 }, 
       {
         scale: 1,
         duration: 0.05,
         ease: "elastic.out(1,0.3)",
         stagger: {
-          each: 0.05, // Delay for each item
-          from: "random", // Random order of animation
+          each: 0.05,
+          from: "random", 
         },
         scrollTrigger: {
-          trigger: container2Ref.current,
-          start: "top 40%", // Trigger when the top of the container is at 80% of viewport
+          trigger: containerRef2.current,
+          start: "top 40%",
           toggleActions: "play none none none",
         },
       }
@@ -41,21 +39,19 @@ const SponsortsSport = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="mb-6 text-6xl font-bold text-center capitalize font-poppins text-mainColor dark:text-secondColor">
-        sport
-      </h2>
+    <div className="py-2">
+   <h3 className="text-5xl uppercase font-poppins">music</h3>
       {/* Grid container */}
-      <div ref={container2Ref}>
-        <div className="grid grid-cols-3 gap-2 w-[340px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[600px] xl:w-[700px] xl:gap-6">
+      <div ref={containerRef2}>
+        <div className="grid grid-cols-3 gap-1 w-[250px] mx-auto sm:w-[400px] md:w-[460px] lg:grid-cols-4 lg:w-[540px] ">
           {sponsortsSport.map((image, index) => (
             <Link key={index} href={image.linkUrl} passHref>
-              <div className="relative w-24 h-24 rounded-lg sm:w-28 sm:h-28 grid-item2 aspect-square md:w-32 md:h-32 xl:w-36 xl:h-36">
+              <div className="relative w-20 h-20 rounded-lg sm:w-28 sm:h-28 grid-item aspect-square md:w-32 md:h-32 ">
                 <Image
                   src={image.src}
                   alt={`Sponsor Image ${index + 1}`}
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover border-2 rounded-lg border-secondColor dark:border-secondDarkColor"
                 />
               </div>
             </Link>

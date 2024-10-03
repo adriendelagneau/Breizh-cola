@@ -1,7 +1,7 @@
 export const SponsortMusic = [
   {
     src: "/image/sponsorts/music/Bobital.png",
-    linkUrl: "https://bobital.com", 
+    linkUrl: "https://bobital.com",
   },
   {
     src: "/image/sponsorts/music/Au-pont-du-rock.png",
@@ -56,7 +56,7 @@ export const SponsortMusic = [
 export const sponsortsSport = [
   {
     src: "/image/sponsorts/sport/AFFLogos205X197-150x150.png",
-    linkUrl: "https://bobital.com", 
+    linkUrl: "https://bobital.com",
   },
   {
     src: "/image/sponsorts/sport/club-de-vannes-150x150.jpg",
@@ -107,38 +107,13 @@ export const sponsortsSport = [
     linkUrl: "https://vieillescharrues.com",
   },
   {
-      src: "/image/sponsorts/sport/prix-de-plumelec-150x150.jpg",
-      linkUrl: "https://roiarthur.com",
-    },
-    {
-      src: "/image/sponsorts/sport/Pro-Am-de-Bretagne-138x150.png",
-      linkUrl: "https://roue-waroch.com",
-    },
-    {
-      src: "/image/sponsorts/sport/rugby-vannes-150x150.jpg",
-      linkUrl: "https://tombeesdelanuit.com",
-    },
-    // {
-    //   src: "/image/sponsorts/sport/Side-car-cross.png",
-    //   linkUrl: "https://vieillescharrues.com",
-    // },
-
-    // {
-    //   src: "/image/sponsorts/sport/stade-brestois-150x150.jpg",
-    //   linkUrl: "https://roiarthur.com",
-    // },
-    // {
-    //   src: "/image/sponsorts/sport/stade-rennais-150x150.jpg",
-    //   linkUrl: "https://roue-waroch.com",
-    // },
-    // {
-    //   src: "/image/sponsorts/sport/tour-de-bretagne-150x150.jpg",
-    //   linkUrl: "https://tombeesdelanuit.com",
-    // },
-    // {
-    //   src: "/image/sponsorts/sport/ujap-quimper-150x150.jpg",
-    //   linkUrl: "https://vieillescharrues.com",
-    // },
+    src: "/image/sponsorts/sport/prix-de-plumelec-150x150.jpg",
+    linkUrl: "https://roiarthur.com",
+  },
+  {
+    src: "/image/sponsorts/sport/rugby-vannes-150x150.jpg",
+    linkUrl: "https://tombeesdelanuit.com",
+  },
 ];
 
 export const infosText = [
@@ -210,9 +185,9 @@ export const productsDetails = [
     name: "zero",
     color: "#000000",
     description:
-    [
-      "Avec Breizh Cola Zéro, savourez toute la tradition et l'authenticité d’un cola breton sans l'ombre d'une calorie ! Nous avons élaboré cette version sans sucres pour ceux qui aiment se faire plaisir tout en prenant soin de leur bien-être. Vous retrouverez la même effervescence, le même goût unique, mais sans compromis."," Que vous soyez en quête d’une boisson rafraîchissante après une journée bien remplie, ou que vous souhaitiez simplement un moment de détente, Breizh Cola Zéro est là pour vous. Toujours aussi pétillant, toujours aussi bon, sans les calories, c’est une nouvelle façon de vivre l’expérience Breizh Cola !"
-    ],
+      [
+        "Avec Breizh Cola Zéro, savourez toute la tradition et l'authenticité d’un cola breton sans l'ombre d'une calorie ! Nous avons élaboré cette version sans sucres pour ceux qui aiment se faire plaisir tout en prenant soin de leur bien-être. Vous retrouverez la même effervescence, le même goût unique, mais sans compromis.", " Que vous soyez en quête d’une boisson rafraîchissante après une journée bien remplie, ou que vous souhaitiez simplement un moment de détente, Breizh Cola Zéro est là pour vous. Toujours aussi pétillant, toujours aussi bon, sans les calories, c’est une nouvelle façon de vivre l’expérience Breizh Cola !"
+      ],
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame, acésulfame K et sucralose.",
     nutritionel: {

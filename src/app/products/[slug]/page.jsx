@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { productsDetails } from '@/utils/data'; 
 import ProductTitle from '@/components/ProductTittle';
-import ProductDescription from '@/components/ProductDescription';
+// import ProductDescription from '@/components/ProductDescription';
 import Ingredients from '@/components/Ingredients';
 import Zero from '@/components/experience/view/Zero';
 import Marquee from '@/components/Marquee';
@@ -35,7 +35,7 @@ const page = ({params}) => {
       <div id="single" className="w-full min-h-[200vh] relative">
         <Zero />
         <ProductTitle name={selectedProduct.name} />
-        <ProductDescription description={selectedProduct.description} />
+        {/* <ProductDescription description={selectedProduct.description} /> */}
         <Marquee />
         <Ingredients
             ingredients={selectedProduct.ingredients}

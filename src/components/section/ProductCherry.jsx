@@ -5,8 +5,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButtons from '../MagneticButtons';
 import { useTimelineStore4 } from "@/store/zuStore";
-import TransitionLink from '../TransitionLink';
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
+import BreizhCherry from '../experience/view/BreizhCherry';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,7 +42,7 @@ const ProductCherry = () => {
             duration: 0.6,
             ease: 'power4.out',
             stagger: 0.05,
-          }
+          }, "four"
         )
         .to(buttonRef.current, { scale: 1, ease: 'back.out' });
     }
@@ -54,8 +55,8 @@ const ProductCherry = () => {
 
       ScrollTrigger.create({
         trigger: section3Ref.current,
-        start: `left+=${section3Width * 0.75}`,
-        end: `+=${section3Width * 0.75}`,
+        start: `left+=${section3Width * 1.5}`,
+        end: `+=${section3Width * 1.5}`,
         scrub: 1,
         markers: false,
         onEnter: () => {
@@ -67,14 +68,14 @@ const ProductCherry = () => {
 
   return (
     <div ref={section3Ref} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
-
+<BreizhCherry />
       <div
         className="relative scale-0 w-[150px] h-[75px] top-[50vh] sm:top-[57vh] left-20 sm:left-32 md:top-[64vh] md:left-44 sm:w-[200px] sm:h-[100px] 2xl:w-[360px] xl:w-[300px] xl:h-[200px] 2xl:h-[180px] md:w-[250px] md:h-[125px] xl:top-[50vh] xl:left-[56vw]"
         ref={buttonRef}
       >
         <MagneticButtons>
           <button className="text-mainColor dark:text-mainDarkColor rotate-12 border-mainColor h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px] border-2 font-bold hover:text-secondColor md:w-[250px] md:h-[125px] hover:bg-mainColor dark:hover:text-secondDarkColor dark:hover:bg-mainDarkColor dark:border-mainDarkColor 2xl:-rotate-6">
-          <TransitionLink href={"/products/cherry"} label={"découvrez le"}/>
+          <Link href={"/products/cherry"}>decouvrez le</Link>
           </button>
         </MagneticButtons>
       </div>

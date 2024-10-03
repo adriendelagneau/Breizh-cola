@@ -1,5 +1,4 @@
 import React from 'react'
-import TransitionLink from '../TransitionLink'
 
 const Screen = () => {
   return (
