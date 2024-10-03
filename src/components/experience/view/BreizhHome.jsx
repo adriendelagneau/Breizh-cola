@@ -24,10 +24,10 @@ const BreizhHome = () => {
           floatIntensity={1} // Up/down float intensity
           floatingRange={[0.2, 1]} // Range of y-axis values the object will float within
         >
-          <Suspense fallback={null}>
+          
             {/* Pass the render callback to the SodaZero component */}
             <SodaHome />
-          </Suspense>
+   
         </Float>
       </Canvas>
     </div>
