@@ -74,7 +74,7 @@ export function SodaHome(props) {
 
       // Set initial position and scale
       groupRef.current.position.set(position.x, position.y, position.z);
-      groupRef.current.scale.set(0, 0, 0); // Start from 0 for animation
+      groupRef.current.scale.set(0.1, 0.1, 0.1); // Start from 0 for animation
 
       // Animate the scale with GSAP after text animations
       timeline.to(
