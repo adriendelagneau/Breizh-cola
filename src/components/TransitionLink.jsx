@@ -24,13 +24,13 @@ const TransitionLink = ({ href, label, myClass }) => {
           left: 0,
           duration: 0.6,
         })
-        .then(() => {
+    //     .then(() => {
            
-            reverseTimeline2();
-            reverseTimeline3();
-            reverseTimeline4();
-            resetCurrentIndex(); 
-    })
+    //         reverseTimeline2();
+    //         reverseTimeline3();
+    //         reverseTimeline4();
+    //         resetCurrentIndex(); 
+    // })
         .then(() => router.push(href)) // Navigate to the new route
         .then(() => {
           // Once the route has changed, hide the transition
