@@ -8,6 +8,7 @@ import { useTimelineStore4 } from "@/store/zuStore";
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import BreizhCherry from '../experience/view/BreizhCherry';
+import TransitionLink from '../TransitionLink';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,7 +76,7 @@ const ProductCherry = () => {
       >
         <MagneticButtons>
           <button className="text-mainColor dark:text-mainDarkColor rotate-12 border-mainColor h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px] border-2 font-bold hover:text-secondColor md:w-[250px] md:h-[125px] hover:bg-mainColor dark:hover:text-secondDarkColor dark:hover:bg-mainDarkColor dark:border-mainDarkColor 2xl:-rotate-6">
-          <Link href={"/products/cherry"}>decouvrez le</Link>
+          <TransitionLink href={"/products/cherry"} label={"decouvrez le"}/>
           </button>
         </MagneticButtons>
       </div>

@@ -30,7 +30,7 @@ const page = ({params}) => {
 
     return (
       <div
-      className="bg-secondColor transition-colors duration-500 min-h-[200vh] w-full"
+      className="bg-mainColor text-secondColor dark:text-secondDarkColor dark:bg-mainDarkColor min-h-[200vh] w-full"
     >
       <div id="single" className="w-full min-h-[200vh] relative">
 
