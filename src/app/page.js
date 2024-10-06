@@ -21,7 +21,7 @@ export default function Home() {
       <VideoStory />
       <Gallery />
       <Sponsorship />
-      {/* <FlipLayout /> */}
+      <FlipLayout />
       <Marquee />
       <Fun />
       <Screen />

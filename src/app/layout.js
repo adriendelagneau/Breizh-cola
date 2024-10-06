@@ -2,6 +2,7 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import ThemeHandler from "@/components/providers/ThemeHandler";
 import Navbar from "@/components/Navbar";
+import TransitionBloc from "@/components/TransitionBloc";
 
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <SmoothScrollProvider>
           <ThemeHandler>
             <Navbar />
+            <TransitionBloc />
             {children}
           </ThemeHandler>
         </SmoothScrollProvider>
