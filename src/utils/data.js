@@ -163,7 +163,6 @@ export const productsDetails = [
       proteines: 0.1,
       sel: 0,
     },
-    format: ["33b", "33g", "150b"],
   },
   {
     name: "cherry",

@@ -1,50 +1,50 @@
-"use client";
+import dynamic from 'next/dynamic';
+import Ingredients from "@/components/Ingredients";
+import ProductTitle from "@/components/ProductTittle";
+import { notFound } from "next/navigation";
 
-import React, { useEffect, useState } from 'react'
-import { productsDetails } from '@/utils/data'; 
-import ProductTitle from '@/components/ProductTittle';
-// import ProductDescription from '@/components/ProductDescription';
-import Ingredients from '@/components/Ingredients';
+async function getData(slug) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/${slug}`, {
+    cache: "no-store",
+  });
 
-import Marquee from '@/components/Marquee';
+  if (!res.ok) {
+    return notFound();
+  }
 
-
-
-
-const page = ({params}) => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-
-  useEffect(() => {
-    // Find the product that matches the params.slug
-    const product = productsDetails.find((p) => p.name === params.slug);
-    setSelectedProduct(product);
-
-    // Dynamically import the corresponding component
-  
-  }, [params.slug]);
-
-      if (!selectedProduct) {
-        return <div>Product not found</div>;
-      }
-
-    return (
-      <div
-      className="bg-mainColor text-secondColor dark:text-secondDarkColor dark:bg-mainDarkColor min-h-[200vh] w-full"
-    >
-      <div id="single" className="w-full min-h-[200vh] relative">
-
-        <ProductTitle name={selectedProduct.name} />
-        {/* <ProductDescription description={selectedProduct.description} /> */}
-        <Marquee />
-        <Ingredients
-            ingredients={selectedProduct.ingredients}
-            nutritionel={selectedProduct.nutritionel}
-            formats={selectedProduct.format}
-          />
-      </div>
-    </div>
-  )
+  return res.json();
 }
 
-export default page
+const page = async ({ params }) => {
+  const data = await getData(params.slug);
+
+  // Dynamically import the corresponding model based on the slug
+  let ModelComponent;
+
+  switch (data.slug) {
+    case 'breizh-cola-original':
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal'));
+      break;
+    case 'breizh-cola-zero':
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal'));
+      break;
+    case 'breizh-cola-cherry':
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal'));
+      break;
+    default:
+      return notFound(); // If the slug does not match any known models
+  }
+
+  return (
+    <div className="bg-mainColor text-secondColor dark:text-secondDarkColor dark:bg-mainDarkColor min-h-[200vh] w-full">
+      <div id="single" className="w-full min-h-[200vh] relative">
+        <ProductTitle name={data.title} />
+        <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
+        {/* Render the appropriate model based on the slug */}
+        <ModelComponent />
+      </div>
+    </div>
+  );
+};
+
+export default page;
