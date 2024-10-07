@@ -39,14 +39,7 @@ const TransitionLink = ({ href, label, myClass }) => {
             resetTimeline4();
             resetCurrentIndex(); 
     })
-        .then(() => {
-          // Once the route has changed, hide the transition
-          gsap.to(transitionBloc, {
-            left: '-100vw',
-            duration: 0.6,
-            delay: 1
-          });
-        });
+
     }
   };
 

@@ -8,13 +8,17 @@ import FlipLayout from "@/components/FlipLayout";
 import Fun from "@/components/section/Fun";
 import Footer from "@/components/section/Footer";
 import Screen from "@/components/section/Screen";
+import TransitionOut from "@/components/TransitionOut";
 
 
 export default function Home() {
 
   return (
 
+    <>
+    
     <div className="w-full bg-mainColor text-secondColor dark:bg-mainDarkColor dark:text-secondDarkColor ">
+    <TransitionOut />
       <Landing />
       <Infos />
       <Marquee />
@@ -27,6 +31,7 @@ export default function Home() {
       <Screen />
       <Footer />
     </div>
+    </>
 
   );
 }

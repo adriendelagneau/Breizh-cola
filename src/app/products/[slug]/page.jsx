@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Ingredients from "@/components/Ingredients";
 import ProductTitle from "@/components/ProductTittle";
 import { notFound } from "next/navigation";
+import TransitionOut from '@/components/TransitionOut';
 
 async function getData(slug) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/${slug}`, {
@@ -36,6 +37,8 @@ const page = async ({ params }) => {
   }
 
   return (
+    <>
+    <TransitionOut />
     <div className="bg-mainColor text-secondColor dark:text-secondDarkColor dark:bg-mainDarkColor min-h-[200vh] w-full">
       <div id="single" className="w-full min-h-[200vh] relative">
         <ProductTitle name={data.title} />
@@ -44,6 +47,7 @@ const page = async ({ params }) => {
         {/* <ModelComponent /> */}
       </div>
     </div>
+    </>
   );
 };
 
