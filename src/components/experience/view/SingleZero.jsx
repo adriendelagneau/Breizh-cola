@@ -11,7 +11,7 @@ const SingleZero = () => {
   return (
     <div className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none" style={{ pointerEvents: 'none' }}>
       <Canvas style={{ pointerEvents: "none" }} className="pointer-events-none">
-        <Suspense>
+
           <Environment preset="sunset" />
           <OrthographicCamera makeDefault zoom={10} position={[0, 0, 50]} />
           <Float
@@ -22,7 +22,7 @@ const SingleZero = () => {
           >
            <Original />
           </Float>
-        </Suspense>
+   
       </Canvas>
     </div>
   );

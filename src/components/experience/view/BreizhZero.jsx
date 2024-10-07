@@ -24,7 +24,7 @@ const BreizhZero = () => {
           >
             <SodaZero />
           </Float>
-        </Suspense>
+    </Suspense>
       </Canvas>
     </div>
   );
