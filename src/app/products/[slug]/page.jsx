@@ -23,13 +23,13 @@ const page = async ({ params }) => {
 
   switch (data.slug) {
     case 'breizh-cola-original':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal'));
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal', { ssr: false }));
       break;
     case 'breizh-cola-zero':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleZero'));
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleZero', { ssr: false }));
       break;
     case 'breizh-cola-cherry':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleCherry'));
+      ModelComponent = dynamic(() => import('@/components/experience/view/SingleCherry', { ssr: false }));
       break;
     default:
       return notFound(); // If the slug does not match any known models
@@ -41,7 +41,7 @@ const page = async ({ params }) => {
         <ProductTitle name={data.title} />
         <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
         {/* Render the appropriate model based on the slug */}
-        {/* <ModelComponent /> */}
+        <ModelComponent />
       </div>
     </div>
   );
