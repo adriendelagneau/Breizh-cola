@@ -33,9 +33,9 @@ const useTimelineStore2 = create((set, get) => ({
     const { timeline2 } = get();
     timeline2.play(); 
   },
-  reverseTimeline2: () => {
+  resetTimeline2: () => {
     const { timeline2 } = get();
-    timeline2.reverse(); 
+    timeline2.reversed(true); // Resets to initial state
   },
 }));
 
@@ -45,9 +45,9 @@ const useTimelineStore3 = create((set, get) => ({
     const { timeline3 } = get();
     timeline3.play(); 
   },
-  reverseTimeline3: () => {
+  resetTimeline3: () => {
     const { timeline3 } = get();
-    timeline3.reverse(); 
+    timeline3.reversed(true); // Resets to initial state
   },
 }));
 
@@ -57,11 +57,12 @@ const useTimelineStore4 = create((set, get) => ({
     const { timeline4 } = get();
     timeline4.play(); 
   },
-  reverseTimeline4: () => {
+  resetTimeline4: () => {
     const { timeline4 } = get();
-    timeline4.reverse(); 
+    timeline4.reversed(true); // Resets to initial state
   },
 }));
+
 
 
 // Handle index (chronology)

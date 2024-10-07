@@ -10,10 +10,9 @@ const TransitionLink = ({ href, label, myClass }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [transitionBloc, setTransitionBloc] = useState(null);
-
-  const { reverseTimeline2 } = useTimelineStore2(); 
-  const { reverseTimeline3 } = useTimelineStore3(); 
-  const { reverseTimeline4 } = useTimelineStore4(); 
+  const { resetTimeline2 } = useTimelineStore2(); 
+  const { resetTimeline3 } = useTimelineStore3(); 
+  const { resetTimeline4 } = useTimelineStore4(); 
   const { resetCurrentIndex } = useCurrentIndexStore();
 
 
@@ -35,9 +34,9 @@ const TransitionLink = ({ href, label, myClass }) => {
         .then(() => router.push(href)) // Navigate to the new route
         .then(() => {
            
-            reverseTimeline2();
-            reverseTimeline3();
-            reverseTimeline4();
+            resetTimeline2();
+            resetTimeline3();
+            resetTimeline4();
             resetCurrentIndex(); 
     })
         .then(() => {
