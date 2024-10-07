@@ -22,7 +22,7 @@ const TransitionOut = () => {
                   gsap.to(transitionBloc, {
             left: '-100vw',
             duration: 0.6,
-            delay: 0.3
+            delay: 0.5
           });
            }
         }
