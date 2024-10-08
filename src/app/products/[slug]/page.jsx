@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import TransitionOut from '@/components/TransitionOut';
 import Screen from '@/components/section/Screen';
 import Marquee from '@/components/Marquee';
-import Infos from '@/components/section/Infos';
 import Single from '@/components/experience/view/Single';
 
 async function getData(slug) {
@@ -31,7 +30,7 @@ const page = async ({ params }) => {
       <div id="single" className="w-full min-h-[200vh] relative">
         <Single obj={params.slug}/>
         <ProductTitle name={data.title} />
-        <Infos />
+      
         <Marquee />
         <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
         <Screen />
