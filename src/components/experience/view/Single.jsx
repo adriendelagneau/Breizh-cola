@@ -1,10 +1,8 @@
-0256637295
+"use client"
 
-1zOljGjjLMtqtfdW delagneauadrien
-
-
-"use client";
-
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Environment, Float, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
@@ -12,10 +10,33 @@ import { Original } from "../model/Original";
 import { Zero } from "../model/Zero"; // Import other models
 import { Cherry } from "../model/Cherry"; // Import other models
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Single = ({ obj }) => {
   const modelRef = useRef(); // Reference for the 3D model
 
-  // Select the model based on the "obj" prop
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: "#single",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        if (modelRef.current) {
+          // Rotate or animate the model based on scroll progress
+          gsap.to(modelRef.current.rotation, {
+            y: progress * Math.PI * 2, // Rotate the model based on scroll
+            duration: 0.1,
+            ease: "power2.out",
+          });
+        }
+      },
+    });
+
+    return () => ScrollTrigger.killAll();
+  }, []);
+
   let ModelComponent;
 
   switch (obj) {
@@ -29,23 +50,22 @@ const Single = ({ obj }) => {
       ModelComponent = Cherry;
       break;
     default:
-      ModelComponent = Original; // Fallback to a default model
+      ModelComponent = Original;
       break;
   }
 
   return (
-    <div className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none" style={{ pointerEvents: 'none' }}>
+    <div id="single" className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none">
       <Canvas style={{ pointerEvents: "none" }} className="pointer-events-none">
         <Suspense fallback={null}>
           <Environment preset="sunset" />
           <OrthographicCamera makeDefault zoom={10} position={[0, 0, 50]} />
           <Float
-            speed={3} // Animation speed, defaults to 1
-            rotationIntensity={1} // XYZ rotation intensity, defaults to 1
-            floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange, defaults to 1
-            floatingRange={[0.2, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+            speed={3}
+            rotationIntensity={1}
+            floatIntensity={1}
+            floatingRange={[0.2, 1]}
           >
-            {/* Pass the ref to the dynamically rendered model */}
             <ModelComponent ref={modelRef} />
           </Float>
         </Suspense>
@@ -54,5 +74,5 @@ const Single = ({ obj }) => {
   );
 };
 
-export default Single;
 
+export default Single

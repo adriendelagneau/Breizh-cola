@@ -3,6 +3,10 @@ import Ingredients from "@/components/Ingredients";
 import ProductTitle from "@/components/ProductTittle";
 import { notFound } from "next/navigation";
 import TransitionOut from '@/components/TransitionOut';
+import Screen from '@/components/section/Screen';
+import Marquee from '@/components/Marquee';
+import Infos from '@/components/section/Infos';
+import Single from '@/components/experience/view/Single';
 
 async function getData(slug) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/${slug}`, {
@@ -19,32 +23,18 @@ async function getData(slug) {
 const page = async ({ params }) => {
   const data = await getData(params.slug);
 
-  // Dynamically import the corresponding model based on the slug
-  let ModelComponent;
-
-  switch (data.slug) {
-    case 'breizh-cola-original':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleOriginal'));
-      break;
-    case 'breizh-cola-zero':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleZero'));
-      break;
-    case 'breizh-cola-cherry':
-      ModelComponent = dynamic(() => import('@/components/experience/view/SingleCherry'));
-      break;
-    default:
-      return notFound(); // If the slug does not match any known models
-  }
 
   return (
     <>
     <TransitionOut />
     <div className="bg-mainColor text-secondColor dark:text-secondDarkColor dark:bg-mainDarkColor min-h-[200vh] w-full">
       <div id="single" className="w-full min-h-[200vh] relative">
+        <Single obj={params.slug}/>
         <ProductTitle name={data.title} />
+        <Infos />
+        <Marquee />
         <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
-        {/* Render the appropriate model based on the slug */}
-        <ModelComponent />
+        <Screen />
       </div>
     </div>
     </>

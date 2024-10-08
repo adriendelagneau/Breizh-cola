@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 
-export const Original = forwardRef((props, ref) => {
+export const Zero = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF('/model/soda-zero.glb');
 
   return (
