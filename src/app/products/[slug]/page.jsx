@@ -44,7 +44,7 @@ const page = async ({ params }) => {
         <ProductTitle name={data.title} />
         <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
         {/* Render the appropriate model based on the slug */}
-        {/* <ModelComponent /> */}
+        <ModelComponent />
       </div>
     </div>
     </>

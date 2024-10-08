@@ -23,7 +23,6 @@ const SingleOriginal = () => {
             >
            <Original />
           </Float>
-    
               </Suspense>
       </Canvas>
     </div>
