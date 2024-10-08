@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Environment, Float, OrthographicCamera } from "@react-three/drei";
@@ -9,13 +8,14 @@ import { Suspense, useRef } from "react";
 import { Original } from "../model/Original";
 import { Zero } from "../model/Zero"; // Import other models
 import { Cherry } from "../model/Cherry"; // Import other models
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Single = ({ obj }) => {
   const modelRef = useRef(); // Reference for the 3D model
 
-  useEffect(() => {
+  useGSAP(() => {
     ScrollTrigger.create({
       trigger: "#single",
       start: "top top",
@@ -34,7 +34,7 @@ const Single = ({ obj }) => {
       },
     });
 
-    return () => ScrollTrigger.killAll();
+   
   }, []);
 
   let ModelComponent;
