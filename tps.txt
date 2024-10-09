@@ -1,58 +1,31 @@
-0256637295
+const useMenu = create((set, get) => ({
+  isMenuOpen: false,
+  timeline: gsap.timeline({ paused: true }), // Store the GSAP timeline here
 
-1zOljGjjLMtqtfdW delagneauadrien
+  // Set the menu state to open or closed
+  setMenu: (isMenuOpen) => set({ isMenuOpen }),
 
+  // Toggle the menu open/close state
+  toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
 
-"use client";
+  // Play the timeline when opening the menu
+  playMenu: () => {
+    const { timeline } = get();
+    timeline.play();  // Play the GSAP animation for menu opening
+    set({ isMenuOpen: true }); // Set the menu state to open
+  },
 
-import { Environment, Float, OrthographicCamera } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
-import { Original } from "../model/Original";
-import { Zero } from "../model/Zero"; // Import other models
-import { Cherry } from "../model/Cherry"; // Import other models
+  // Reverse the timeline to close the menu
+  reverseMenu: () => {
+    const { timeline } = get();
+    timeline.reverse(); // Reverse the GSAP animation (i.e., play backward)
+    set({ isMenuOpen: false }); // Set the menu state to closed
+  },
 
-const Single = ({ obj }) => {
-  const modelRef = useRef(); // Reference for the 3D model
-
-  // Select the model based on the "obj" prop
-  let ModelComponent;
-
-  switch (obj) {
-    case 'breizh-cola-original':
-      ModelComponent = Original;
-      break;
-    case 'breizh-cola-zero':
-      ModelComponent = Zero;
-      break;
-    case 'breizh-cola-cherry':
-      ModelComponent = Cherry;
-      break;
-    default:
-      ModelComponent = Original; // Fallback to a default model
-      break;
+  // Reset the timeline to its initial state (reversed without playing)
+  reversedMenu: () => {
+    const { timeline } = get();
+    timeline.reversed(true); // Set the GSAP timeline to its initial reversed state
+    set({ isMenuOpen: false }); // Set the menu state to closed
   }
-
-  return (
-    <div className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none" style={{ pointerEvents: 'none' }}>
-      <Canvas style={{ pointerEvents: "none" }} className="pointer-events-none">
-        <Suspense fallback={null}>
-          <Environment preset="sunset" />
-          <OrthographicCamera makeDefault zoom={10} position={[0, 0, 50]} />
-          <Float
-            speed={3} // Animation speed, defaults to 1
-            rotationIntensity={1} // XYZ rotation intensity, defaults to 1
-            floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange, defaults to 1
-            floatingRange={[0.2, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-          >
-            {/* Pass the ref to the dynamically rendered model */}
-            <ModelComponent ref={modelRef} />
-          </Float>
-        </Suspense>
-      </Canvas>
-    </div>
-  );
-};
-
-export default Single;
-
+}));

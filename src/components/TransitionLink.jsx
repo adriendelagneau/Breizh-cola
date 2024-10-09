@@ -3,17 +3,20 @@
 import { useRouter, usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
-import { useCurrentIndexStore, useTimelineStore2, useTimelineStore3, useTimelineStore4 } from "@/store/zuStore";
+import { useCurrentIndexStore, useMenu, useTimelineStore2, useTimelineStore3, useTimelineStore4 } from "@/store/zuStore";
 
 
 const TransitionLink = ({ href, label, myClass }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [transitionBloc, setTransitionBloc] = useState(null);
-  const { resetTimeline2 } = useTimelineStore2(); 
-  const { resetTimeline3 } = useTimelineStore3(); 
-  const { resetTimeline4 } = useTimelineStore4(); 
+  const { resetTimeline2 } = useTimelineStore2();
+  const { resetTimeline3 } = useTimelineStore3();
+  const { resetTimeline4 } = useTimelineStore4();
   const { resetCurrentIndex } = useCurrentIndexStore();
+  const { reversedMenu } = useMenu()
+
+
 
 
   useEffect(() => {
@@ -24,6 +27,7 @@ const TransitionLink = ({ href, label, myClass }) => {
   }, []);
 
   const handleClick = () => {
+    console.log(href, pathname)
     if (href !== pathname && transitionBloc) {
       // Start the transition animation
       gsap
@@ -31,14 +35,16 @@ const TransitionLink = ({ href, label, myClass }) => {
           left: 0,
           duration: 0.6,
         })
-        .then(() => router.push(href)) // Navigate to the new route
         .then(() => {
-           
-            resetTimeline2();
-            resetTimeline3();
-            resetTimeline4();
-            resetCurrentIndex(); 
-    })
+          reversedMenu()
+          resetTimeline2();
+          resetTimeline3();
+          resetTimeline4();
+          resetCurrentIndex();
+
+
+        })
+        .then(() => router.push(href)) // Navigate to the new route
 
     }
   };

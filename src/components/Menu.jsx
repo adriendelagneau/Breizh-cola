@@ -1,72 +1,53 @@
 "use client";
 
-import { useMenu, useSmoothScroll } from "@/store/zuStore";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
+import { useMenu } from "@/store/zuStore"; // Import Zustand store
+import { useEffect, useRef } from "react";
 import BurgerIconMenu from "./BurgerIconMenu";
-import TransitionLink from "./TransitionLink"; // Import TransitionLink component
+import TransitionLink from "./TransitionLink";
+import gsap from "gsap";
 
 const Menu = () => {
   const menu1Ref = useRef(null);
   const liRefs = useRef([]); // Array to store the refs for li divs
-  const { isMenuOpen, setMenu } = useMenu();
+  const { isMenuOpen, playMenu, reverseMenu, timelineX } = useMenu(); // Access Zustand store
 
-  const { isActive, toggleSmoothState } = useSmoothScroll((state) => ({
-    isActive: state.isActive,
-    toggleSmoothState: state.toggleSmoothState,
-  }));
-
-  useGSAP(() => {
-    // Timeline for menu open animation
-    const tlOpen = gsap.timeline({
-      paused: true,
-      onStart: () => {
-        if (isActive) toggleSmoothState();
-        document.body.style.overflow = "hidden";
-      },
-    })
-    .to(menu1Ref.current, { top: "0%", duration: 0.3 }) // Menu slides in
-    .to(
-      liRefs.current,
-      { y: 0, duration: 0.3, stagger: 0.25, ease: "power4.out" }, // Animate to visible position
-      "<0.4" // Start animation slightly after menu opening
-    );
-
-    // Timeline for menu close animation
-    const tlClose = gsap.timeline({
-      paused: true,
-      onComplete: () => {
-        if (!isActive) toggleSmoothState();
-        document.body.style.overflow = "auto";
-      },
-    })
-    .to(
-      liRefs.current,
-      { y: "100%", duration: 0.3, stagger: 0.25, ease: "power4.in" } // Animate out with y position
-    )
-    .to(menu1Ref.current, { top: "100vh", duration: 0.3 }); // Menu slides out
-
-    // Play timelines based on menu state
-    if (isMenuOpen) {
-      tlOpen.play();
-    } else {
-      tlClose.play();
+  useEffect(() => {
+    // Initialize GSAP timeline from the Zustand store
+    if (timelineX && !timelineX.isActive()) {
+      timelineX
+        .to(menu1Ref.current, { top: "0%", duration: 0.3 }) // Menu slides in
+        .to(
+          liRefs.current,
+          { y: 0, duration: 0.3, stagger: 0.25, ease: "power4.out" }, // Animate each item
+          "<0.4" // Start this animation slightly after the menu slides in
+        );
+        
+      liRefs.current.forEach((li) => {
+        gsap.set(li, { y: "100%" }); // Set initial position for each item
+      });
     }
-  }, [isMenuOpen]);
+  }, [timelineX]);
+
+  useEffect(() => {
+    // Play or reverse the timeline based on the menu state
+    if (isMenuOpen) {
+      playMenu(); // Play GSAP animation when menu opens
+    } else {
+      reverseMenu(); // Reverse GSAP animation when menu closes
+    }
+  }, [isMenuOpen, playMenu, reverseMenu]);
 
   // Update the state based on window width
   const updateMedia = () => {
-    if (window.innerWidth < 1024) setMenu(false);
+    if (window.innerWidth < 1024) {
+      reverseMenu(); // Close menu if screen width is below 1024px
+    }
   };
 
   useEffect(() => {
-    // Set initial state
-    updateMedia();
     // Add resize event listener
-    window.addEventListener('resize', updateMedia);
-    // Clean up event listener on component unmount
-    return () => window.removeEventListener('resize', updateMedia);
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
   }, []);
 
   return (
@@ -76,21 +57,20 @@ const Menu = () => {
     >
       <BurgerIconMenu />
       <ul className="flex flex-col items-center justify-center w-full h-full gap-4 uppercase text-8xl text-mainColor font-poppins dark:text-mainDarkColor">
-        <li className="relative overflow-hidden">
-          <div ref={(el) => liRefs.current[0] = el} className="translate-y-full">
-            <TransitionLink href={"/products/original"} label={"original"} myClass="transition-link" /> {/* Using TransitionLink */}
-          </div>
-        </li>
-        <li className="relative overflow-hidden">
-          <div ref={(el) => liRefs.current[1] = el} className="translate-y-full">
-            <TransitionLink href={"/products/zero"} label={"zero"} myClass="transition-link" /> {/* Using TransitionLink */}
-          </div>
-        </li>
-        <li className="relative overflow-hidden">
-          <div ref={(el) => liRefs.current[2] = el} className="translate-y-full">
-            <TransitionLink href={"/products/cherry"} label={"cherry"} myClass="transition-link" /> {/* Using TransitionLink */}
-          </div>
-        </li>
+        {["original", "zero", "cherry"].map((label, index) => (
+          <li className="relative overflow-hidden" key={label}>
+            <div
+              ref={(el) => (liRefs.current[index] = el)}
+              className="translate-y-full"
+            >
+              <TransitionLink
+                href={`/products/breizh-cola-${label}`}
+                label={label}
+                myClass="transition-link"
+              />
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );

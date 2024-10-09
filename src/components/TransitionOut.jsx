@@ -15,9 +15,8 @@ const TransitionOut = () => {
 
     useEffect(() => {
         if (transitionBloc) {
-            // Access the position of the element
             const rect = transitionBloc.getBoundingClientRect();
-            console.log('Element position:', rect.left);
+
            if(rect.left == 0){
                   gsap.to(transitionBloc, {
             left: '-100vw',

@@ -15,10 +15,33 @@ const useSmallMenu = create((set) => ({
   toggleSmallMenu: () => set((state) => ({ isSmallMenuOpen: !state.isSmallMenuOpen })),
 }));
 
-const useMenu = create((set) => ({
+const useMenu = create((set, get) => ({
   isMenuOpen: false,
+  timelineX: gsap.timeline({ paused: true }), // Store the GSAP timeline here
+
+  // Set the menu state to open or closed
   setMenu: (isMenuOpen) => set({ isMenuOpen }),
-  toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
+
+  // Play the timeline when opening the menu
+  playMenu: () => {
+    const { timelineX } = get();
+    timelineX.play();  // Play the GSAP animation for menu opening
+    set({ isMenuOpen: true }); // Set the menu state to open
+  },
+
+  // Reverse the timelineX to close the menu
+  reverseMenu: () => {
+    const { timelineX } = get();
+    timelineX.reverse(); // Reverse the GSAP animation (i.e., play backward)
+    set({ isMenuOpen: false }); // Set the menu state to closed
+  },
+
+  reversedMenu: () => {
+    const { timelineX } = get();
+    timelineX.progress(0); // Reset the GSAP timeline to the beginning
+    timelineX.pause(); // Pause it to stop any animations
+    set({ isMenuOpen: false }); // Set the menu state to closed
+  }
 }));
 
 
@@ -64,13 +87,14 @@ const useTimelineStore4 = create((set, get) => ({
 }));
 
 
-
 // Handle index (chronology)
 const useCurrentIndexStore = create((set) => ({
   currentIndex: 0,
   setCurrentIndex: (index) => set({ currentIndex: index }),
   resetCurrentIndex: () => set({ currentIndex: 0 }), 
 }));
+
+
 
 
 export {

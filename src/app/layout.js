@@ -3,6 +3,8 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import ThemeHandler from "@/components/providers/ThemeHandler";
 import Navbar from "@/components/Navbar";
 import TransitionBloc from "@/components/TransitionBloc";
+import Menu from "@/components/Menu";
+import MenuSmall from "@/components/MenuSmall";
 
 
 export const metadata = {
@@ -18,6 +20,8 @@ export default function RootLayout({ children }) {
           <ThemeHandler>
             <Navbar />
             <TransitionBloc />
+            <Menu />
+            <MenuSmall />
             {children}
           </ThemeHandler>
         </SmoothScrollProvider>
