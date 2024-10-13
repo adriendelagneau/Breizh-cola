@@ -1,31 +1,8 @@
-const useMenu = create((set, get) => ({
-  isMenuOpen: false,
-  timeline: gsap.timeline({ paused: true }), // Store the GSAP timeline here
-
-  // Set the menu state to open or closed
-  setMenu: (isMenuOpen) => set({ isMenuOpen }),
-
-  // Toggle the menu open/close state
-  toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
-
-  // Play the timeline when opening the menu
-  playMenu: () => {
-    const { timeline } = get();
-    timeline.play();  // Play the GSAP animation for menu opening
-    set({ isMenuOpen: true }); // Set the menu state to open
-  },
-
-  // Reverse the timeline to close the menu
-  reverseMenu: () => {
-    const { timeline } = get();
-    timeline.reverse(); // Reverse the GSAP animation (i.e., play backward)
-    set({ isMenuOpen: false }); // Set the menu state to closed
-  },
-
-  // Reset the timeline to its initial state (reversed without playing)
-  reversedMenu: () => {
-    const { timeline } = get();
-    timeline.reversed(true); // Set the GSAP timeline to its initial reversed state
-    set({ isMenuOpen: false }); // Set the menu state to closed
-  }
-}));
+  <div 
+      className='relative h-[800px]'
+      style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
+    >
+      <div className='fixed bottom-0 h-[800px] w-full'>
+        <Content />
+      </div>
+    </div>
