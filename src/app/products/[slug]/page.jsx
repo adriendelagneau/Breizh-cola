@@ -6,6 +6,7 @@ import TransitionOut from '@/components/TransitionOut';
 import Screen from '@/components/section/Screen';
 import Marquee from '@/components/Marquee';
 import Single from '@/components/experience/view/Single';
+import Infos from '@/components/section/Infos';
 
 async function getData(slug) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/${slug}`, {
@@ -30,7 +31,7 @@ const page = async ({ params }) => {
       <div id="single" className="w-full min-h-[200vh] relative">
         <Single obj={params.slug}/>
         <ProductTitle name={data.title} />
-      
+      <Infos />
         <Marquee />
         <Ingredients ingredients={data.ingredients} nutritionel={data.nutritionel} />
         <Screen />

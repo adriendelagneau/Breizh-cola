@@ -5,12 +5,12 @@ import MagneticButtons from "../MagneticButtons";
 const Footer = () => {
   return (
     <div
-      className={`flex flex-col items-center justify-center h-[40vh] bg-mainColor dark:bg-mainDarkColor`}
+      className={`flex flex-col items-center justify-center h-[10vh] bg-secondColor dark:bg-secondDarkColor`}
     >
       <div className="flex justify-center gap-10 sm:gap-16 lg:gap-20">
         <MagneticButtons>
           <svg
-            className="w-10 h-10 cursor-pointer sm:h-12 sm:w-12 lg:h-16 lg:w-16 fill-secondColor dark:fill-secondDarkColor"
+            className="w-10 h-10 cursor-pointer fill-mainColor dark:fill-mainDarkColor"
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="w-10 h-10 cursor-pointer sm:h-12 sm:w-12 lg:h-16 lg:w-16 fill-secondColor dark:fill-secondDarkColor"
+            className="w-10 h-10 cursor-pointer fill-mainColor dark:fill-mainDarkColor"
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="w-10 h-10 cursor-pointer sm:h-12 sm:w-12 lg:h-16 lg:w-16 fill-secondColor dark:fill-secondDarkColor"
+            className="w-10 h-10 cursor-pointer fill-mainColor dark:fill-mainDarkColor"
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const Footer = () => {
 
         <MagneticButtons>
           <svg
-            className="w-10 h-10 cursor-pointer sm:h-12 sm:w-12 lg:h-16 lg:w-16 fill-secondColor dark:fill-secondDarkColor"
+            className="w-10 h-10 cursor-pointer fill-mainColor dark:fill-mainDarkColor"
             id="Layer_2"
             data-name="Layer 2"
             xmlns="http://www.w3.org/2000/svg"

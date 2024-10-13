@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
+
 import Nutritionel from "./Nutritionel";
-import ProductFormats from "./ProductFormats";
+
 
 
 

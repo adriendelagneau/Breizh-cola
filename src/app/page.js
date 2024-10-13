@@ -6,9 +6,10 @@ import Gallery from "@/components/section/Gallery";
 import Sponsorship from "@/components/Sponsortship";
 import FlipLayout from "@/components/FlipLayout";
 import Fun from "@/components/section/Fun";
-import Footer from "@/components/section/Footer";
 import Screen from "@/components/section/Screen";
 import TransitionOut from "@/components/TransitionOut";
+import ImgGallery from "@/components/section/ImgGallery";
+import Gimg from "@/components/section/Gimg";
 
 
 export default function Home() {
@@ -27,9 +28,9 @@ export default function Home() {
       <Sponsorship />
       <FlipLayout />
       <Marquee />
-      <Fun />
       <Screen />
-      <Footer />
+  <Gimg />
+      {/* <Fun /> */}
     </div>
     </>
 

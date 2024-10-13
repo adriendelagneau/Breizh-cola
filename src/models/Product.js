@@ -23,16 +23,12 @@ const ProductSchema = new Schema(
       type: String,
       required: true,
     },
-    objectURL : {
-      type: String,
-      required: true
-    },
     color: {
       type: String,
       required: true,
     },
-    description: {
-      type: String,
+    infoSingle: {
+      type: [String], // Modify description to be an array of strings
       required: true,
     },
     ingredients: {
