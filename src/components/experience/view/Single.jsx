@@ -19,7 +19,7 @@ const Single = ({ obj }) => {
     ScrollTrigger.create({
       trigger: "#ingredients",
       start: "top top",
-      end: "bottom bottom",
+      end: "bottom top",
       scrub: true,
       onUpdate: (self) => {
         const progress = self.progress;

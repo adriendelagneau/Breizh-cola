@@ -27,10 +27,10 @@ const Ingredients = ({ ingredients, nutritionel}) => {
         scrollTrigger: {
           trigger: sectionElement,
           start: "top top",
-          end: "bottom+=100% top",
+          end: "bottom top",
           scrub: true,
           pin: true,
-          markers: true, // for debugging
+          //markers: true, 
         },
       }
     );
