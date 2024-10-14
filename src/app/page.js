@@ -28,9 +28,8 @@ export default function Home() {
       <Sponsorship />
       <FlipLayout />
       <Marquee />
-      <Screen />
+      <Fun />
   <Gimg />
-      {/* <Fun /> */}
     </div>
     </>
 

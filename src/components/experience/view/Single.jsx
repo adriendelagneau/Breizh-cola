@@ -17,7 +17,7 @@ const Single = ({ obj }) => {
 
   useGSAP(() => {
     ScrollTrigger.create({
-      trigger: "#single",
+      trigger: "#ingredients",
       start: "top top",
       end: "bottom bottom",
       scrub: true,
@@ -55,7 +55,7 @@ const Single = ({ obj }) => {
   }
 
   return (
-    <div id="single" className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none">
+    <div id="single" className="sticky top-0 left-0 z-20 w-full h-screen pointer-events-none">
       <Canvas style={{ pointerEvents: "none" }} className="pointer-events-none">
         <Suspense fallback={null}>
           <Environment preset="sunset" />
