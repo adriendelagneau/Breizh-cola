@@ -30,7 +30,6 @@ const Ingredients = ({ ingredients, nutritionel}) => {
           end: "bottom top",
           scrub: true,
           pin: true,
-          //markers: true, 
         },
       }
     );
