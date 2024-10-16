@@ -1,134 +1,67 @@
 export const SponsortMusic = [
   {
-    src: "/image/sponsorts/music/Bobital.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089913/breizhCola/sponsorts/download_3__150x150_oyzedo.jpg",
     linkUrl: "https://bobital.com",
   },
   {
-    src: "/image/sponsorts/music/Au-pont-du-rock.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089911/breizhCola/sponsorts/download_1__150x150_ltnc6n.jpg",
     linkUrl: "https://aupontdurock.com",
   },
   {
-    src: "/image/sponsorts/music/Belle-ile-on-air.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089912/breizhCola/sponsorts/download_2__150x150_kxyrwn.jpg",
     linkUrl: "https://belleileonair.com",
   },
   {
-    src: "/image/sponsorts/music/AuBDM.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089925/breizhCola/sponsorts/download_150x150_oou17c.jpg",
     linkUrl: "https://aubdm.com",
   },
   {
-    src: "/image/sponsorts/music/Festival-chant-marin.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089914/breizhCola/sponsorts/download_4__150x150_fjgy0l.jpg",
     linkUrl: "https://festivalchantmarin.com",
   },
   {
-    src: "/image/sponsorts/music/festival-inter-celtique.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089915/breizhCola/sponsorts/download_5__150x150_lbwbh5.jpg",
     linkUrl: "https://festival-interceltique.bzh",
   },
   {
-    src: "/image/sponsorts/music/Jazz-en-ville.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089916/breizhCola/sponsorts/download_6__150x150_zds1us.jpg",
     linkUrl: "https://jazzenville.com",
   },
   {
-    src: "/image/sponsorts/music/Mlogo205X197-1.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089917/breizhCola/sponsorts/download_7__156x150_m0naer.jpg",
     linkUrl: "https://mlogo.com",
   },
   {
-    src: "/image/sponsorts/music/Motszik.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089918/breizhCola/sponsorts/download_8__150x150_dhnode.jpg",
     linkUrl: "https://motszik.com",
   },
   {
-    src: "/image/sponsorts/music/Roi-Arthur.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089920/breizhCola/sponsorts/download_9__150x150_lprow8.jpg",
     linkUrl: "https://roiarthur.com",
   },
   {
-    src: "/image/sponsorts/music/Roue-Waroch.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089921/breizhCola/sponsorts/download_10__150x150_ed5ven.jpg",
     linkUrl: "https://roue-waroch.com",
   },
   {
-    src: "/image/sponsorts/music/Tombées-de-la-nuit.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089922/breizhCola/sponsorts/download_11__150x150_qq8fks.jpg",
     linkUrl: "https://tombeesdelanuit.com",
   },
   {
-    src: "/image/sponsorts/music/Vieilles-Charrue.png",
+    src: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729089924/breizhCola/sponsorts/download_12__150x150_ydhtuc.jpg",
     linkUrl: "https://vieillescharrues.com",
-  },
-];
-
-export const sponsortsSport = [
-  {
-    src: "/image/sponsorts/sport/AFFLogos205X197-150x150.png",
-    linkUrl: "https://bobital.com",
-  },
-  {
-    src: "/image/sponsorts/sport/club-de-vannes-150x150.jpg",
-    linkUrl: "https://aupontdurock.com",
-  },
-  {
-    src: "/image/sponsorts/sport/fl-lorient-150x150.jpg",
-    linkUrl: "https://belleileonair.com",
-  },
-  {
-    src: "/image/sponsorts/sport/GDVHLogos205X197-150x150.png",
-    linkUrl: "https://aubdm.com",
-  },
-  {
-    src: "/image/sponsorts/sport/guingamp-150x150.jpg",
-    linkUrl: "https://festivalchantmarin.com",
-  },
-  {
-    src: "/image/sponsorts/sport/leton-tregor-basket-150x150.jpg",
-    linkUrl: "https://festival-interceltique.bzh",
-  },
-  {
-    src: "/image/sponsorts/sport/ligue-de-basket-de-bretagne-150x150.jpg",
-    linkUrl: "https://jazzenville.com",
-  },
-  {
-    src: "/image/sponsorts/sport/LMVLogos205X197-150x150.png",
-    linkUrl: "https://mlogo.com",
-  },
-  {
-    src: "/image/sponsorts/sport/MCILogos205X197-150x150.png",
-    linkUrl: "https://motszik.com",
-  },
-  {
-    src: "/image/sponsorts/sport/MRTLogos205X197-150x150.png",
-    linkUrl: "https://roiarthur.com",
-  },
-  {
-    src: "/image/sponsorts/sport/MVLogos205X197-150x150.png",
-    linkUrl: "https://roue-waroch.com",
-  },
-  {
-    src: "/image/sponsorts/sport/OFACLogos205X197-150x150.png",
-    linkUrl: "https://tombeesdelanuit.com",
-  },
-  {
-    src: "/image/sponsorts/sport/Open-de-Rennes-150x150.png",
-    linkUrl: "https://vieillescharrues.com",
-  },
-  {
-    src: "/image/sponsorts/sport/prix-de-plumelec-150x150.jpg",
-    linkUrl: "https://roiarthur.com",
-  },
-  {
-    src: "/image/sponsorts/sport/rugby-vannes-150x150.jpg",
-    linkUrl: "https://tombeesdelanuit.com",
   },
 ];
 
 export const infosText = [
   "Créé en 2002, Breizh Cola est le premier cola régional à proposer aux consommateurs une vraie alternative française à cette boisson mythique. Des années plus tard, le cola breton est un véritable succès.",
-  "C’est grâce à sa recette unique, son identité authentiquement bretonne et son ton décalé que Breizh Cola a su se hisser dans le peloton de tête des marques de cola en France."
+  "C’est grâce à sa recette unique, son identité authentiquement bretonne et son ton décalé que Breizh Cola a su se hisser dans le peloton de tête des marques de cola en France.",
+  "En s'appuyant sur des valeurs locales et en soutenant des initiatives écoresponsables, Breizh Cola est devenu un symbole de fierté régionale, tout en conquérant de nouveaux territoires au-delà de la Bretagne."
 ];
 
-export const sponsortsSportText = [
-  "Breizh Cola s’investit dans le sport breton en soutenant des compétitions régionales.",
-  "Cette implication dans le sport permet à la marque de promouvoir un mode de vie actif et de renforcer la notoriété des événements sportifs à travers toute la région."
-];
-
-export const sponsortMusicText = [
-  "Breizh Cola soutient la scène musicale bretonne en parrainant des festivals et concerts locaux.",
-  "La marque s’associe à des événements musicaux majeurs pour célébrer la culture régionale à travers des partenariats authentiques."
+export const sponsortsMusicText = [
+  "Breizh Cola soutient activement la scène musicale bretonne en parrainant des festivals et concerts régionaux tout au long de l'année.",
+  "Grâce à son engagement dans la musique, la marque contribue à promouvoir la culture locale et à dynamiser les événements musicaux dans toute la Bretagne."
 ];
 
 export const sponsortText = [

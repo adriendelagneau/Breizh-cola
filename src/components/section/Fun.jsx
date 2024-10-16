@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react'
-import Footer from './Footer'
+import Footer from './SocialLinks'
 import { useTheme } from 'next-themes';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';

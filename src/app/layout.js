@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import TransitionBloc from "@/components/TransitionBloc";
 import Menu from "@/components/Menu";
 import MenuSmall from "@/components/MenuSmall";
-import TestFooter from "@/components/TestFooter";
+import Footer from "@/components/Footer";
 
 
 export const metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             <Menu />
             <MenuSmall />
             {children}
-            <TestFooter />
+            <Footer />
           </ThemeHandler>
         </SmoothScrollProvider>
       </body>

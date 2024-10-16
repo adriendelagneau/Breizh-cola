@@ -4,7 +4,7 @@ import { Environment, Float, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
-import { SodaOriginal } from "../model/SodaOriginal";
+
 import { SodaHome } from "../model/SodaHome";
 
 const BreizhHome = () => {

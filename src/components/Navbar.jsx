@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     <div
       ref={navbarRef}
-      className='fixed left-0 z-40 flex justify-between w-full h-20 p-1 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
+      className='fixed left-0 z-40 flex justify-between w-full h-20 p-3 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
     >
       <div className='flex items-center font-bold uppercase sm:text-xl'>
         {isDesktop ? (
