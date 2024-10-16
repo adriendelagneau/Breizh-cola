@@ -53,10 +53,10 @@ const Menu = () => {
   return (
     <div
       ref={menu1Ref}
-      className="fixed left-0 z-40 w-full h-screen overflow-hidden bg-mainDarkColor dark:bg-secondDarkColor top-full"
+      className="fixed left-0 z-40 w-full h-screen overflow-hidden bg-secondColor dark:bg-mainColor top-full"
     >
       <BurgerIconMenu />
-      <ul className="flex flex-col items-center justify-center w-full h-full gap-4 uppercase text-8xl text-mainColor font-poppins dark:text-mainDarkColor">
+      <ul className="flex flex-col items-center justify-center w-full h-full gap-4 uppercase text-8xl text-mainColor font-poppins dark:text-secondColor">
         {["original", "zero", "cherry"].map((label, index) => (
           <li className="relative overflow-hidden" key={label}>
             <div

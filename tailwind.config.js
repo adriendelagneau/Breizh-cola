@@ -17,9 +17,6 @@ module.exports = {
       colors: {
         mainColor: "var(--mainColor)",
         secondColor: "var(--secondColor)",
-
-        mainDarkColor: "var(--mainDarkColor)",
-        secondDarkColor: "var(--secondDarkColor)",
       },
     },
   },

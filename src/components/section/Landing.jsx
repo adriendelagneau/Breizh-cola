@@ -54,7 +54,7 @@ const Landing = () => {
     <div
       ref={landingRef}
       id="landing"
-      className="relative flex flex-col items-center w-full h-screen p-4 pt-32 overflow-hidden uppercase font-poppins bg-mainColor dark:bg-mainDarkColor dark:text-secondDarkColor text-secondColor lg:justify-center lg:items-start 2xl:pl-24"
+      className="relative flex flex-col items-center w-full h-screen p-4 pt-32 overflow-hidden uppercase font-poppins bg-mainColor dark:bg-secondColor dark:text-mainColor text-secondColor lg:justify-center lg:items-start 2xl:pl-24"
     >
     <BreizhHome />
    
@@ -78,7 +78,7 @@ const Landing = () => {
         </div>
         <div
           ref={title4Ref}
-          className="inline text-5xl translate-y-full sm:text-6xl lg:text-8xl text-stroke-1 text-stroke-secondColor text-mainColor dark:text-stroke-secondDarkColor dark:text-mainDarkColor xl:text-9xl md:text-7xl"
+          className="inline text-5xl translate-y-full sm:text-6xl lg:text-8xl text-stroke-1 text-stroke-secondColor text-mainColor dark:text-stroke-mainColor dark:text-secondColor xl:text-9xl md:text-7xl"
         >
           cola
         </div>
@@ -95,7 +95,7 @@ const Landing = () => {
         </div>
         <div
           ref={title7Ref}
-          className="inline text-5xl translate-y-full sm:text-6xl lg:text-8xl text-stroke-1 text-stroke-secondColor dark:text-stroke-secondDarkColor text-mainColor dark:text-mainDarkColor xl:text-9xl md:text-7xl"
+          className="inline text-5xl translate-y-full sm:text-6xl lg:text-8xl text-stroke-1 text-stroke-secondColor dark:text-stroke-mainColor text-mainColor dark:text-secondColor xl:text-9xl md:text-7xl"
         >
           ouest
         </div>

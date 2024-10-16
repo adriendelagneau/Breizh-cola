@@ -19,13 +19,13 @@ const BurgerIcon = () => {
         <div className="relative flex overflow-hidden items-center justify-center w-[28px] h-[40px]">
           <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-transform duration-300 origin-center overflow-hidden">
             <div 
-              className={`bg-secondColor dark:bg-secondDarkColor h-[2px] w-7 transform transition-transform duration-300 origin-left ${isSmallMenuOpen ? 'rotate-[42deg]' : ''}`}
+              className={`bg-secondColor dark:bg-mainColor h-[2px] w-7 transform transition-transform duration-300 origin-left ${isSmallMenuOpen ? 'rotate-[42deg]' : ''}`}
             ></div>
             <div 
-              className={`bg-secondColor dark:bg-secondDarkColor h-[2px] w-1/2 rounded transform transition-transform duration-300 ${isSmallMenuOpen ? '-translate-x-10' : ''}`}
+              className={`bg-secondColor dark:bg-mainColor h-[2px] w-1/2 rounded transform transition-transform duration-300 ${isSmallMenuOpen ? '-translate-x-10' : ''}`}
             ></div>
             <div 
-              className={`bg-secondColor dark:bg-secondDarkColor h-[2px] w-7 transform transition-transform duration-300 origin-left ${isSmallMenuOpen ? '-rotate-[42deg]' : ''}`}
+              className={`bg-secondColor dark:bg-mainColor h-[2px] w-7 transform transition-transform duration-300 origin-left ${isSmallMenuOpen ? '-rotate-[42deg]' : ''}`}
             ></div>
           </div>
         </div>

@@ -73,7 +73,7 @@ const Marquee = () => {
 
   return (
     <div className="relative flex h-[18vh] sm:h-[20vh] lg:h-[24vh] w-full overflow-hidden bg-myWhite my-3 -skew-y-2">
-      <div className="absolute z-10 -translate-x-3 text-secondColor bg-mainColor dark:bg-mainDarkColor top-2/4 border-y-[3px] border-skin-border border-secondColor dark:border-secondDarkColor dark:text-secondDarkColor">
+      <div className="absolute z-10 -translate-x-3 text-secondColor bg-mainColor dark:bg-secondColor top-2/4 border-y-[3px] border-skin-border border-secondColor dark:border-mainColor dark:text-mainColor">
         <div
           ref={slider}
           className="relative text-6xl capitalize whitespace-nowrap font-creamCake sm:text-7xl lg:text-8xl"

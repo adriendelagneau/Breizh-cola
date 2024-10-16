@@ -5,10 +5,10 @@ import MagneticButtons from "../MagneticButtons";
 const SocialLinks = () => {
   return (
 <>
-    <div className="grid grid-cols-2 gap-4 sm:hidden bg-secondColor dark:bg-secondDarkColor sm:gap-10 2xl:gap-10">
+    <div className="grid grid-cols-2 gap-4 sm:hidden bg-secondColor dark:bg-mainColor sm:gap-10 2xl:gap-10">
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -55,10 +55,10 @@ const SocialLinks = () => {
   </MagneticButtons>
 </div>
 
-<div className="hidden sm:flex sm:flex-row sm:gap-8 bg-secondColor dark:bg-secondDarkColor 2xl:gap-10">
+<div className="hidden sm:flex sm:flex-row sm:gap-8 bg-secondColor dark:bg-mainColor 2xl:gap-10">
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const SocialLinks = () => {
 
   <MagneticButtons>
     <svg
-      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-mainDarkColor"
+      className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 fill-mainColor dark:fill-secondColor"
       id="Layer_2"
       data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"

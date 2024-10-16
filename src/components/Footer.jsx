@@ -6,7 +6,7 @@ const Footer = () => {
   return (
 
     <div
-      className='relative h-[100px] bg-secondColor text-mainColor dark:bg-secondDarkColor dark:text-mainDarkColor'
+      className='relative h-[100px] bg-secondColor text-mainColor dark:bg-mainColor dark:text-secondColor'
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className='fixed bottom-0 h-[100px] w-full flex items-center justify-between px-3'>

@@ -66,7 +66,7 @@ const FlipLayout = () => {
         <MagneticButtons>
           <button
             onClick={flipLayout}
-            className="text-secondColor lg:text-xl dark:text-secondDarkColor rotate-12 border-secondColor h-[50px] text-lg uppercase rounded-[50%] cursor-pointer w-[100px] border-2 font-bold hover:text-mainColor hover:bg-secondColor dark:hover:text-mainDarkColor dark:hover:bg-secondDarkColor dark:border-secondDarkColor 2xl:-rotate-6 lg:mt-16 lg:w-[150px] lg:h-[75px]"
+            className="text-secondColor lg:text-xl dark:text-mainColor rotate-12 border-secondColor h-[50px] text-lg uppercase rounded-[50%] cursor-pointer w-[100px] border-2 font-bold hover:text-mainColor hover:bg-secondColor dark:hover:text-secondColor dark:hover:bg-mainColor dark:border-mainColor 2xl:-rotate-6 lg:mt-16 lg:w-[150px] lg:h-[75px]"
           >
             voir
           </button>

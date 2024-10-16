@@ -77,13 +77,13 @@ const Navbar = () => {
   return (
     <div
       ref={navbarRef}
-      className='fixed left-0 z-40 flex justify-between w-full h-20 p-3 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-mainDarkColor dark:text-secondDarkColor'
+      className='fixed left-0 z-40 flex justify-between w-full h-20 p-3 -top-full bg-mainColor text-secondColor md:p-4 font-poppins dark:bg-secondColor dark:text-mainColor'
     >
       <div className='flex items-center font-bold uppercase sm:text-xl'>
         {isDesktop ? (
           <ul className='flex gap-3 text-xl font-bold uppercase'>
             <li
-              className='relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-secondDarkColor'
+              className='relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-mainColor'
               onClick={() => setMenu(true)}
             >
               produits
@@ -92,7 +92,7 @@ const Navbar = () => {
               href={"/chronology"}
               label={"historique"}
               myClass={
-                "relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-secondDarkColor"
+                "relative cursor-pointer after:bg-secondColor after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all dark:after:bg-mainColor"
               }
             />
           

@@ -46,7 +46,7 @@ const MenuSmall = () => {
   return (
     <div
       ref={menuRef}
-      className="fixed z-30 w-full h-screen bg-mainColor dark:bg-mainDarkColor dark:text-secondDarkColor top-20 text-secondColor -left-full"
+      className="fixed z-30 w-full h-screen bg-mainColor dark:bg-secondColor dark:text-mainColor top-20 text-secondColor -left-full"
     >
 
     </div>

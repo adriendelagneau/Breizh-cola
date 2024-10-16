@@ -6,12 +6,14 @@ import TransitionOut from "@/components/TransitionOut";
 import Sponsorship from "@/components/Sponsortship";
 import Screen from "@/components/section/Screen";
 import FlipLayout from "@/components/FlipLayout";
+import Gimg from "@/components/GalleryImg";
+
 
 
 export default function Home() {
 
   return (
-      <div className="w-full bg-mainColor text-secondColor dark:bg-mainDarkColor dark:text-secondDarkColor ">
+      <div className="w-full bg-mainColor text-secondColor dark:bg-secondColor dark:text-mainColor ">
         <TransitionOut />
         <Landing />
         <Infos />
@@ -19,6 +21,9 @@ export default function Home() {
         <VideoStory />
         <Sponsorship />
         <FlipLayout />
+        <Screen />
+        <Screen />
+        <Gimg />
         <Screen />
       </div>
   );
