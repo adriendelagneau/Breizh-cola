@@ -12,7 +12,6 @@
   src: url('../../public/font/poppins-extrabold.ttf') format('truetype');
 }
 
-
 @layer base {
   :root {
     --mainColor: #fef2f2;

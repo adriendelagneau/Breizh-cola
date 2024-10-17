@@ -16,6 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
+        <head>
+        <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />   {/* Meta tag for disabling auto-rotation */}
+      </head>
       <body>
         <SmoothScrollProvider>
           <ThemeHandler>

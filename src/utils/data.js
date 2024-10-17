@@ -56,7 +56,6 @@ export const SponsortMusic = [
 export const infosText = [
   "Créé en 2002, Breizh Cola est le premier cola régional à proposer aux consommateurs une vraie alternative française à cette boisson mythique. Des années plus tard, le cola breton est un véritable succès.",
   "C’est grâce à sa recette unique, son identité authentiquement bretonne et son ton décalé que Breizh Cola a su se hisser dans le peloton de tête des marques de cola en France.",
-  "En s'appuyant sur des valeurs locales et en soutenant des initiatives écoresponsables, Breizh Cola est devenu un symbole de fierté régionale, tout en conquérant de nouveaux territoires au-delà de la Bretagne."
 ];
 
 export const sponsortsMusicText = [

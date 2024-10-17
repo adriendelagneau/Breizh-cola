@@ -26,7 +26,7 @@ const Infos = () => {
           trigger: container.current,
           scrub: true,
           start: 'top 70%',
-          end: `+=${window.innerHeight * 1.2}`, // Custom end for mobile
+          end: `+=${window.innerHeight * 0.8}`, // Custom end for mobile
           once: true,
           toggleActions: 'play none none none',
         },
@@ -43,7 +43,7 @@ const Infos = () => {
           trigger: container.current,
           scrub: true,
           start: 'top 85%',
-          end: `+=${window.innerHeight * 1.2}`, // Custom end for tablets
+          end: `+=${window.innerHeight * 0.8}`, // Custom end for tablets
           once: true,
           toggleActions: 'play none none none',
         },
@@ -60,7 +60,7 @@ const Infos = () => {
           trigger: container.current,
           scrub: true,
           start: 'top 85%',
-          end: `+=${window.innerHeight * 0.9}`, // Custom end for desktop
+          end: `+=${window.innerHeight * 0.7}`, // Custom end for desktop
           once: true,
           toggleActions: 'play none none none',
         },
