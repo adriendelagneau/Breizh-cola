@@ -7,6 +7,7 @@ import Sponsorship from "@/components/Sponsortship";
 import Screen from "@/components/section/Screen";
 import FlipLayout from "@/components/FlipLayout";
 import Gimg from "@/components/GalleryImg";
+import Gallery from "@/components/Gallery";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Infos />
         <Marquee />
         <VideoStory />
+        <Gallery />
         <Sponsorship />
         <FlipLayout />
         <Screen />

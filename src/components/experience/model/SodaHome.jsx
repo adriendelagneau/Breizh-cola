@@ -64,7 +64,7 @@ export function SodaHome(props) {
           position = { x: 24, y: -20, z: 0 };
           break;
         case '2xl':
-          scale = { x: 8.5, y: 8.5, z: 8.5 };
+          scale = { x: 7.5, y: 7.5, z: 7.5 };
           position = { x: 24, y: -23, z: 0 };
           break;
         default:

@@ -1,0 +1,1 @@
+-block viewport in portrait for < 1080px meta or css
