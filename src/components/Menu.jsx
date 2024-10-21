@@ -64,7 +64,7 @@ const Menu = () => {
               className="translate-y-full"
             >
               <TransitionLink
-                href={`/products/breizh-cola-${label}`}
+                href={`/product/breizh-cola-${label}`}
                 label={label}
                 myClass="transition-link"
               />

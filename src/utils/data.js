@@ -82,8 +82,8 @@ export const sections = [
 
 export const productsDetails = [
   {
+    slug: 'breizh-cola-original',
     name: "original",
-    color: "#123456",
     description:
       "La recette originale, créée en 2002. Son secret ? Un dosage parfait des ingrédients, lui donnant de fines bulles. Un goût plébiscité par les consommateurs depuis 20 ans !",
     ingredients:
@@ -97,24 +97,8 @@ export const productsDetails = [
     },
   },
   {
-    name: "cherry",
-    color: "#fef2f2",
-    description:
-      "Plus de 20 ans après la création du 1er cola régional de France, notre équipe d'irréductibles bretons s'est mise en tête de lancer LE cola qui manquait à notre gamme : Breizh Cola saveur cerise.",
-    ingredients:
-      "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
-    nutritionel: {
-      energie: 11,
-      graisses: 0.1,
-      glucides: 0.3,
-      proteines: 0.1,
-      sel: 0,
-    },
-    format: ["33b", "33g", "150b"],
-  },
-  {
+    slug: 'breizh-cola-zero',
     name: "zero",
-    color: "#000000",
     description:
       [
         "Avec Breizh Cola Zéro, savourez toute la tradition et l'authenticité d’un cola breton sans l'ombre d'une calorie ! Nous avons élaboré cette version sans sucres pour ceux qui aiment se faire plaisir tout en prenant soin de leur bien-être. Vous retrouverez la même effervescence, le même goût unique, mais sans compromis.", " Que vous soyez en quête d’une boisson rafraîchissante après une journée bien remplie, ou que vous souhaitiez simplement un moment de détente, Breizh Cola Zéro est là pour vous. Toujours aussi pétillant, toujours aussi bon, sans les calories, c’est une nouvelle façon de vivre l’expérience Breizh Cola !"
@@ -128,6 +112,20 @@ export const productsDetails = [
       proteines: 0,
       sel: 0,
     },
-    format: ["33b", "33g", "150b"],
+  },
+  {
+    slug: 'breizh-cola-cherry',
+    name: "cherry",
+    description:
+      "Plus de 20 ans après la création du 1er cola régional de France, notre équipe d'irréductibles bretons s'est mise en tête de lancer LE cola qui manquait à notre gamme : Breizh Cola saveur cerise.",
+    ingredients:
+      "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
+    nutritionel: {
+      energie: 11,
+      graisses: 0.1,
+      glucides: 0.3,
+      proteines: 0.1,
+      sel: 0,
+    },
   },
 ];
