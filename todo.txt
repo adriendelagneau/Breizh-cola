@@ -1,1 +1,23 @@
 -block viewport in portrait for < 1080px meta or css
+
+
+  const { timeline4 } = useTimelineStore4();
+
+  useGSAP(() => {
+         // Start from scale 0
+         groupRef.current.scale.set(0, 0, 0);
+
+         // Add the animation to the timeline
+         timeline4.to(
+           groupRef.current.scale,
+           {
+             x: 12,
+             y: 12,
+             z: 12,
+             delay: 1.3,
+             duration: 0.6,
+             ease: 'power3.out',
+           },
+           'four' // GSAP label for syncing animations
+         );
+  }, [])

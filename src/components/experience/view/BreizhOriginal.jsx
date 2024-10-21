@@ -3,9 +3,8 @@
 import { Environment, Float, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-import { SodaOriginal } from "../model/SodaOriginal";
-import gsap, { Back } from "gsap";
 import { useTimelineStore2 } from "@/store/zuStore";  // Import the timeline hook from your store
+import { Original } from "../model/Original";
 
 const BreizhOriginal = () => {
   const [screenSize, setScreenSize] = useState("sm");
@@ -117,7 +116,7 @@ const BreizhOriginal = () => {
           floatIntensity={1}
           floatingRange={[0.2, 1]}
         >
-          <SodaOriginal
+          <Original
             rotation={rotation}
             location={location}
             scale={scale}

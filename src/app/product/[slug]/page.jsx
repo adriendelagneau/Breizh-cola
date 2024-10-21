@@ -5,6 +5,7 @@ import Ingredients from '@/components/Ingredients';
 import Screen from '@/components/section/Screen';
 import TransitionOut from '@/components/TransitionOut';
 import Single from '@/components/experience/view/Single';
+import SingleInfos from '@/components/section/SingleInfos';
 
 const Page = ({ params }) => {
   const { slug } = params;
@@ -23,6 +24,7 @@ const Page = ({ params }) => {
      
       <ProductTitle name={product.name} />
       <Single obj={product.slug}/>
+      <SingleInfos infos={product.description} />
       <Screen />
       <Ingredients ingredients={product.ingredients} nutritionel={product.nutritionel} />
     </div>

@@ -1,14 +1,21 @@
 'use client'
 
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 
-export const Zero = forwardRef((props, ref) => {
+export const Zero = forwardRef(({ scale, location, rotation, onLoaded }, ref) => {
+
   const { nodes, materials } = useGLTF('/model/soda-zero.glb');
 
+  useEffect(() => {
+    if (onLoaded) {
+      onLoaded(); // Call the callback when the model is loaded
+    }
+  }, [onLoaded]); // Ensure the callback is called when the component mounts
+
   return (
-    <group ref={ref} {...props} dispose={null} position={[0,-40,0]} scale={10}>
+    <group ref={ref}  dispose={null}  position={location} scale={scale} rotation={rotation}>
       <group rotation={[-Math.PI / 2, 0.15, Math.PI * 0.8]}>
         <mesh geometry={nodes.Object_2.geometry} material={materials['Material.006']} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.aiStandardSurface4SG} />

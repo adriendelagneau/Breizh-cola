@@ -50,7 +50,7 @@ const GalleryImg = () => {
     };
 
     return (
-        <main onMouseMove={manageMouseMove} className="relative w-full h-screen overflow-hidden bg-blue-200">
+        <main onMouseMove={manageMouseMove} className="relative w-full h-screen overflow-hidden ">
             {/* Plane 1 */}
             <div ref={plane1} className="absolute w-full h-screen">
                 <div className="absolute h-[150px] w-[100px] top-[3%] left-[5%] overflow-hidden filter brightness-80 -rotate-6 md:w-[133px] md:h-[200px]">
@@ -111,7 +111,7 @@ const GalleryImg = () => {
             <div ref={plane3} className="absolute top-0 left-0 w-full h-screen">
                 <div className="absolute h-[100px] w-[100px] top-[23%] left-[30%] overflow-hidden filter brightness-90 rotate-2  md:w-[100px] md:h-[100px]">
                     <Image
-                        src={"/image/02.png"}
+                        src={"/image/02.jpg"}
                         alt="image"
                         fill={true}
                         className="object-cover"
@@ -119,7 +119,7 @@ const GalleryImg = () => {
                 </div>
                 <div className="absolute h-[100px] w-[100px] bottom-[8%] left-[14%] overflow-hidden rotate-6  md:w-[100px] md:h-[100px]">
                     <Image
-                        src={"/image/03.png"}
+                        src={"/image/03.jpg"}
                         alt="image"
                         fill={true}
                         className="object-cover"

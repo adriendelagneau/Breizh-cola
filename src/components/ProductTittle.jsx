@@ -38,7 +38,7 @@ const ProductTitle = ({ name }) => {
   }, []);
 
   return (
-    <div ref={titleContainerRef} className="absolute top-0 left-0 w-full h-screen pt-32">
+    <div ref={titleContainerRef} className="absolute top-0 left-0 w-full h-screen pt-32" id="singleTtitle">
     
       <div ref={subRef} className="relative mt-6 ">
         <div

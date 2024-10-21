@@ -10,6 +10,7 @@ import Link from 'next/link';
 // import BreizhZero from '../experience/view/BreizhZero';
 import TransitionLink from './TransitionLink';
 import MagneticButtons from './MagneticButtons';
+import BreizhZero from './experience/view/BreizhZero';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +60,7 @@ const ProductZero = () => {
         start: `left+=${sectionWidth * 0.75}`,
         end: `+=${sectionWidth * 0.75}`,
         scrub: 1,
-        markers: false,
+        markers: true,
         onEnter: () => {
           playTimeline3(); // Play the timeline when the trigger is reached
         },
@@ -69,14 +70,14 @@ const ProductZero = () => {
 
   return (
     <div ref={sectionZeroRef} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6">
-    {/* <BreizhZero /> */}
+    <BreizhZero />
       <div
         className="relative scale-0 w-[150px] h-[75px] top-[50vh] sm:top-[57vh] left-20 sm:left-32 md:top-[64vh] md:left-44 sm:w-[200px] sm:h-[100px] 2xl:w-[360px] xl:w-[300px] xl:h-[200px] 2xl:h-[180px] md:w-[250px] md:h-[125px] xl:top-[50vh] xl:left-[56vw]"
         ref={buttonRefZero}
       >
         <MagneticButtons>
           <button className="text-mainColor dark:text-secondColor rotate-12 border-mainColor h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px] border-2 font-bold hover:text-secondColor md:w-[250px] md:h-[125px] hover:bg-mainColor dark:hover:text-mainColor dark:hover:bg-secondColor dark:border-secondColor 2xl:-rotate-6">
-            <TransitionLink href={"/products/breizh-cola-zero"} label={"decouvrez le"}/>
+            <TransitionLink href={"/product/breizh-cola-zero"} label={"decouvrez le"}/>
           </button>
         </MagneticButtons>
       </div>

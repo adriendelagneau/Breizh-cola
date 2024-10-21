@@ -84,8 +84,10 @@ export const productsDetails = [
   {
     slug: 'breizh-cola-original',
     name: "original",
-    description:
-      "La recette originale, créée en 2002. Son secret ? Un dosage parfait des ingrédients, lui donnant de fines bulles. Un goût plébiscité par les consommateurs depuis 20 ans !",
+    description: [
+      "Breizh Cola Original, lancé en 2002, offre un mélange parfait d’ingrédients, avec des bulles fines et un goût rafraîchissant. Apprécié pour son caractère authentique et breton, il reste un favori indétrônable après plus de 20 ans.",
+      "Que ce soit pour un moment de détente ou pour accompagner vos repas, Breizh Cola Original est l’emblème d'une boisson pétillante au goût unique. C'est une expérience qui capture l'essence même de la Bretagne."
+    ],
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
     nutritionel: {
@@ -99,10 +101,10 @@ export const productsDetails = [
   {
     slug: 'breizh-cola-zero',
     name: "zero",
-    description:
-      [
-        "Avec Breizh Cola Zéro, savourez toute la tradition et l'authenticité d’un cola breton sans l'ombre d'une calorie ! Nous avons élaboré cette version sans sucres pour ceux qui aiment se faire plaisir tout en prenant soin de leur bien-être. Vous retrouverez la même effervescence, le même goût unique, mais sans compromis.", " Que vous soyez en quête d’une boisson rafraîchissante après une journée bien remplie, ou que vous souhaitiez simplement un moment de détente, Breizh Cola Zéro est là pour vous. Toujours aussi pétillant, toujours aussi bon, sans les calories, c’est une nouvelle façon de vivre l’expérience Breizh Cola !"
-      ],
+    description: [
+      "Avec Breizh Cola Zéro, savourez l’authenticité d’un cola breton sans aucune calorie. Conçu pour ceux qui veulent profiter d’un goût riche sans le sucre, il allie plaisir et bien-être sans compromis.",
+      "Son goût fidèle à l'original, tout en étant léger et sans sucre, en fait un compagnon idéal pour tous les moments de détente. Breizh Cola Zéro vous accompagne dans chaque instant, avec la même effervescence."
+    ],
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame, acésulfame K et sucralose.",
     nutritionel: {
@@ -116,8 +118,10 @@ export const productsDetails = [
   {
     slug: 'breizh-cola-cherry',
     name: "cherry",
-    description:
-      "Plus de 20 ans après la création du 1er cola régional de France, notre équipe d'irréductibles bretons s'est mise en tête de lancer LE cola qui manquait à notre gamme : Breizh Cola saveur cerise.",
+    description: [
+      "Breizh Cola Cherry apporte une touche fruitée à la gamme avec son goût de cerise. Ce cola breton audacieux associe la saveur classique avec un zeste de cerise, créant une expérience gourmande et rafraîchissante.",
+      "Laissez-vous surprendre par cette combinaison unique, parfaite pour une pause rafraîchissante à tout moment de la journée. Breizh Cola Cherry est la boisson idéale pour ceux qui recherchent une alternative fruitée."
+    ],
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
     nutritionel: {

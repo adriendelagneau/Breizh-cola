@@ -14,16 +14,16 @@ const Nutritionel = ({ nutritionel }) => {
           {Object.entries(nutritionel).map(([key, value], i) => (
             <div
               key={i}
-              className="relative flex flex-col items-center h-56 gap-3 py-2 text-xl font-bold text-center capitalize w-36 text-secondColor dark:text-secondDarkColor"
+              className="relative flex flex-col items-center h-56 gap-3 py-2 text-xl font-bold text-center capitalize w-36 text-secondColor dark:text-mainColor"
             >
               <div>
                 <h4 className="h-16">{key}</h4>
                 <div className="relative">
-                  <p className="absolute -translate-x-1/2 bottom-6 left-1/2 text-mainColor dark:text-mainDarkColor">
+                  <p className="absolute -translate-x-1/2 bottom-6 left-1/2 text-mainColor dark:text-secondColor">
                     {value} {key === "energie" ? "Kcal" : "g"}
                   </p>
                   <svg
-                    className="fill-secondColor dark:fill-secondDarkColor"
+                    className="fill-secondColor dark:fill-mainColor"
                     version="1.1"
                     width="140px"
                     height="140px"
