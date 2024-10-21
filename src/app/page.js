@@ -24,9 +24,9 @@ export default function Home() {
         <Sponsorship />
         <FlipLayout />
         <Screen />
-        <Screen />
+
         <Gimg />
-        <Screen />
+   
       </div>
   );
 }

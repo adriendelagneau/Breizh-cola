@@ -47,7 +47,7 @@ const Single = ({ obj }) => {
         break;
       case "2xl":
         scale = [10, 10, 10];
-        location = [0, -40, 0];
+        location = [0, -30, 0];
         rotation = [0, 0, 0];
         break;
       default:
@@ -134,7 +134,7 @@ const Single = ({ obj }) => {
   const { scale, location, rotation } = getModelProperties(screenSize);
 
   return (
-    <div id="single" className="sticky top-0 left-0 z-20 w-full h-screen pointer-events-none">
+    <div id="single" className="sticky top-[10vh] left-0 z-20 w-full h-screen pointer-events-none">
       <Canvas style={{ pointerEvents: "none" }} className="pointer-events-none">
         <Suspense fallback={null}>
           <Environment preset="sunset" />

@@ -1,11 +1,13 @@
 import React from "react";
 
 const Nutritionel = ({ nutritionel }) => {
+
+  console.log(nutritionel)
   return (
     <div>
       {" "}
       <div>
-        <h3 className="mb-12 text-3xl font-poppins">
+        <h3 className="mb-12 text-3xl uppercase font-poppins">
           Informations Nutritionnelles{" "}
           <span className="text-3xl">( pour 100ml )</span>
         </h3>
@@ -17,7 +19,7 @@ const Nutritionel = ({ nutritionel }) => {
               className="relative flex flex-col items-center h-56 gap-3 py-2 text-xl font-bold text-center capitalize w-36 text-secondColor dark:text-mainColor"
             >
               <div>
-                <h4 className="h-16">{key}</h4>
+                <h4 className="h-16 uppercase">{key}</h4>
                 <div className="relative">
                   <p className="absolute -translate-x-1/2 bottom-6 left-1/2 text-mainColor dark:text-secondColor">
                     {value} {key === "energie" ? "Kcal" : "g"}

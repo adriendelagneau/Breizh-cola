@@ -109,9 +109,9 @@ export const productsDetails = [
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame, acésulfame K et sucralose.",
     nutritionel: {
       energie: 0,
-      graisses: 0,
-      glucides: 0,
-      proteines: 0,
+      graisses: 0.1,
+      glucides: 0.3,
+      proteines: 0.1,
       sel: 0,
     },
   },
@@ -125,10 +125,10 @@ export const productsDetails = [
     ingredients:
       "Eau, gaz carbonique, colorant : E150d, acidifiants : acide citrique, acide phosphorique et citrate de sodium, caféine, arôme naturel de cola et autres arômes naturels, édulcorants : aspartame et acésulfame K.",
     nutritionel: {
-      energie: 11,
+      energie: 42,
       graisses: 0.1,
-      glucides: 0.3,
-      proteines: 0.1,
+      glucides: 9.8,
+      proteines: 0.3,
       sel: 0,
     },
   },
