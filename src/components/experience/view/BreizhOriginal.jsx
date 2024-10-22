@@ -81,7 +81,7 @@ const BreizhOriginal = () => {
   useEffect(() => {
     if (isLoaded) {
       // Clear previous tweens
-      console.log('play')
+  
 
       switch (screenSize) {
         case "lg":

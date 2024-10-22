@@ -7,8 +7,6 @@ import { useGLTF } from '@react-three/drei';
 export const Original = forwardRef(({ scale, location, rotation, onLoaded }, ref) => {
   const { nodes, materials } = useGLTF('/model/soda-zero.glb'); // Load the GLTF model
 
-  console.log("Original model loaded");
-
   useEffect(() => {
     if (onLoaded) {
       onLoaded(); // Call the callback when the model is loaded

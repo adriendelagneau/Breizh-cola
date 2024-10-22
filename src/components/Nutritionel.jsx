@@ -2,7 +2,6 @@ import React from "react";
 
 const Nutritionel = ({ nutritionel }) => {
 
-  console.log(nutritionel)
   return (
     <div>
       {" "}

@@ -27,7 +27,6 @@ const TransitionLink = ({ href, label, myClass }) => {
   }, []);
 
   const handleClick = () => {
-    console.log(href, pathname)
     if (href !== pathname && transitionBloc) {
       // Start the transition animation
       gsap

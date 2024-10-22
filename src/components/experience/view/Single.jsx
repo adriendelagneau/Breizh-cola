@@ -88,8 +88,9 @@ const Single = ({ obj }) => {
     ScrollTrigger.create({
       trigger: "#singleTtitle",
       start: "top top",
-      end: "bottom top",
+      end: "bottom 5%",
       scrub: true,
+      markers: true,
       onUpdate: (self) => {
         const progress = self.progress;
         if (modelRef.current) {

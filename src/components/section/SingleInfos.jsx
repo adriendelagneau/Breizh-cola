@@ -13,7 +13,6 @@ const SingleInfos = ({infos}) => {
   const refs = useRef([]);
   const container = useRef(null);
 
-console.log(infos)
 
   
   useGSAP(() => {

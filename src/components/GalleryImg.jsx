@@ -17,7 +17,7 @@ const GalleryImg = () => {
 
     const manageMouseMove = (e) => {
 
-        if (window.innerWidth > 1080) {
+        if (window.innerWidth > 1024) {
             
             const { movementX, movementY } = e;
             xForce += movementX * speed;
@@ -50,30 +50,30 @@ const GalleryImg = () => {
     };
 
     return (
-        <main onMouseMove={manageMouseMove} className="relative w-full h-screen overflow-hidden ">
+        <main onMouseMove={manageMouseMove} className="relative w-full h-screen overflow-hidden">
             {/* Plane 1 */}
             <div ref={plane1} className="absolute w-full h-screen">
-                <div className="absolute h-[150px] w-[100px] top-[3%] left-[5%] overflow-hidden filter brightness-80 -rotate-6 md:w-[133px] md:h-[200px]">
+                <div className="absolute h-[300px] w-[200px] top-[5%] left-[8%] overflow-hidden filter brightness-80">
                     <Image
-                        src={"/image/BC-2015.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/BC-2015_eazonn.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[150px] w-[100px] bottom-[5%] right-[6%] overflow-hidden rotate-2 md:w-[133px] md:h-[200px]">
+                <div className="absolute h-[300px] w-[200px] top-[55%] left-[12%] overflow-hidden">
                     <Image
-                        src={"/image/66753631.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074428/breizhCola/66753631_kpxscj.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[150px] w-[100px] top-[20%] left-[70%] overflow-hidden -rotate-3 md:w-[133px] md:h-[200px]">
+                <div className="absolute h-[300px] w-[200px] top-[35%] left-[70%] overflow-hidden">
                     <Image
-                        src={"/image/01.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074421/breizhCola/01_e4ejis.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
@@ -81,27 +81,27 @@ const GalleryImg = () => {
 
             {/* Plane 2 */}
             <div ref={plane2} className="absolute top-0 left-0 w-full h-screen">
-                <div className="absolute h-[150px] w-[100px] top-[45%] left-[5%] overflow-hidden -rotate-3 md:w-[133px] md:h-[200px]">
+                <div className="absolute h-[300px] w-[200px] top-[10%] left-[28%] overflow-hidden">
                     <Image
-                        src={"/image/campagne-bc-breizh-ile.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074432/breizhCola/campagne-bc-breizh-ile_lpbrdw.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[150px] w-[100px] top-[65%] left-[40%] overflow-hidden rotate-6 md:w-[133px] md:h-[200px]">
+                <div className="absolute h-[300px] w-[200px] top-[50%] left-[50%] overflow-hidden">
                     <Image
-                        src={"/image/unnamed.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074429/breizhCola/unnamed_gki545.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[100px] w-[150px] top-[4%] left-[50%] overflow-hidden rotate-3">
+                <div className="absolute h-[200px] w-[300px] top-[8%] left-[75%] overflow-hidden">
                     <Image
-                        src={"/image/meme.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
@@ -109,27 +109,27 @@ const GalleryImg = () => {
 
             {/* Plane 3 */}
             <div ref={plane3} className="absolute top-0 left-0 w-full h-screen">
-                <div className="absolute h-[100px] w-[100px] top-[23%] left-[30%] overflow-hidden filter brightness-90 rotate-2  md:w-[100px] md:h-[100px]">
+                <div className="absolute h-[180px] w-[180px] top-[15%] left-[50%] overflow-hidden filter brightness-90">
                     <Image
-                        src={"/image/02.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074429/breizhCola/02_gejeeo.png"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[100px] w-[100px] bottom-[8%] left-[14%] overflow-hidden rotate-6  md:w-[100px] md:h-[100px]">
+                <div className="absolute h-[250px] w-[250px] top-[62%] left-[34%] overflow-hidden">
                     <Image
-                        src={"/image/03.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074432/breizhCola/03_tdjmil.png"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
-                <div className="absolute h-[80px] w-[80px] top-[50%] left-[75%] overflow-hidden rotate-6 md:w-[100px] md:h-[100px]">
+                <div className="absolute h-[220px] w-[220px] top-[50%] left-[85%] overflow-hidden">
                     <Image
-                        src={"/image/04.jpg"}
+                        src={"https://res.cloudinary.com/dos8mey8r/image/upload/v1729074429/breizhCola/04_jgmhpf.jpg"}
                         alt="image"
-                        fill={true}
+                        fill
                         className="object-cover"
                     />
                 </div>
