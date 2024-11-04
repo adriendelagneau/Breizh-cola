@@ -1,3 +1,4 @@
+import { Cherry } from "lucide-react";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,13 +9,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+
+  backgroundImage: {
+        'gradient-custom': 'linear-gradient(to bottom, rgba(252, 231, 243, 0) 0%, rgba(252, 231, 243, 1) 50%)',
+      },
+      fontFamily: {
+        creamCake: ["CreamCake", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      colors: {
+        mainColor: "var(--mainColor)",
+        secondColor: "var(--secondColor)",
+        cherryColor: "var(--cherryColor)"
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
 };
 export default config;
