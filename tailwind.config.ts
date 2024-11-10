@@ -26,6 +26,7 @@ const config: Config = {
   },
   plugins: [
     require("@designbycode/tailwindcss-text-stroke"),
+    require("@xpd/tailwind-3dtransforms"),
   ],
 };
 export default config;

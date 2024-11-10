@@ -33,13 +33,14 @@ const Years = ({currentIndex}: YearsProps) => {
       });
     }
 
+    console.log(currentIndex)
     // Optional cleanup if needed
-    return () => {
-      liRefs.current.forEach((li) => {
-        gsap.killTweensOf(li);
-      });
-    };
-  }, [currentIndex]);
+    // return () => {
+    //   liRefs.current.forEach((li) => {
+    //     gsap.killTweensOf(li);
+    //   });
+    // };
+  },{dependencies: [currentIndex]});
 
   return (
     <div className='sticky top-0 left-0 z-10 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-mainColor'>
