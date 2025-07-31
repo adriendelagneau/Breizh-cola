@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import Header from "@/components/Header";
+import ViewCanvas from "@/components/ViewCanvas";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const creamCake = localFont({
+  variable: "--font-cream-cake",
+  src: "../../public/font/Cream Cake.otf",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = localFont({
+  variable: "--font-poppins",
+  src: "../../public/font/poppins-extrabold.ttf",
 });
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${creamCake.variable} antialiased overflow-x-hidden bg-secondColor`}
       >
-        {children}
+        <SmoothScrollProvider>
+          <Header />
+          <main >
+            {children}
+            <ViewCanvas />
+          </main>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
