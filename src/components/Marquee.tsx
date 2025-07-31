@@ -23,7 +23,8 @@ const Marquee = ({
 
   let xPercent = 0;
   let direction = -1;
-  // let animationFrameId: number | null = null; 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let animationFrameId: number | null = null; 
 
   const setSecondTextPosition = () => {
     if (secondText.current) {
