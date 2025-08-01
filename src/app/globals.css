@@ -6,6 +6,7 @@
 
   --primary: #591420;
   --secondary: #f5ddd2;
+  --cherryColor: #170010;
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-cherry: var(--cherryColor);
   
 }
 

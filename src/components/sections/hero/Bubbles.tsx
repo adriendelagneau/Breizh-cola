@@ -1,9 +1,13 @@
 "use client";
+
 import * as THREE from "three";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useBubbleStore } from "@/lib/store/useZuStore";
+import { createNoise3D } from "simplex-noise";
+
+const noise3D = createNoise3D();
 
 const o = new THREE.Object3D();
 
@@ -19,73 +23,92 @@ export function Bubbles({
   const minSpeed = speed * 0.001;
   const maxSpeed = speed * 0.005;
 
-  // Access play/pause state from useBubbleStore
   const isPlaying = useBubbleStore((state) => state.isPlaying);
 
-  const geometry = new THREE.SphereGeometry(bubbleSize, 16, 16);
-  const material = new THREE.MeshStandardMaterial({
-    transparent: true,
-    opacity,
-  });
+  // Memoize geometry and material for performance
+  const geometry = useMemo(
+    () => new THREE.SphereGeometry(bubbleSize, 16, 16),
+    [bubbleSize]
+  );
 
-  // Effect to initialize or clear bubbles based on play/pause state
+  const material = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        transparent: true,
+        opacity,
+        color: "#591420",
+      }),
+    [opacity]
+  );
+
+  // Dispose geometry and material on unmount
+  useEffect(() => {
+    return () => {
+      geometry.dispose();
+      material.dispose();
+    };
+  }, [geometry, material]);
+
   useEffect(() => {
     const mesh = meshRef.current;
     if (!mesh) return;
 
     if (isPlaying) {
-      // Initialize bubbles at the bottom when playing
       for (let i = 0; i < count; i++) {
         o.position.set(
-          gsap.utils.random(-4, 4), // Random x position
-          -2, // Starting y position below the screen
-          gsap.utils.random(-4, 4) // Random z position
+          gsap.utils.random(-4, 4),
+          -2,
+          gsap.utils.random(-4, 4)
         );
         o.updateMatrix();
         mesh.setMatrixAt(i, o.matrix);
         bubbleSpeed.current[i] = gsap.utils.random(minSpeed, maxSpeed);
       }
     } else {
-      // Clear all bubbles by resetting positions when stopped
       for (let i = 0; i < count; i++) {
-        o.position.set(0, -10, 0); // Move out of view
+        o.position.set(0, -10, 0);
         o.updateMatrix();
         mesh.setMatrixAt(i, o.matrix);
       }
     }
 
-    // Mark instance matrix for update
     mesh.instanceMatrix.needsUpdate = true;
-
-    return () => {
-      // Clean up geometry and material on unmount
-      mesh.geometry.dispose();
-      (mesh.material as THREE.Material).dispose();
-    };
   }, [isPlaying, count, minSpeed, maxSpeed]);
 
-  useFrame(() => {
-    if (!meshRef.current || !isPlaying) return;
+useFrame(({ clock }) => {
+  const mesh = meshRef.current;
+  if (!mesh || !isPlaying) return;
 
-    material.color = new THREE.Color("#591420");
+  const time = clock.getElapsedTime();
 
-    for (let i = 0; i < count; i++) {
-      meshRef.current.getMatrixAt(i, o.matrix);
-      o.position.setFromMatrixPosition(o.matrix);
-      o.position.y += bubbleSpeed.current[i];
+  for (let i = 0; i < count; i++) {
+    mesh.getMatrixAt(i, o.matrix);
+    o.position.setFromMatrixPosition(o.matrix);
 
-      if (o.position.y > 4 && repeat) {
-        o.position.y = -2; // Reset to starting y position
-        o.position.x = gsap.utils.random(-4, 4); // Randomize x and z again
-        o.position.z = gsap.utils.random(-4, 4);
-      }
+    // Vertical movement
+    o.position.y += bubbleSpeed.current[i];
 
-      o.updateMatrix();
-      meshRef.current.setMatrixAt(i, o.matrix);
+    // Add Perlin drift using noise3D
+    const driftX = noise3D(i * 0.1, o.position.y * 0.2, time * 0.2);
+    const driftZ = noise3D(i * 0.2 + 100, o.position.y * 0.2, time * 0.2);
+
+    o.position.x += driftX * 0.002; // adjust for desired chaos
+    o.position.z += driftZ * 0.002;
+
+    // Reset if bubble goes too high
+    if (o.position.y > 4 && repeat) {
+      o.position.y = -2;
+      o.position.x = gsap.utils.random(-4, 4);
+      o.position.z = gsap.utils.random(-4, 4);
     }
 
-    meshRef.current.instanceMatrix.needsUpdate = true;
-  });
+    o.updateMatrix();
+    mesh.setMatrixAt(i, o.matrix);
+  }
+
+  mesh.instanceMatrix.needsUpdate = true;
+});
+
 
   return (
     <instancedMesh
@@ -105,7 +128,17 @@ export function BubbleToggleButton() {
   return (
     <button
       onClick={togglePlay}
-      style={{ position: "absolute", top: 20, right: 20 }}
+      style={{
+        position: "absolute",
+        top: 20,
+        right: 20,
+        padding: "0.5rem 1rem",
+        backgroundColor: "#591420",
+        color: "#fff",
+        border: "none",
+        borderRadius: "4px",
+        cursor: "pointer",
+      }}
     >
       {isPlaying ? "Pause Bubbles" : "Play Bubbles"}
     </button>
