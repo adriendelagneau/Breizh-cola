@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import Header from "@/components/Header";
 import ViewCanvas from "@/components/ViewCanvas";
+import Footer from "@/components/Footer";
 
 const creamCake = localFont({
   variable: "--font-cream-cake",
@@ -36,6 +37,7 @@ export default function RootLayout({
             {children}
             <ViewCanvas />
           </main>
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>

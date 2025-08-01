@@ -49,7 +49,6 @@ export default function Home() {
 
       {/* <Carousel /> */}
       <Social />
-      <Footer />
     </div>
   );
 }

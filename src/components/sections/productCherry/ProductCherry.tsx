@@ -33,7 +33,7 @@ const ProductCherry = () => {
         ref={buttonRef}
       >
         <MagneticButtons>
-          <button className="text-primary  rotate-12  h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px]  border-2 font-bold   md:w-[250px] md:h-[125px] bg-transparent  2xl:-rotate-6 hover:bg-primary hover:text-cherryColor">
+          <button className="text-primary  rotate-12  h-[75px] sm:h-[100px] sm:w-[200px] text-lg sm:text-xl md:text-2xl 2xl:w-[360px] xl:w-[300px] xl:h-[150px] 2xl:h-[180px] xl:text-4xl uppercase rounded-[50%] cursor-pointer w-[150px]  border-2 font-bold   md:w-[250px] md:h-[125px] bg-transparent  2xl:-rotate-6 hover:bg-primary hover:text-cherry">
             <Link href={"/"}>decouvrez-le</Link>
           </button>
         </MagneticButtons>
