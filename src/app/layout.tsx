@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${creamCake.variable} antialiased overflow-x-hidden bg-secondary`}
+        className={`${poppins.variable} ${creamCake.variable} antialiased overflow-x-hidden`}
       >
         <SmoothScrollProvider>
           <Header />
@@ -43,3 +43,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

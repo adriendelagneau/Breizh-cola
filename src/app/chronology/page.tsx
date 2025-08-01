@@ -1,17 +1,16 @@
-import Chronos from '@/components/Chronos'
+import Chronos from "@/components/Chronos";
+import Social from "@/components/sections/social/Social";
 
-import React from 'react'
-
-
+import React from "react";
 
 const page = () => {
   return (
-    <div className='bg-secondary'>
-      {/* <VideoStory /> */}
+    <div className="bg-secondary">
       <Chronos />
-      <div className='w-full h-screen bg-secondary flex items-center justify-center text-7xl text-primary font-extrabold'>Hello world !</div>
-    </div>
-  )
-}
+      <Social />
 
-export default page
+    </div>
+  );
+};
+
+export default page;

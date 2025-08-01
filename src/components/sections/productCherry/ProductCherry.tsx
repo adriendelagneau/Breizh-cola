@@ -24,7 +24,10 @@ const ProductCherry = () => {
   const buttonRef = useRef(null);
 
   return (
-  <div ref={section3Ref} className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6 bg-mainColor overflow-hidden product-cherry  bg-gradient-to-b from-cherry from-55% to-secondary to-75%">
+    <div
+      ref={section3Ref}
+      className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6 bg-primary overflow-hidden product-cherry  bg-gradient-to-b from-cherry from-55% to-secondary to-75%"
+    >
       <View className=" pointer-events-none absolute top-0 z-30  hidden h-screen w-full md:block">
         <Scene flavor="cherry" />
       </View>

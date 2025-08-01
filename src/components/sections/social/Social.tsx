@@ -52,9 +52,9 @@ const Social = ( ) => {
   }, []);
 
   return (
-    <div ref={containerRef} className='h-screen w-full bg-secondary relative overflow-hidden flex items-center justify-center'>
+    <div ref={containerRef} className='h-[50vh] w-full bg-secondary relative overflow-hidden flex items-center justify-center'>
 
-<p className="font-poppins text-primary text-6xl sm:text-7xl md:text-8xl uppercase -skew-y-3 ">
+<p className="font-poppins text-primary text-5xl sm:text-6xl md:text-7xl uppercase -skew-y-3 mb-36 ">
   restez connectez
 </p>
 

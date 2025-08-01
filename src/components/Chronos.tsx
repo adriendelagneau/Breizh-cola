@@ -28,7 +28,7 @@ const Chronos: React.FC = () => {
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => setCurrentIndex(index), 50);
         },
-        markers: true,
+        // markers: true,
       })
     );
 
