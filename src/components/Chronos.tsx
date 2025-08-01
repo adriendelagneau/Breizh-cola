@@ -59,7 +59,7 @@ const Chronos: React.FC = () => {
         >
           {index % 2 === 0 ? (
             <>
-              <div className="absolute  w-[480px] -translate-x-1/2 left-1/4 top-1/2 transform -translate-y-1/2 text-primary">
+              <div className="absolute -rotate-3  w-[480px] -translate-x-1/2 left-[20%] top-1/2 transform -translate-y-1/2 text-primary">
                 {section.text}
               </div>
               <div
@@ -79,9 +79,9 @@ const Chronos: React.FC = () => {
           ) : (
             <>
               <div
-                className="absolute right-3/4 top-1/2 transform translate-x-1/2 -translate-y-1/2 
+                className="absolute right-[80%] top-1/2 transform translate-x-1/2 -translate-y-1/2 
                 bg-primary rounded-sm border border-[#ccc] shadow-md 
-                p-2 pt-2 pb-6 w-[480px]"
+                p-2 pt-2 pb-6 w-[480px] -rotate-6"
               >
                 <Image
                   src={section.image}
@@ -91,7 +91,7 @@ const Chronos: React.FC = () => {
                   className="w-full h-auto object-cover sepia-70"
                 />
               </div>
-              <div className="absolute w-96 -translate-x-1/2 left-3/4 top-1/2 transform -translate-y-1/2 text-primary">
+              <div className="absolute w-96 rotate-3 -translate-x-1/2 left-[80%] top-1/2 transform -translate-y-1/2 text-primary">
                 {section.text}
               </div>
             </>
