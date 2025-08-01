@@ -19,7 +19,7 @@ const Chronos: React.FC = () => {
     const triggers = sectionsRef.current.map((section, index) =>
       ScrollTrigger.create({
         trigger: section!,
-        start: 'top 100%', // Triggers slightly before center for smoother sync
+        start: 'top 20%', // Triggers slightly before center for smoother sync
         onEnter: () => {
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => setCurrentIndex(index), 50);

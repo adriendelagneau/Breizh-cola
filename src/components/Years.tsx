@@ -35,7 +35,7 @@ const Years = ({ currentIndex }: YearsProps) => {
             <li
               key={i}
               ref={el => { liRefs.current[i] = el; }}
-              className='h-[105px] flex items-center justify-center -skew-x-6'
+              className='h-[105px] flex items-center justify-center -skew-x-12 p-6'
             >
               {s.year}
             </li>
