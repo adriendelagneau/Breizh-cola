@@ -9,7 +9,7 @@ const page = () => {
     <div className='bg-secondary'>
       {/* <VideoStory /> */}
       <Chronos />
-      <div className='w-full h-screen bg-secondary'>Hello world !</div>
+      <div className='w-full h-screen bg-secondary flex items-center justify-center text-7xl text-primary font-extrabold'>Hello world !</div>
     </div>
   )
 }

@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import Years from './Years';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { sections } from '@/lib/data';
-import { useGSAP } from '@gsap/react';
+import React, { useRef, useState, useEffect } from "react";
+import Years from "./Years";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { sections } from "@/lib/data";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,7 @@ const Chronos: React.FC = () => {
     const triggers = sectionsRef.current.map((section, index) =>
       ScrollTrigger.create({
         trigger: section!,
-        start: 'top 20%', // Triggers slightly before center for smoother sync
+        start: "top 20%", // Triggers slightly before center for smoother sync
         onEnter: () => {
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => setCurrentIndex(index), 50);
@@ -29,12 +29,11 @@ const Chronos: React.FC = () => {
           timeoutRef.current = setTimeout(() => setCurrentIndex(index), 50);
         },
         markers: true,
-    
       })
     );
 
     return () => {
-      triggers.forEach(trigger => trigger.kill());
+      triggers.forEach((trigger) => trigger.kill());
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
@@ -45,41 +44,54 @@ const Chronos: React.FC = () => {
   }, []);
 
   return (
-    <div className='relative w-full'>
-    
+    <div className="relative w-full">
       <Years currentIndex={currentIndex} />
       {sections.map((section, index) => (
         <div
           key={section.id}
-          ref={el => { sectionsRef.current[index] = el; }}
+          ref={(el) => {
+            sectionsRef.current[index] = el;
+          }}
           id={section.id}
-          className='w-full h-screen relative  text-5xl font-poppins px-6  '
+          className="w-full h-screen relative uppercase text-6xl font-poppins px-6  "
           role="region"
           aria-label={`Section for the year ${section.year}`}
         >
           {index % 2 === 0 ? (
             <>
-              <div className='absolute w-96 -translate-x-1/2 left-1/4 top-1/2 transform -translate-y-1/2 text-primary'>
+              <div className="absolute  w-[480px] -translate-x-1/2 left-1/4 top-1/2 transform -translate-y-1/2 text-primary">
                 {section.text}
               </div>
-              <Image
-                src={section.image}
-                alt={`Image for ${section.year}`}
-                width={400}
-                height={413}
-                className='absolute -translate-x-1/2 left-3/4 top-1/2 transform -translate-y-1/2'
-              />
+              <div
+                className="absolute left-[80%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                bg-primary rounded-sm border border-[#ccc] shadow-md 
+                p-2 pt-2 pb-6 w-[500px] rotate-6"
+              >
+                <Image
+                  src={section.image}
+                  alt={`Image for ${section.year}`}
+                  width={500}
+                  height={413}
+                  className="w-full h-auto object-cover sepia-70"
+                />
+              </div>
             </>
           ) : (
             <>
-              <Image
-                src={section.image}
-                alt={`Image for ${section.year}`}
-                width={300}
-                height={413}
-                className='absolute -translate-x-1/2 left-1/4 top-1/2 transform -translate-y-1/2'
+              <div
+                className="absolute right-3/4 top-1/2 transform translate-x-1/2 -translate-y-1/2 
+                bg-primary rounded-sm border border-[#ccc] shadow-md 
+                p-2 pt-2 pb-6 w-[480px]"
+              >
+                <Image
+                  src={section.image}
+                  alt={`Image for ${section.year}`}
+                  width={500}
+                  height={413}
+                  className="w-full h-auto object-cover sepia-70"
                 />
-              <div className='absolute w-96 -translate-x-1/2 left-3/4 top-1/2 transform -translate-y-1/2 text-primary'>
+              </div>
+              <div className="absolute w-96 -translate-x-1/2 left-3/4 top-1/2 transform -translate-y-1/2 text-primary">
                 {section.text}
               </div>
             </>

@@ -67,61 +67,60 @@ export const sponsortText = [
   "En soutenant divers événements culturels et sportifs, Breizh Cola s’engage à promouvoir les talents et les traditions de la région bretonne.",
   "La marque bretonne renforce sa présence en investissant dans des initiatives qui favorisent le développement régional, tant au niveau sportif que culturel."
 ];
-
 export const sections = [
   { 
     id: 'year-2003', 
     year: 2003, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Lancement d’un cola breton pour concurrencer les grandes marques internationales." 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754063895/breizhCola/bz1_crlgiv.jpg", 
+    text: "Naissance de Breizh Cola, le cola breton." 
   },
   { 
     id: 'year-2007', 
     year: 2007, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Succès en Bretagne grâce à son goût unique et son ancrage local." 
+    text: "Succès en Bretagne, ancrage local fort." 
   },
   { 
     id: 'year-2011', 
     year: 2011, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Déploiement national, les fans du terroir adoptent le cola breton." 
+    text: "Déploiement national, expansion du cola breton." 
   },
   { 
     id: 'year-2018', 
     year: 2018, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Nouvelles recettes et engagement pour des ingrédients plus naturels." 
+    text: "Nouvelles recettes et ingrédients naturels." 
   },
   { 
     id: 'year-2022', 
     year: 2022, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "La marque mise sur l’écologie et réduit ses déchets plastiques." 
+    text: "Réduction des plastiques et actions écologiques." 
   },
   { 
     id: 'year-2025', 
     year: 2025, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Campagne axée sur la culture bretonne et la convivialité." 
+    text: "Campagne sur la culture bretonne." 
   },
   { 
     id: 'year-2028', 
     year: 2028, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Symbole régional, Breizh Cola soutient les événements bretons." 
+    text: "Soutien aux événements bretons." 
   },
   { 
     id: 'year-2031', 
     year: 2031, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Lancement de versions bio et sans sucre pour une gamme plus saine." 
+    text: "Lancement de versions bio et sans sucre." 
   },
   { 
     id: 'year-2035', 
     year: 2035, 
     image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Le cola breton s’exporte et devient une fierté française à l’international." 
+    text: "Exportation et succès international." 
   },
 ];
 
