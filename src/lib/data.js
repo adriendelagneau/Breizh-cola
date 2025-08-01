@@ -77,50 +77,50 @@ export const sections = [
   { 
     id: 'year-2007', 
     year: 2007, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754065320/breizhCola/bz3_euoqwg.jpg", 
     text: "Succès en Bretagne, ancrage local fort." 
   },
   { 
     id: 'year-2011', 
     year: 2011, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754065641/breizhCola/bz5_cqeiz1.jpg", 
     text: "Déploiement national, expansion du cola breton." 
+  },
+  { 
+    id: 'year-2015', 
+    year: 2015, 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754065844/breizhCola/bz6_fqdo4y.jpg", 
+    text: "Nouvelles recettes et ingrédients naturels." 
   },
   { 
     id: 'year-2018', 
     year: 2018, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Nouvelles recettes et ingrédients naturels." 
-  },
-  { 
-    id: 'year-2022', 
-    year: 2022, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754066577/breizhCola/bz7_yblvex.jpg", 
     text: "Réduction des plastiques et actions écologiques." 
   },
   { 
-    id: 'year-2025', 
-    year: 2025, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
+    id: 'year-2020', 
+    year: 2020, 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754067080/breizhCola/bz8_hxhy7f.jpg", 
     text: "Campagne sur la culture bretonne." 
   },
   { 
-    id: 'year-2028', 
-    year: 2028, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Soutien aux événements bretons." 
+    id: 'year-2023', 
+    year: 2023, 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754067654/breizhCola/bz9_yegs0b.jpg", 
+    text: "Collaboration avec des artistes bretons pour un design unique." 
   },
   { 
     id: 'year-2031', 
     year: 2031, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754067853/breizhCola/bz10_quqd5y.jpg", 
     text: "Lancement de versions bio et sans sucre." 
   },
   { 
     id: 'year-2035', 
     year: 2035, 
-    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1729074431/breizhCola/meme_w645rs.jpg", 
-    text: "Exportation et succès international." 
+    image: "https://res.cloudinary.com/dos8mey8r/image/upload/v1754068115/breizhCola/bz11_nliwm2.jpg", 
+    text: "Breizh Cola vers le futur" 
   },
 ];
 
