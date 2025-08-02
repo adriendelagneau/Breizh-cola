@@ -2,7 +2,7 @@
 
 import { View } from "@react-three/drei";
 import React from "react";
-import { Bubbles } from "../hero/Bubbles";
+import { Bubbles } from "./Bubbles";
 import Scene from "./Scene";
 
 const BubblesComponent = () => {

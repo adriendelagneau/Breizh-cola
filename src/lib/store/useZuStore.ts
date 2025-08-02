@@ -18,6 +18,6 @@ interface BubbleState {
 }
 
 export const useBubbleStore = create<BubbleState>((set) => ({
-  isPlaying: true, // Default to playing
+  isPlaying: false, // Default to playing
   togglePlay: () => set((state) => ({ isPlaying: !state.isPlaying })),
 }));

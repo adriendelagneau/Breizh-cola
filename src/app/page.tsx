@@ -6,13 +6,14 @@ import ProductCherry from "@/components/sections/productCherry/ProductCherry";
 import ProductOriginal from "@/components/sections/productOriginal/ProductOriginal";
 import ProductZero from "@/components/sections/productZero/ProductZero";
 import Social from "@/components/sections/social/Social";
+import BubblesShaderLayer from "@/components/sections/shaderBubbles/BubblesShaderLayer";
 
 
 export default function Home() {
   return (
     <div className="relative top-0 z-0">
       <BubblesComponent />
-
+    {/* <BubblesShaderLayer /> */}
       <Hero />
       <Marquee
         initialDirection={1}
