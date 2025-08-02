@@ -6,8 +6,8 @@ import Scene from "./Scene";
 
 const Bg = () => {
   return (
-    <View className="hero-scene pointer-events-none sticky top-0 z-40 -mt-[100vh] hidden h-screen w-full md:block">
-    <Scene flavor="cherry" />
+   <View className="pointer-events-none fixed inset-0 -z-20 h-screen w-full top-0 left-0">
+      <Scene flavor="cherry" />
     </View>
   );
 };

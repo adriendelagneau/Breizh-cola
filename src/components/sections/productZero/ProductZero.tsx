@@ -27,7 +27,7 @@ const ProductZero = () => {
   return (
     <div
       ref={sectionZeroRef}
-      className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6 bg-primary overflow-hidden product-zero bg-gradient-to-b from-black from-55% to-secondary to-75%"
+      className="relative top-0 left-0 flex flex-col items-center w-full min-h-screen xl:items-start xl:pl-6 overflow-hidden product-zero"
     >
       <View className=" pointer-events-none absolute top-0 z-30  hidden h-screen w-full md:block">
         <Scene flavor="zero" />

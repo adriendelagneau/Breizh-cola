@@ -1,21 +1,18 @@
 import Marquee from "@/components/Marquee";
-import Bg from "@/components/sections/bg/bg";
-import Scene from "@/components/sections/bg/Scene";
 import Carousel from "@/components/sections/carousel/Carousel";
-// import Carousel from "@/components/sections/carousel/Carousel";
+import BubblesComponent from "@/components/sections/bubbles/BubblesComponent";
 import Hero from "@/components/sections/hero/Hero";
 import ProductCherry from "@/components/sections/productCherry/ProductCherry";
 import ProductOriginal from "@/components/sections/productOriginal/ProductOriginal";
 import ProductZero from "@/components/sections/productZero/ProductZero";
 import Social from "@/components/sections/social/Social";
-import ShaderBackground from "@/components/shader-background";
-import { View } from "@react-three/drei";
 
-import { Canvas } from "@react-three/fiber";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="relative top-0 z-0">
+      <BubblesComponent />
+
       <Hero />
       <Marquee
         initialDirection={1}
@@ -54,9 +51,9 @@ export default function Home() {
       />
 
       <Carousel />
-      <Bg />
 
       <Social />
+       
     </div>
   );
 }

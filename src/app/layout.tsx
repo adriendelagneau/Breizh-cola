@@ -27,13 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body
         className={`${poppins.variable} ${creamCake.variable} antialiased overflow-x-hidden`}
       >
         <SmoothScrollProvider>
           <Header />
-          <main>
+          <main className="bg-secondary">
             {children}
             <ViewCanvas />
           </main>
