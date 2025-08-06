@@ -2,7 +2,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useLenis } from "lenis/react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -13,7 +12,7 @@ const SideMenu = () => {
   const startCloseMenu = useMenuStore((state) => state.startCloseMenu);
   const finishCloseMenu = useMenuStore((state) => state.finishCloseMenu);
   const openMenu = useMenuStore((state) => state.openMenu);
-  const lenis = useLenis();  // <== get Lenis instance here
+
   const listRefs = useRef<HTMLLIElement[]>([]);
   const menuRef = useRef<HTMLDivElement>(null);
   const tlText = useRef<gsap.core.Timeline | null>(null);
@@ -45,33 +44,32 @@ const SideMenu = () => {
   }, [isMenuOpen]);
 
   // Handle close animation: text slides down, then menu slides left
-useGSAP(() => {
-  if (!isMenuOpen && !isAnimatingOut && tlText.current && menuRef.current) {
-    setIsAnimatingOut(true);
-    startCloseMenu();
+  useGSAP(() => {
+    if (!isMenuOpen && !isAnimatingOut && tlText.current && menuRef.current) {
+      setIsAnimatingOut(true);
+      startCloseMenu();
 
-    tlText.current
-      .timeScale(1)
-      .reverse()
-      .eventCallback("onReverseComplete", () => {
-        tlMenu.current = gsap.timeline({
-          onComplete: () => {
-            finishCloseMenu();
-            setIsAnimatingOut(false);
+      // Reverse text animation (slide down)
+      tlText.current
+        .timeScale(1)
+        .reverse()
+        .eventCallback("onReverseComplete", () => {
+          // After text animation reverse finishes, slide the menu out
+          tlMenu.current = gsap.timeline({
+            onComplete: () => {
+              finishCloseMenu();
+              setIsAnimatingOut(false);
+            },
+          });
 
-            // ✅ Re-enable scroll here, after the full animation ends
-            lenis?.start();
-          },
+          tlMenu.current.to(menuRef.current, {
+            x: "-100%",
+            ease: "power.inOut",
+            duration: 0.2,
+          });
         });
-
-        tlMenu.current.to(menuRef.current, {
-          x: "-100%",
-          ease: "power.inOut",
-          duration: 0.2,
-        });
-      });
-  }
-}, [isMenuOpen, isAnimatingOut, startCloseMenu, finishCloseMenu, lenis]);
+    }
+  }, [isMenuOpen, isAnimatingOut, startCloseMenu, finishCloseMenu]);
 
   const handleClose = () => {
     // If animation is running or closing already, do nothing
@@ -107,17 +105,17 @@ useGSAP(() => {
     }
   };
 
-//   useEffect(() => {
-//   if (isMenuOpen) {
-//     document.body.style.overflowY = "hidden";
-//   } else {
-//     document.body.style.overflowY = "";
-//   }
+  useEffect(() => {
+  if (isMenuOpen) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "";
+  }
 
-//   return () => {
-//     document.body.style.overflowY = "";
-//   };
-// }, [isMenuOpen]);
+  return () => {
+    document.body.style.overflowY = "";
+  };
+}, [isMenuOpen]);
 
 
   const menuItems = [
