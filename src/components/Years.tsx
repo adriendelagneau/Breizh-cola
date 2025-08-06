@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useRef } from 'react';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { sections } from '@/lib/data';
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import React, { useRef } from "react";
+
+import { sections } from "@/lib/data";
 
 interface YearsProps {
   currentIndex: number;
@@ -13,29 +14,34 @@ const Years = ({ currentIndex }: YearsProps) => {
   const listRef = useRef<HTMLUListElement | null>(null);
   const liRefs = useRef<(HTMLLIElement | null)[]>([]);
 
-  useGSAP(() => {
-    liRefs.current.forEach((li, i) => {
-      gsap.to(li, {
-        scale: i === currentIndex ? 1 : 0.4,
-        duration: 0.4,
-        ease: 'power2.out',
+  useGSAP(
+    () => {
+      liRefs.current.forEach((li, i) => {
+        gsap.to(li, {
+          scale: i === currentIndex ? 1 : 0.4,
+          duration: 0.4,
+          ease: "power2.out",
+        });
       });
-    });
-  }, { dependencies: [currentIndex] });
+    },
+    { dependencies: [currentIndex] }
+  );
 
   return (
-    <div className='sticky top-0 -mt-[100vh] left-0 z-20 flex items-center justify-center w-full h-screen font-bold text-9xl font-poppins text-primary pointer-events-none'>
-      <div className='overflow-hidden h-[105px]'>
+    <div className="font-poppins text-primary pointer-events-none sticky top-0 left-0 z-20 -mt-[100vh] flex h-screen w-full items-center justify-center text-9xl font-bold">
+      <div className="h-[105px] overflow-hidden">
         <ul
           ref={listRef}
-          className='relative transition-transform'
+          className="relative transition-transform"
           style={{ transform: `translateY(${-(currentIndex * 105)}px)` }}
         >
           {sections.map((s, i) => (
             <li
               key={i}
-              ref={el => { liRefs.current[i] = el; }}
-              className='h-[105px] flex items-center justify-center -skew-x-12 p-6'
+              ref={(el) => {
+                liRefs.current[i] = el;
+              }}
+              className="flex h-[105px] -skew-x-12 items-center justify-center p-6"
             >
               {s.year}
             </li>

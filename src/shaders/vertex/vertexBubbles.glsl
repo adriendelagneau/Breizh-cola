@@ -1,26 +1,31 @@
-precision mediump float;
-
 uniform float uTime;
+
 attribute float aSpeed;
-attribute float aOffset;
+attribute vec3 aOffset;
 
-varying float vAlpha;
+varying float vOpacity;
 
-float noise(float x) {
-  return fract(sin(x * 91.3458) * 47453.5453);
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
 }
 
 void main() {
-  vec3 pos = position;
+    vec3 pos = position;
 
-  float time = uTime + aOffset;
-  pos.y = mod(pos.y + time * aSpeed, 6.0) - 3.0;
+    float time = uTime * aSpeed;
 
-  pos.x += sin(pos.y + aOffset) * 0.1;
-  pos.z += cos(pos.y + aOffset) * 0.1;
+    // Bubble float upward and noise-based drift
+    pos.y += time;
 
-  vAlpha = 1.0 - smoothstep(2.0, 3.0, pos.y);
+    float noiseX = sin(aOffset.x * 10.0 + time * 2.0) * 0.2;
+    float noiseZ = cos(aOffset.z * 10.0 + time * 2.0) * 0.2;
 
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-  gl_PointSize = 4.0;
+    pos.x += noiseX;
+    pos.z += noiseZ;
+
+    // Pass opacity for fragment shader
+    vOpacity = 1.0 - smoothstep(0.0, 4.0, pos.y);
+
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos + aOffset, 1.0);
 }
+

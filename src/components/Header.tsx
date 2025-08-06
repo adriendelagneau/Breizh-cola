@@ -55,6 +55,7 @@ const Header = () => {
         <div
           className="relative flex h-6 w-6 flex-col items-center justify-center lg:hidden"
           onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             isMenuOpen ? startCloseMenu() : openMenu();
           }}
         >

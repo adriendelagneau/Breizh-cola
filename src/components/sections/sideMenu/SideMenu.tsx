@@ -11,7 +11,7 @@ const SideMenu = () => {
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
   const startCloseMenu = useMenuStore((state) => state.startCloseMenu);
   const finishCloseMenu = useMenuStore((state) => state.finishCloseMenu);
-  const openMenu = useMenuStore((state) => state.openMenu);
+  // const openMenu = useMenuStore((state) => state.openMenu);
 
   const listRefs = useRef<HTMLLIElement[]>([]);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -103,21 +103,20 @@ const SideMenu = () => {
       // fallback: just finish immediately
       finishCloseMenu();
     }
-        document.body.style.overflowY = "";
+    document.body.style.overflowY = "";
   };
 
   useEffect(() => {
-  if (isMenuOpen) {
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.overflowY = "";
-  }
+    if (isMenuOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "";
+    }
 
-  return () => {
-    document.body.style.overflowY = "";
-  };
-}, [isMenuOpen]);
-
+    return () => {
+      document.body.style.overflowY = "";
+    };
+  }, [isMenuOpen]);
 
   const menuItems = [
     { label: "home", href: "/" },
@@ -127,17 +126,15 @@ const SideMenu = () => {
     { label: "lemon", href: "/product/lemon" },
     { label: "stevia", href: "/product/stevia" },
     { label: "history", href: "/chronology" },
-
   ];
 
   return (
     <div
       ref={menuRef}
-      className={`bg-primary -translate-x-full font-poppins fixed top-20 left-0 z-50 flex h-[calc(100vh-5rem)] w-full transform items-center justify-center transition-transform duration-300
-}`}
+      className="bg-primary font-poppins fixed top-20 left-0 z-50 flex h-[calc(100vh-5rem)] w-full -translate-x-full transform items-center justify-center transition-transform duration-300"
       role="dialog"
       aria-hidden={!isMenuOpen}
-    //   style={{ transform: isMenuOpen ? "translateX(0)" : undefined }}
+      //   style={{ transform: isMenuOpen ? "translateX(0)" : undefined }}
     >
       <ul className="text-secondary flex flex-col items-center gap-6 text-4xl uppercase">
         {menuItems.map((item, i) => (

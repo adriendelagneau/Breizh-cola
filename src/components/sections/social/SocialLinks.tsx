@@ -1,16 +1,17 @@
 "use client";
 
-import MagneticButtons from "@/components/MagneticButtons";
 import Link from "next/link";
+
+import MagneticButtons from "@/components/MagneticButtons";
 
 const SocialLinks = () => {
   return (
     <div className="absolute bottom-36 left-1/2 -translate-x-1/2">
-      <div className="hidden sm:flex sm:flex-row sm:gap-8 bg-transparent 2xl:gap-10">
+      <div className="hidden bg-transparent sm:flex sm:flex-row sm:gap-8 2xl:gap-10">
         <MagneticButtons>
           <Link href={"https://facebook.com/breizh-cola"}>
             <svg
-              className="w-14 h-14 cursor-pointer  fill-primary"
+              className="fill-primary h-14 w-14 cursor-pointer"
               id="Layer_2"
               data-name="Layer 2"
               xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +25,7 @@ const SocialLinks = () => {
         <MagneticButtons>
           <Link href={"https://twitter.com/breizh-cola"}>
             <svg
-              className="w-14 h-14 cursor-pointer  fill-primary"
+              className="fill-primary h-14 w-14 cursor-pointer"
               id="Layer_2"
               data-name="Layer 2"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +39,7 @@ const SocialLinks = () => {
         <MagneticButtons>
           <Link href={"https://youtube.com/breizh-cola"}>
             <svg
-              className="w-14 h-14 cursor-pointer  fill-primary"
+              className="fill-primary h-14 w-14 cursor-pointer"
               id="Layer_2"
               data-name="Layer 2"
               xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +53,7 @@ const SocialLinks = () => {
         <MagneticButtons>
           <Link href={"https://tic-toc.com/breizh-cola"}>
             <svg
-              className="w-14 h-14 cursor-pointer  fill-primary"
+              className="fill-primary h-14 w-14 cursor-pointer"
               id="Layer_2"
               data-name="Layer 2"
               xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
 
 interface MarqueeProps {
   initialDirection?: number;
@@ -24,7 +24,7 @@ const Marquee = ({
   let xPercent = 0;
   let direction = -1;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let animationFrameId: number | null = null; 
+  let animationFrameId: number | null = null;
 
   const setSecondTextPosition = () => {
     if (secondText.current) {
@@ -82,19 +82,19 @@ const Marquee = ({
   return (
     <div
       style={{ backgroundColor: bgColor }}
-      className="text-primary border-y-2 border-primary"
+      className="text-primary border-primary border-y-2"
     >
       <div
         className={
-          "relative flex h-[8vh] sm:h-[10vh] lg:h-[100px] xl:h-[130px] w-full overflow-hidden"
+          "relative flex h-[8vh] w-full overflow-hidden sm:h-[10vh] lg:h-[100px] xl:h-[130px]"
         }
       >
-        <div className="absolute z-10 -translate-x-3   top-1/2  -translate-y-1/2 ">
+        <div className="absolute top-1/2 z-10 -translate-x-3 -translate-y-1/2">
           <div
             ref={slider}
-            className="relative text-3xl sm:text-5xl lg:text-6xl xl:text-7xl capitalize whitespace-nowrap font-poppins "
+            className="font-poppins relative text-3xl whitespace-nowrap capitalize sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            <p className="relative pr-5 m-0" ref={firstText}>
+            <p className="relative m-0 pr-5" ref={firstText}>
               {sentence}
             </p>
             <p className="absolute top-0 left-[100%] m-0 pr-5" ref={secondText}>

@@ -26,6 +26,7 @@ const FLAVORS: {
 ];
 
 const Carousel = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentIndex, setCurrentIndex] = useState(0);
   const [angleOffset, setAngleOffset] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -74,6 +75,7 @@ const Carousel = () => {
     });
 
     return () => observerRef.current?.kill();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [angleOffset, isAnimating]);
 
   // const activeIndex = ((currentIndex % total) + total) % total;

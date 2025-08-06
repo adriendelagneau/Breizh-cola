@@ -1,13 +1,12 @@
 precision mediump float;
 
-uniform vec3 uColor;
-uniform float uOpacity;
-
-varying float vAlpha;
+varying float vOpacity;
 
 void main() {
-  float dist = distance(gl_PointCoord, vec2(0.5));
-  float circle = smoothstep(0.5, 0.2, dist);
+    vec3 color = vec3(1.0, 0.6, 0.7); // pinkish
+    gl_FragColor = vec4(color, vOpacity * 0.4);
 
-  gl_FragColor = vec4(uColor, uOpacity * circle * vAlpha);
+    // Soft edges (optional)
+    float d = length(gl_PointCoord - vec2(0.5));
+    if (d > 0.5) discard;
 }

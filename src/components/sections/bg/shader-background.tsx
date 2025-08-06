@@ -3,6 +3,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+
 import fragmentShader from "@/shaders/fragment/fragmentBg.glsl";
 import vertexShader from "@/shaders/vertex/vertexBg.glsl";
 

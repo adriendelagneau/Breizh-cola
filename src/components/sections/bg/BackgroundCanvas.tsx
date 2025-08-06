@@ -1,8 +1,9 @@
 "use client";
 
-import ShaderBackground from "@/components/sections/bg/shader-background";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+
+import ShaderBackground from "@/components/sections/bg/shader-background";
 
 export default function BackgroundCanvas() {
   return (

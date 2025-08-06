@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import SocialLinks from './SocialLinks';
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
+import React, { useEffect, useRef } from "react";
 
+import SocialLinks from "./SocialLinks";
 
-const Social = ( ) => {
+const Social = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const img1Ref = useRef<HTMLDivElement | null>(null);
   const img2Ref = useRef<HTMLDivElement | null>(null);
@@ -36,7 +36,7 @@ const Social = ( ) => {
           gsap.to(ref.current, {
             x: offsetX,
             y: offsetY,
-            ease: 'power3.out',
+            ease: "power3.out",
             duration: 1.6,
           });
         }
@@ -44,19 +44,21 @@ const Social = ( ) => {
     };
 
     const container = containerRef.current;
-    container?.addEventListener('mousemove', handleMouseMove);
+    container?.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      container?.removeEventListener('mousemove', handleMouseMove);
+      container?.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
-    <div ref={containerRef} className='h-[50vh] w-full relative overflow-hidden flex items-center justify-center'>
-
-<p className="font-poppins text-primary text-5xl sm:text-6xl md:text-7xl uppercase -skew-y-3 mb-36 ">
-  restez connectez
-</p>
+    <div
+      ref={containerRef}
+      className="relative flex h-[50vh] w-full items-center justify-center overflow-hidden"
+    >
+      <p className="font-poppins text-primary mb-36 -skew-y-3 text-5xl uppercase sm:text-6xl md:text-7xl">
+        restez connectez
+      </p>
 
       {/* <div
         ref={img1Ref}

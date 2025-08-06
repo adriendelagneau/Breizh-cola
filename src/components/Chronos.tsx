@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import Years from "./Years";
-import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React, { useRef, useState, useEffect } from "react";
+
 import { sections } from "@/lib/data";
-import { useGSAP } from "@gsap/react";
+
+import Years from "./Years";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,45 +55,37 @@ const Chronos: React.FC = () => {
             sectionsRef.current[index] = el;
           }}
           id={section.id}
-          className="w-full h-screen relative uppercase text-6xl font-poppins px-6  "
+          className="font-poppins relative h-screen w-full px-6 text-6xl uppercase"
           role="region"
           aria-label={`Section for the year ${section.year}`}
         >
           {index % 2 === 0 ? (
             <>
-              <div className="absolute -rotate-3  w-[480px] -translate-x-1/2 left-[20%] top-1/2 transform -translate-y-1/2 text-primary">
+              <div className="text-primary absolute top-1/2 left-[20%] w-[480px] -translate-x-1/2 -translate-y-1/2 -rotate-3 transform">
                 {section.text}
               </div>
-              <div
-                className="absolute left-[80%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                bg-primary rounded-sm border border-[#ccc] shadow-md 
-                p-2 pt-2 pb-6 w-[500px] rotate-6"
-              >
+              <div className="bg-primary absolute top-1/2 left-[80%] w-[500px] -translate-x-1/2 -translate-y-1/2 rotate-6 transform rounded-sm border border-[#ccc] p-2 pt-2 pb-6 shadow-md">
                 <Image
                   src={section.image}
                   alt={`Image for ${section.year}`}
                   width={500}
                   height={413}
-                  className="w-full h-auto object-cover sepia-70"
+                  className="h-auto w-full object-cover sepia-70"
                 />
               </div>
             </>
           ) : (
             <>
-              <div
-                className="absolute right-[80%] top-1/2 transform translate-x-1/2 -translate-y-1/2 
-                bg-primary rounded-sm border border-[#ccc] shadow-md 
-                p-2 pt-2 pb-6 w-[480px] -rotate-6"
-              >
+              <div className="bg-primary absolute top-1/2 right-[80%] w-[480px] translate-x-1/2 -translate-y-1/2 -rotate-6 transform rounded-sm border border-[#ccc] p-2 pt-2 pb-6 shadow-md">
                 <Image
                   src={section.image}
                   alt={`Image for ${section.year}`}
                   width={500}
                   height={413}
-                  className="w-full h-auto object-cover sepia-70"
+                  className="h-auto w-full object-cover sepia-70"
                 />
               </div>
-              <div className="absolute w-96 rotate-3 -translate-x-1/2 left-[80%] top-1/2 transform -translate-y-1/2 text-primary">
+              <div className="text-primary absolute top-1/2 left-[80%] w-96 -translate-x-1/2 -translate-y-1/2 rotate-3 transform">
                 {section.text}
               </div>
             </>

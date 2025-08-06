@@ -1,5 +1,4 @@
 // utils/splitters.js
-import React from 'react';
 
 const splitLetters = (word, refs) => {
   return word.split("").map((letter, i) => (
