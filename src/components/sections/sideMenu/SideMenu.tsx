@@ -130,7 +130,7 @@ const SideMenu = () => {
   return (
     <div
       ref={menuRef}
-      className={`bg-primary -translate-x-full font-poppins fixed top-20 left-0 z-20 flex h-[calc(100vh-5rem)] w-full transform items-center justify-center transition-transform duration-300
+      className={`bg-primary -translate-x-full font-poppins fixed top-20 left-0 z-50 flex h-[calc(100vh-5rem)] w-full transform items-center justify-center transition-transform duration-300
 }`}
       role="dialog"
       aria-hidden={!isMenuOpen}

@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body
-        className={`${poppins.variable} ${creamCake.variable} overflow-x-hidden antialiased`}
+        className={`${poppins.variable} ${creamCake.variable}  scrollbar scrollbar-none overflow-x-hidden antialiased`}
       >
         <Header />
         <SideMenu />

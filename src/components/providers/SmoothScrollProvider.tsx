@@ -12,10 +12,7 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!lenis) return;
 
-      if (!isMenuOpen) return;
 
-  // Stop scrolling immediately when menu opens
-  lenis?.stop();
 
     if (isMenuOpen) {
       lenis.stop(); // Disable scroll
