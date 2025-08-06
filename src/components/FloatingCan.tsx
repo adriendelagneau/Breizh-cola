@@ -24,7 +24,7 @@ const FloatingCan = forwardRef<Group, FloatingCanProps>(
       rotationIntensity = 1,
       floatIntensity = 1,
       floatingRange = [-0.1, 0.1],
-      scale = 0,
+      scale = 1,
       children,
       ...props
     },

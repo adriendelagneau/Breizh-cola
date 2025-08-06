@@ -29,15 +29,10 @@ const ViewCanvas = () => {
         top: 0,
         left: "50%",
         transform: "translateX(-50%)",
-        animation: "fadeInCanvas 1s ease-out 0.3s forwards",
         pointerEvents: "none",
         zIndex,
-        background: "transparent",
+
       }}
-      onCreated={({ gl }) => {
-        gl.setClearColor(0x000000, 0);
-      }}
-      shadows
       dpr={[1, 1.5]}
       gl={{ antialias: true, alpha: true }}
       camera={{ fov: 30 }}

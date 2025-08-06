@@ -54,7 +54,7 @@ function Scene() {
           x: 0.6,
           y: 0.6,
           z: 0.6,
-          duration: 0.7,
+          duration: 1,
           ease: "back.out(1)",
           delay: 1.6,
         });
