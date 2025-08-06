@@ -39,8 +39,8 @@ export default function RootLayout({
         <SideMenu />
         <BackgroundCanvas />
         <SmoothScrollProvider>
-          <main className="bg-secondary font-poppins">
             <BubblesComponent />
+          <main className="bg-secondary font-poppins">
             {children}
             <ViewCanvas />
           </main>
