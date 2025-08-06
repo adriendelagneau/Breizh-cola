@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
-import FloatingCan from "@/components/FloatingCan";
-import { Group } from "three";
+import { useGSAP } from "@gsap/react";
 import { Environment } from "@react-three/drei";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
+import { Group } from "three";
+
+import FloatingCan from "@/components/FloatingCan";
 import { useMeshStore } from "@/lib/store/useZuStore";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -38,12 +39,26 @@ function Scene() {
     const mm = gsap.matchMedia();
 
     mm.add("(max-width: 799px)", () => {
-      // Add alternate animations for mobile devices
-      gsap.set(can1Ref.current!.position, { x: 0, y: -0.6 });
-      gsap.set(can1Ref.current!.scale, { x: 0.6, y: 0.6, z: 0.6 });
+      if (!can1Ref.current || !can3Ref.current || !can4Ref.current) return;
 
-      gsap.set(can3Ref.current!.position, { y: 5, z: -1 });
-      gsap.set(can4Ref.current!.position, { x: 2, y: -4.5, z: 2 });
+      // ✅ Set initial states
+      gsap.set(can1Ref.current.position, { x: 0, y: -0.6 });
+      gsap.set(can1Ref.current.scale, { x: 0, y: 0, z: 0 }); // collapsed initially
+
+      gsap.set(can3Ref.current.position, { y: 5, z: -1 });
+      gsap.set(can4Ref.current.position, { x: 2, y: -4.5, z: 2 });
+
+      // ✅ Intro scale animation
+      if (window.scrollY < 20) {
+        gsap.to(can1Ref.current.scale, {
+          x: 0.6,
+          y: 0.6,
+          z: 0.6,
+          duration: 0.7,
+          ease: "back.out(1)",
+          delay: 1.6,
+        });
+      }
     });
 
     mm.add("(min-width: 800px)", () => {

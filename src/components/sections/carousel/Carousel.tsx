@@ -101,7 +101,7 @@ const Carousel = () => {
 
       {/* 3D Carousel */}
       <div className="relative z-30 flex w-full items-center justify-center px-2">
-        <View className="h-[27vh] w-full sm:h-[40vh] md:h-[48vh] lg:h-[60vh] xl:h-[75vh]">
+        <View className="h-[29vh] w-full sm:h-[40vh] md:h-[48vh] lg:h-[60vh] xl:h-[75vh]">
           {FLAVORS.map((flavor, index) => {
             const angle = index * anglePerCan + angleOffset;
             const radiusX = 1.6;

@@ -1,7 +1,7 @@
 "use client";
 
-import { forwardRef, ReactNode } from "react";
 import { Float } from "@react-three/drei";
+import { forwardRef, ReactNode } from "react";
 import { Group } from "three";
 
 import { SodaCan, SodaCanProps } from "./SodaCan";
@@ -24,11 +24,11 @@ const FloatingCan = forwardRef<Group, FloatingCanProps>(
       rotationIntensity = 1,
       floatIntensity = 1,
       floatingRange = [-0.1, 0.1],
-      scale = 1,
+      scale = 0,
       children,
       ...props
     },
-    ref,
+    ref
   ) => {
     return (
       <group ref={ref} scale={scale} {...props}>
@@ -43,7 +43,7 @@ const FloatingCan = forwardRef<Group, FloatingCanProps>(
         </Float>
       </group>
     );
-  },
+  }
 );
 
 FloatingCan.displayName = "FloatingCan";

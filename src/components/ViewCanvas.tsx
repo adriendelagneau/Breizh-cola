@@ -1,11 +1,27 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import clsx from "clsx"; // optional utility for class merging
 import { Suspense } from "react";
+import { useEffect, useState } from "react";
 
+import { useMeshStore } from "@/lib/store/useZuStore";
 
 const ViewCanvas = () => {
+  const ready = useMeshStore((state) => state.ready);
+
+  const [zIndex, setZIndex] = useState(-10);
+
+  useEffect(() => {
+    if (ready) {
+      const timeout = setTimeout(() => {
+        setZIndex(20); // bring canvas forward smoothly
+      }, 300); // match your CSS animation delay
+      return () => clearTimeout(timeout);
+    }
+  }, [ready]);
+
   return (
     <Canvas
       style={{
@@ -13,17 +29,18 @@ const ViewCanvas = () => {
         top: 0,
         left: "50%",
         transform: "translateX(-50%)",
-        overflow: "hidden",
+        animation: "fadeInCanvas 1s ease-out 0.3s forwards",
         pointerEvents: "none",
-        zIndex: 20
-     
+        zIndex,
+        background: "transparent",
+      }}
+      onCreated={({ gl }) => {
+        gl.setClearColor(0x000000, 0);
       }}
       shadows
       dpr={[1, 1.5]}
-      gl={{ antialias: true }}
-      camera={{
-        fov: 30,
-      }}
+      gl={{ antialias: true, alpha: true }}
+      camera={{ fov: 30 }}
     >
       <Suspense fallback={null}>
         <View.Port />
