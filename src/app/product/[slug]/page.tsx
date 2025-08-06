@@ -9,13 +9,13 @@ interface PageProps {
 const Page = async ({ params }: PageProps) => {
 
   const slug = await params;
-  console.log(slug)
+  console.log(slug);
   return (
 
 
-    <div className="pt-24  min-h-[300vh] relative">
+    <div className="pt-24  min-h-[300vh] relative w-full">
       <HeroSingle />
-      <h3 className="w-full text-center text-6xl text-primary uppercase font-poppins">
+      <h3 className="w-full text-center text-2xl text-primary uppercase font-poppins">
         choose your favorite one
       </h3>
       <Carousel />

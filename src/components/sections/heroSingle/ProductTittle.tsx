@@ -1,8 +1,8 @@
 "use client";
 import { useGSAP } from "@gsap/react";
-import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,53 +27,64 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         ease: "back.out(2)",
         scrollTrigger: {
           trigger: titleContainerRef.current,
-          start: "top top",
+          start: "top 19%",
           end: "bottom 99%",
         },
       });
     });
   }, []);
-  
 
   return (
     <div
       ref={titleContainerRef}
-      className="absolute top-0 left-0 w-full h-screen"
+      className="absolute top-0 left-0 h-screen w-full mt-16"
       id="singleTtitle"
     >
-      <div ref={subRef} className="relative ">
+      <div ref={subRef} className="relative text-5xl">
         <div
-          className={`absolute top-0 z-10 uppercase -translate-x-1/2 opacity-100 left-1/2 text-9xl  text-primary   font-poppins`}
+          className={
+            "text-primary font-poppins absolute top-0 left-1/2 z-10 -translate-x-1/2 uppercase opacity-100"
+          }
         >
           {name}
         </div>
         <div
           ref={ref1}
-          className={`absolute top-0 uppercase -translate-x-1/2 left-1/2 text-9xl text-stroke text-stroke-primary text-primary  font-poppins opacity-70  `}
+          className={
+            "text-stroke text-stroke-primary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 uppercase opacity-70"
+          }
         >
           {name}
         </div>
         <div
           ref={ref2}
-          className={`absolute top-0 uppercase -translate-x-1/2 left-1/2 text-9xl text-stroke text-stroke-primary text-primary  font-poppins opacity-50  `}
+          className={
+            "text-stroke text-stroke-primary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 uppercase opacity-50"
+          }
         >
           {name}
         </div>
         <div
           ref={ref3}
-          className={`absolute top-0 uppercase -translate-x-1/2 left-1/2 text-9xl text-stroke text-stroke-primary text-primary  font-poppins opacity-30  `}
+          className={
+            "text-stroke text-stroke-primary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 uppercase opacity-30"
+          }
         >
           {name}
         </div>
         <div
           ref={ref4}
-          className={`absolute top-0 uppercase -translate-x-1/2 left-1/2 text-9xl text-stroke text-stroke-primary text-primary  font-poppins opacity-10  `}
+          className={
+            "text-stroke text-stroke-primary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 uppercase opacity-10"
+          }
         >
           {name}
         </div>
         <div
           ref={ref5}
-          className={`absolute top-0 uppercase -translate-x-1/2 left-1/2 text-9xl text-stroke text-stroke-primary text-primary  font-poppins opacity-5  `}
+          className={
+            "text-stroke text-stroke-primary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 uppercase opacity-5"
+          }
         >
           {name}
         </div>

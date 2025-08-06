@@ -103,6 +103,7 @@ const SideMenu = () => {
       // fallback: just finish immediately
       finishCloseMenu();
     }
+        document.body.style.overflowY = "";
   };
 
   useEffect(() => {
@@ -119,12 +120,14 @@ const SideMenu = () => {
 
 
   const menuItems = [
+    { label: "home", href: "/" },
     { label: "original", href: "/product/original" },
     { label: "zero", href: "/product/zero" },
     { label: "cherry", href: "/product/cherry" },
     { label: "lemon", href: "/product/lemon" },
     { label: "stevia", href: "/product/stevia" },
     { label: "history", href: "/chronology" },
+
   ];
 
   return (
@@ -136,7 +139,7 @@ const SideMenu = () => {
       aria-hidden={!isMenuOpen}
     //   style={{ transform: isMenuOpen ? "translateX(0)" : undefined }}
     >
-      <ul className="text-secondary flex flex-col items-center gap-6 text-7xl uppercase">
+      <ul className="text-secondary flex flex-col items-center gap-6 text-4xl uppercase">
         {menuItems.map((item, i) => (
           <div key={item.label} className="overflow-hidden">
             <li
