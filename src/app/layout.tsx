@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import BackgroundCanvas from "@/components/sections/bg/BackgroundCanvas";
+import BubblesComponent from "@/components/sections/bubbles/BubblesComponent";
+import SideMenu from "@/components/sections/sideMenu/SideMenu";
+import ViewCanvas from "@/components/ViewCanvas";
+
+const creamCake = localFont({
+  variable: "--font-cream-cake",
+  src: "../../public/font/Cream Cake.otf",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = localFont({
+  variable: "--font-poppins",
+  src: "../../public/font/poppins-extrabold.ttf",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +31,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${creamCake.variable} overflow-x-hidden antialiased`}
       >
-        {children}
+        <Header />
+        <SideMenu />
+        <BackgroundCanvas />
+        <SmoothScrollProvider>
+          <main className="bg-secondary font-poppins">
+            <BubblesComponent />
+            {children}
+            <ViewCanvas />
+          </main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
